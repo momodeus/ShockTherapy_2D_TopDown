@@ -1036,8 +1036,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSize: 0.48
   timeToMove: 0.2
-  startX: 15
-  startY: 27
+  startGridX: 1
+  startGridY: 1
+  startX: 0.15
+  startY: 0.75
   collisionMap: {fileID: 4900000, guid: 23f2d58eff3a0974590971841cb5766f, type: 3}
 --- !u!212 &1261010326
 SpriteRenderer:

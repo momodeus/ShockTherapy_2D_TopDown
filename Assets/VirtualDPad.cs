@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class VirtualDPad : MonoBehaviour
 {
-    public GridMovement playerMovement;
+    public PlayerMovement playerMovement;
 
     private Touch theTouch;
     private Vector2 touchStartPosition, touchEndPosition;

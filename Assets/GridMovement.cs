@@ -10,11 +10,17 @@ public class GridMovement : MonoBehaviour
     public float startX, startY;
     public TextAsset collisionMap;
 
-    //direction constants
-    private const int NORTH = 0;
-    private const int SOUTH = 2;
-    private const int EAST = 3;
-    private const int WEST = 1;
+    //direction constants (don't want to see in inspector, but valuable to other places)
+    [HideInInspector]
+    public const int NORTH = 0;
+    [HideInInspector]
+    public const int SOUTH = 2;
+    [HideInInspector]
+    public const int EAST = 3;
+    [HideInInspector]
+    public const int WEST = 1;
+    [HideInInspector]
+    public const int NONE = -1;
 
     private int heading = NORTH;
     private int gridX, gridY;
@@ -23,7 +29,7 @@ public class GridMovement : MonoBehaviour
     private bool isMoving = false;
     private Vector3 origPos, targetPos;
     private Quaternion origHeading, targetHeading;
-
+    private int queuedDirection = -1;
     void Start()
     {
         //reading collision file and setting up collision matrix
@@ -42,11 +48,36 @@ public class GridMovement : MonoBehaviour
             }
         }
         transform.position = new Vector3(gridSize * (gridX - 0.5f * collisions.GetLength(0)) + startX, gridSize * (gridY - 0.5f * collisions.GetLength(1)) + startY, 0);
-        updateCanMove();
+        UpdateCanMove();
     }
     // Update is called once per frame
     void Update()
     {
+        if (queuedDirection == NORTH && !isMoving && heading != SOUTH && canMove[NORTH])
+        {
+            StartCoroutine(MovePlayer(NORTH));
+            queuedDirection = NONE;
+        }
+        else if (queuedDirection == WEST && !isMoving && heading != EAST && canMove[WEST])
+        {
+            StartCoroutine(MovePlayer(WEST));
+            queuedDirection = NONE;
+        }
+        else if (queuedDirection == SOUTH && !isMoving && heading != NORTH && canMove[SOUTH])
+        {
+            StartCoroutine(MovePlayer(SOUTH));
+            queuedDirection = NONE;
+        }
+        else if (queuedDirection == EAST && !isMoving && heading != WEST && canMove[EAST])
+        {
+            StartCoroutine(MovePlayer(EAST));
+            queuedDirection = NONE;
+        }
+        else if (!isMoving && canMove[heading])
+        {
+            StartCoroutine(MovePlayer(heading));
+        }
+        /* keyboard control
         if (Input.GetKey(KeyCode.W) && !isMoving && heading != SOUTH && canMove[NORTH])
         {
             StartCoroutine(MovePlayer(NORTH));
@@ -63,9 +94,17 @@ public class GridMovement : MonoBehaviour
         {
             StartCoroutine(MovePlayer(heading));
         }
+        */
+
     }
 
-    private void updateCanMove()
+
+    public void RequestNewMove(int newHeading)
+    {
+        queuedDirection = newHeading;
+    }
+
+    private void UpdateCanMove()
     {
         canMove[NORTH] = collisions[gridX, gridY + 1];
         canMove[EAST] = collisions[gridX + 1, gridY];
@@ -102,8 +141,8 @@ public class GridMovement : MonoBehaviour
                 gridY++;
                 break;
         }
-        updateCanMove();
-        //Debug.Log("Grid Pos: [" + gridX + ", " + gridY + "]");
+        UpdateCanMove();
+        Debug.Log("Grid Pos: [" + gridX + ", " + gridY + "]");
         heading = newHeading;
         float elapsedTime = 0;
         origPos = transform.position;
@@ -115,8 +154,8 @@ public class GridMovement : MonoBehaviour
         {
             transform.position = Vector3.Lerp(origPos, targetPos, (elapsedTime / timeToMove));
             transform.rotation = Quaternion.Slerp(origHeading, targetHeading, (elapsedTime / timeToMove));
-            elapsedTime += Time.deltaTime;  
-            yield return null;
+            elapsedTime += Time.fixedDeltaTime;  
+            yield return new WaitForFixedUpdate();
         }
 
         transform.rotation = Quaternion.Slerp(origHeading, targetHeading, 1);

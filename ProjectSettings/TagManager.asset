@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Minimap
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Minimap
+    uniqueID: 2493974189
+    locked: 0
   - name: Background
     uniqueID: 611451911
     locked: 0
@@ -52,4 +55,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 144714225
+    locked: 0
+  - name: UI
+    uniqueID: 3325208767
     locked: 0

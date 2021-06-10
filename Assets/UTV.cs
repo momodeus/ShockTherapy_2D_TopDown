@@ -45,6 +45,8 @@ public class UTV : MonoBehaviour
         }
         return false;
     }
+
+    //TODO: Figure out how to smooth out movement; it's pretty jittery at times
     private IEnumerator MoveRoutine(int newHeading)
     {
         isMoving = true;

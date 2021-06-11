@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Parent class for all UTVs on the map. 
+/// Contains information about where it is on the grid, 
+/// speed of movement, whether it can turn around. 
+/// </summary>
 public class UTV : MonoBehaviour
 {
     public int heading = GridMovement.NORTH;
-    public int gridX, gridY; //set these to start it off. TODO: verify these aren't invalid coords in Start()
+    public int gridX, gridY; //set these to start it off
     public float timeToMove = 0.2f;
     public GridMovement grid;
     public bool canTurn180 = true;
@@ -19,6 +24,11 @@ public class UTV : MonoBehaviour
     {
         SetupPosition();
     }
+
+    /// <summary>
+    /// verifies that gridX and gridY are not in an obstructed cell, 
+    /// and moves object to its proper location based on gridX and gridY
+    /// </summary>
     protected void SetupPosition()
     {
         //have to verify that gridX and gridY are good
@@ -46,6 +56,14 @@ public class UTV : MonoBehaviour
         transform.position = grid.GetCoords(gridX, gridY);        
     }
 
+    /// <summary>
+    /// Simple Euclidean distance squared
+    /// </summary>
+    /// <param name="x1"></param>
+    /// <param name="y1"></param>
+    /// <param name="x2"></param>
+    /// <param name="y2"></param>
+    /// <returns></returns>
     protected float Dist2(float x1, float y1, float x2, float y2)
     {
         return (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
@@ -57,9 +75,11 @@ public class UTV : MonoBehaviour
         //to be implemented in player / enemy (/ ghost?) subclasses
     }
 
-    /**
-     * returns whether the move happened. 
-     */
+    /// <summary>
+    /// Tries to move UTV in direction given
+    /// </summary>
+    /// <param name="newHeading">new direction to move</param>
+    /// <returns>whether the move was successful</returns>
     protected bool TryMove(int newHeading)
     {
         if (newHeading == GridMovement.NONE) return false; //might want this to be true, since success; however, doesn't move
@@ -73,6 +93,11 @@ public class UTV : MonoBehaviour
     }
 
     //TODO: Figure out how to smooth out movement; it's pretty jittery at times
+    /// <summary>
+    /// Moves the UTV smoothly to its new location and rotates it in the proper direction
+    /// </summary>
+    /// <param name="newHeading"></param>
+    /// <returns></returns>
     private IEnumerator MoveRoutine(int newHeading)
     {
         isMoving = true;

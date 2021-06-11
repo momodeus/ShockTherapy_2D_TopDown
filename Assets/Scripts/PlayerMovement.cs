@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//TODO: RESTRUCTURING SO THAT GRIDMOVEMENT IS GLOBAL AND PLAYERMOVEMENT / ENEMYMOVEMENT IS INSTANTIATED
-//      WANT TO FIGURE OUT HOW TO MAKE ENEMIES MOVE RANDOMLY AT FIRST, THEN MOVE TOWARDS PLAYER. 
+/// <summary>
+/// Controller for player movement. Is currently set up to handle both unity editor and android mobile implementations.
+/// On computer, WASD controls move player. 
+/// On android, swipes move player. 
+/// </summary>
 public class PlayerMovement : UTV
 {
     
-    private int queuedHeading = -1;
+    private int queuedHeading = -1; //holds queued heading. This imrpoves responsiveness if player tries to move slightly before they're allowed to
 
 
     private bool android;
@@ -66,16 +69,25 @@ android = true;
         }
     }
 
+    /// <summary>
+    /// Figures out what player hit. If flag, pick it up; if enemy, die. 
+    /// </summary>
+    /// <param name="other"></param>
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("other tag: " + other.gameObject.tag);
         if(other.gameObject.CompareTag("Pickup"))
         {
-            Debug.Log("pickuped");
+            GameManager.Instance.PickupFlag(100);
             other.gameObject.SetActive(false);
 
         }
     }
+
+    /// <summary>
+    /// Allows queueing of next move
+    /// </summary>
+    /// <param name="newHeading">next move to queue</param>
     public void RequestNewMove(int newHeading)
     {
         queuedHeading = newHeading;

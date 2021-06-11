@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Spawner for flags at the beginning of a game. 
+/// </summary>
 public class FlagSpawner : MonoBehaviour
 {
-    public GameObject flag;
+    public GameObject flag; //reference to flag prefab
     public const int numFlagsToSpawn = 10;
-    public GridMovement grid;
+    public GridMovement grid; //reference to map's grid
     // Start is called before the first frame update
     void Start()
     {

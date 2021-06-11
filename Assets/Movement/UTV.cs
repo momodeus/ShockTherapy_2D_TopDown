@@ -8,7 +8,7 @@ public class UTV : MonoBehaviour
     public int gridX, gridY; //set these to start it off. TODO: verify these aren't invalid coords in Start()
     public float timeToMove = 0.2f;
     public GridMovement grid;
-
+    public bool canTurn180 = true;
     protected bool isMoving = false;
     protected Vector3 origPos, targetPos;
     protected Quaternion origHeading, targetHeading;
@@ -21,11 +21,38 @@ public class UTV : MonoBehaviour
     }
     protected void SetupPosition()
     {
+        //have to verify that gridX and gridY are good
+        if (!grid.IsUnBlocked(gridX, gridY))
+        {
+            float bestDist = float.MaxValue;
+            int bx = gridX, by = gridY; //best grid x/y
+            List<Vector2> validPoints = grid.GetValidPoints();
+            Debug.Log(validPoints.ToString());
+            for (int i = 0; i < validPoints.Count; i++)
+            {
+                Vector2 point = validPoints[i];
+                float test = Dist2(gridX, gridY, point.x, point.y);
+                if (test < bestDist)
+                {
+                    bx = (int)point.x;
+                    by = (int)point.y;
+                    bestDist = test;
+                }
+            }
+            gridX = bx;
+            gridY = by;
+        }
+
         transform.position = new Vector3(
             grid.gridSize * (gridX - 0.5f * grid.GetWidth()) + grid.offsetX,
-            grid.gridSize * (gridY - 0.5f * grid.GetHeight()) + grid.offsetY, 0);
-
+            grid.gridSize * (gridY - 0.5f * grid.GetHeight()) + grid.offsetY, 0);        
     }
+
+    protected float Dist2(float x1, float y1, float x2, float y2)
+    {
+        return (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -38,7 +65,8 @@ public class UTV : MonoBehaviour
     protected bool TryMove(int newHeading)
     {
         if (newHeading == GridMovement.NONE) return false; //might want this to be true, since success; however, doesn't move
-        if ( (newHeading % 4) != (heading + 2) % 4 && !isMoving && grid.CanMove(newHeading, gridX, gridY))
+        if ((newHeading % 4) != (heading + 2) % 4 && !canTurn180) return false;
+        if (!isMoving && grid.CanMove(newHeading, gridX, gridY))
         {
             StartCoroutine(MoveRoutine(newHeading));
             return true;

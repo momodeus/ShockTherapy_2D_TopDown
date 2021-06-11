@@ -321,11 +321,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heading: 0
-  gridX: 24
-  gridY: 24
+  gridX: 3
+  gridY: 3
   timeToMove: 0.25
   grid: {fileID: 1383370172}
+  canTurn180: 1
   player: {fileID: 1261010325}
+  queueDepth: 7
 --- !u!1 &181023725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,6 +1238,7 @@ MonoBehaviour:
   gridY: 1
   timeToMove: 0.2
   grid: {fileID: 1383370172}
+  canTurn180: 1
 --- !u!212 &1261010326
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1417,13 +1420,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1383370171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09747fce9e61dfe4e8a9dcd27a928dad, type: 3}
+  m_Script: {fileID: 11500000, guid: decce39e0d5d69446bb283fb4e964abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   collisionMap: {fileID: 4900000, guid: 23f2d58eff3a0974590971841cb5766f, type: 3}
   gridSize: 0.48
-  offsetX: -7.907
-  offsetY: -13.6656
+  offsetX: 0.48
+  offsetY: 0.24
+  gridWidth: 0
+  gridHeight: 0
 --- !u!4 &1383370173
 Transform:
   m_ObjectHideFlags: 0
@@ -1520,7 +1525,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1815564614}
   - component: {fileID: 1815564613}
-  - component: {fileID: 1815564612}
   m_Layer: 0
   m_Name: MinimapCamera
   m_TagString: MainCamera
@@ -1528,14 +1532,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1815564612
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1815564609}
-  m_Enabled: 1
 --- !u!20 &1815564613
 Camera:
   m_ObjectHideFlags: 0

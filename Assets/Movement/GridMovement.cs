@@ -16,15 +16,14 @@ public class GridMovement : MonoBehaviour
     public const int SOUTH = 2;
     [HideInInspector]
     public const int EAST = 3;
-
     [HideInInspector]
     public const int NONE = -1;
 
-    private int gridWidth, gridHeight;
+    public int gridWidth, gridHeight;
     private bool[,] collisions;
-
+    private List<Vector2> validPoints;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         //reading collision file and setting up collision matrix
         List<string> eachLine = new List<string>();
@@ -39,6 +38,16 @@ public class GridMovement : MonoBehaviour
         }
         gridWidth = collisions.GetLength(0);
         gridHeight = collisions.GetLength(1);
+
+        validPoints = new List<Vector2>();
+        for (int i = 0; i < gridHeight; i++)
+        {
+            for (int j = 0; j < gridWidth; j++)
+            {
+                if (collisions[j, i]) validPoints.Add(new Vector2(j, i));
+            }
+        }
+        Debug.Log("finished awake with " + gridWidth + "x" + gridHeight + " grid, and " + validPoints.Count + " valid locations");
     }
 
     // Update is called once per frame
@@ -47,26 +56,40 @@ public class GridMovement : MonoBehaviour
         //might want to keep track of all cars here somehow, or to update some game manager stuff
     }
 
+    public bool IsUnBlocked(int gridX, int gridY)
+    {
+        return IsValid(gridX, gridY) && collisions[gridX, gridY];
+    }
+
+    public bool IsValid(int gridX, int gridY)
+    {
+        return gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight;
+    }
 
     public bool CanMove(int heading, int gridX, int gridY)
     {
-        if (gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight)
+        if (gridX >= 1 && gridX < gridWidth-1 && gridY >= 1 && gridY < gridHeight-1)
         {
             switch(heading)
             {
                 case NORTH:
                     return collisions[gridX, gridY + 1];
-                case EAST:
-                    return collisions[gridX + 1, gridY];
-                case SOUTH:
-                    return collisions[gridX, gridY - 1];
                 case WEST:
                     return collisions[gridX - 1, gridY];
+                case SOUTH:
+                    return collisions[gridX, gridY - 1];
+                case EAST:
+                    return collisions[gridX + 1, gridY];
                 default:
                     return false;
             }
         }
         return false;
+    }
+
+    public List<Vector2> GetValidPoints()
+    {
+        return validPoints;
     }
 
     public int GetWidth()

@@ -66,7 +66,16 @@ android = true;
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("other tag: " + other.gameObject.tag);
+        if(other.gameObject.CompareTag("Pickup"))
+        {
+            Debug.Log("pickuped");
+            other.gameObject.SetActive(false);
 
+        }
+    }
     public void RequestNewMove(int newHeading)
     {
         queuedHeading = newHeading;

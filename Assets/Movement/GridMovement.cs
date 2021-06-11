@@ -92,6 +92,10 @@ public class GridMovement : MonoBehaviour
         return validPoints;
     }
 
+    public Vector3 GetCoords(int gx, int gy)
+    {
+        return new Vector3(gridSize * (gx - 0.5f*GetWidth()) + offsetX, gridSize * (gy - 0.5f*GetHeight()) + offsetY, 0);
+    }
     public int GetWidth()
     {
         return gridWidth;

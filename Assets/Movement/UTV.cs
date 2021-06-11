@@ -43,9 +43,7 @@ public class UTV : MonoBehaviour
             gridY = by;
         }
 
-        transform.position = new Vector3(
-            grid.gridSize * (gridX - 0.5f * grid.GetWidth()) + grid.offsetX,
-            grid.gridSize * (gridY - 0.5f * grid.GetHeight()) + grid.offsetY, 0);        
+        transform.position = grid.GetCoords(gridX, gridY);        
     }
 
     protected float Dist2(float x1, float y1, float x2, float y2)

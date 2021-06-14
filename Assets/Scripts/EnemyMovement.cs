@@ -16,13 +16,14 @@ public class EnemyMovement : UTV
     // Start is called before the first frame update
     void Start()
     {
-        SetupPosition();
+        Setup();
         nextMoves = new Queue<int>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!allowedToMove) return;
         if (!isMoving)
         {
             if (nextMoves.Count > 0)

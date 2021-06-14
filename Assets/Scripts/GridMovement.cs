@@ -54,6 +54,8 @@ public class GridMovement : MonoBehaviour
             }
         }
         Debug.Log("finished awake with " + gridWidth + "x" + gridHeight + " grid, and " + validPoints.Count + " valid locations");
+
+
     }
 
     // Update is called once per frame

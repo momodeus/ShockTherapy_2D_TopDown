@@ -7,7 +7,7 @@ using UnityEngine;
 /// Contains information about where it is on the grid, 
 /// speed of movement, whether it can turn around. 
 /// </summary>
-public class UTV : MonoBehaviour
+public class UTV : MonoBehaviour, GameManagerListener
 {
     public int heading = GridMovement.NORTH;
     public int gridX, gridY; //set these to start it off
@@ -17,20 +17,22 @@ public class UTV : MonoBehaviour
     protected bool isMoving = false;
     protected Vector3 origPos, targetPos;
     protected Quaternion origHeading, targetHeading;
-
+    protected bool allowedToMove = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        SetupPosition();
+        Setup();
     }
 
     /// <summary>
     /// verifies that gridX and gridY are not in an obstructed cell, 
     /// and moves object to its proper location based on gridX and gridY
     /// </summary>
-    protected void SetupPosition()
+    protected void Setup()
     {
+        //add this as a listener to GameManager
+        GameManager.Instance.AddGameManagerListener(this);
         //have to verify that gridX and gridY are good
         if (!grid.IsUnBlocked(gridX, gridY))
         {
@@ -82,6 +84,7 @@ public class UTV : MonoBehaviour
     /// <returns>whether the move was successful</returns>
     protected bool TryMove(int newHeading)
     {
+        if (!allowedToMove) return false;
         if (newHeading == GridMovement.NONE) return false; //might want this to be true, since success; however, doesn't move
         if ((newHeading % 4) != (heading + 2) % 4 && !canTurn180) return false;
         if (!isMoving && grid.CanMove(newHeading, gridX, gridY))
@@ -134,7 +137,7 @@ public class UTV : MonoBehaviour
 
         origHeading = transform.rotation;
         targetHeading = Quaternion.Euler(0, 0, heading * 90);
-        while(elapsedTime < timeToMove)
+        while(elapsedTime < timeToMove && allowedToMove)
         {
             transform.position = Vector3.Lerp(origPos, targetPos, (elapsedTime / timeToMove));
             transform.rotation = Quaternion.Slerp(origHeading, targetHeading, (elapsedTime / timeToMove));
@@ -147,4 +150,9 @@ public class UTV : MonoBehaviour
 
         isMoving = false;
     }
+
+    public void OnGameLost() { allowedToMove = false; }
+    public void OnGameStarted() { allowedToMove = true; }
+    public void OnGameWon() { allowedToMove = false; }
+    public void OnScoreChanged() { }
 }

@@ -10,7 +10,7 @@ using UnityEngine;
 /// </summary>
 public class PlayerMovement : UTV
 {
-    
+    public float fuelUsedPerMove = 0.1f;
     private int queuedHeading = -1; //holds queued heading. This imrpoves responsiveness if player tries to move slightly before they're allowed to
 
 
@@ -18,7 +18,7 @@ public class PlayerMovement : UTV
 
     void Start()
     {
-        SetupPosition();
+        Setup();
 #if UNITY_EDITOR
 android = false;
 #elif UNITY_ANDROID
@@ -28,18 +28,20 @@ android = true;
     // Update is called once per frame
     void Update()
     {
+        if (!allowedToMove) return;
         if(android) { 
             if (queuedHeading == GridMovement.NONE)
             {
-                TryMove(heading);
+                GameManager.Instance.UseFuel(TryMove(heading) ? fuelUsedPerMove : 0);
             } else
             {
                 if (TryMove(queuedHeading))
                 {
                     queuedHeading = GridMovement.NONE;
+                    GameManager.Instance.UseFuel(fuelUsedPerMove);
                 } else
                 {
-                    TryMove(heading);
+                    GameManager.Instance.UseFuel(TryMove(heading) ? fuelUsedPerMove : 0);
                 }
             }
         } else {
@@ -64,7 +66,10 @@ android = true;
             }
             if(!moved)
             {
-                TryMove(heading);
+                GameManager.Instance.UseFuel(TryMove(heading) ? fuelUsedPerMove : 0);
+            } else
+            {
+                GameManager.Instance.UseFuel(fuelUsedPerMove);
             }
         }
     }
@@ -75,12 +80,14 @@ android = true;
     /// <param name="other"></param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("other tag: " + other.gameObject.tag);
         if(other.gameObject.CompareTag("Pickup"))
         {
-            GameManager.Instance.PickupFlag(100);
+            GameManager.Instance.PickupFlag(LocalGameManager.flagScore);
             other.gameObject.SetActive(false);
 
+        } else if (other.gameObject.CompareTag("Enemy"))
+        {
+            GameManager.Instance.GameLost();
         }
     }
 

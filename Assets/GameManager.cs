@@ -47,7 +47,7 @@ public class GameManager
     {
         flagsRemaining--;
         Debug.Log("flags remaining: " + flagsRemaining);
-        UpdateScore(flagScore + (int)(flagScore * EaseOutCirc(GetPercentFuelRemaining())));
+        UpdateScore(flagScore + (int)(flagScore * Easing(GetPercentFuelRemaining())) / 100 * 100);
         if(flagsRemaining == 0)
         {
             Debug.Log("0 flags remain");
@@ -88,8 +88,10 @@ public class GameManager
         this.startFuel = startFuel;
         fuelRemaining = startFuel;
         gameStartTime = Time.unscaledTimeAsDouble;
+        score = 0;
         foreach (GameManagerListener gml in listeners)
         {
+            gml.OnScoreChanged();
             gml.OnGameStarted();
         }
         return true;
@@ -121,19 +123,33 @@ public class GameManager
         listeners.Add(gml);
     }
 
+    public void RemoveGameManagerListener(GameManagerListener gml)
+    {
+        listeners.Remove(gml);
+    }
+
+    public void ClearGameManagerListeners()
+    {
+        listeners.Clear();
+    }
+
     public float GetPercentFuelRemaining()
     {
         return fuelRemaining / startFuel;
     }
 
+    public void ReturnToMainMenu()
+    {
+        state = StateType.MAINMENU;
+    }
     /// <summary>
     /// easing function from easings.net
     /// </summary>
     /// <param name="x"></param>
     /// <returns></returns>
-    private static float EaseOutCirc(float x)
+    private static float Easing(float x)
     {
-        return Mathf.Sqrt(1 - (x - 1)*(x - 1));
+        return x * x * x * x;
     }
 }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class LocalGameManager : MonoBehaviour, GameManagerListener
 {
@@ -21,7 +21,7 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
         GameManager.Instance.AddGameManagerListener(this);
         winSplash.SetActive(false);
         loseSplash.SetActive(false);
-        scoreText.text = "SCORE:\n" + GameManager.Instance.GetScore();
+        //scoreText.text = "SCORE:\n" + GameManager.Instance.GetScore();
     }
 
     // Update is called once per frame
@@ -46,5 +46,16 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
     public void OnScoreChanged()
     {
         scoreText.text = "SCORE:\n" + GameManager.Instance.GetScore();
+    }
+
+    public void ReturnToMainMenu()
+    {
+        GameManager.Instance.ReturnToMainMenu();
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OnDestroy()
+    {
+        GameManager.Instance.ClearGameManagerListeners();
     }
 }

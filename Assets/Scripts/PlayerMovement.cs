@@ -11,14 +11,17 @@ using UnityEngine;
 public class PlayerMovement : UTV
 {
     public float fuelUsedPerMove = 0.1f;
+    public GameObject smokePrefab;
     private int queuedHeading = -1; //holds queued heading. This imrpoves responsiveness if player tries to move slightly before they're allowed to
-
-
+    public int maxSmokes = 3;
+    private int lastSmokeX = 0, lastSmokeY = 0;
     private bool android;
 
     void Start()
     {
         Setup();
+        lastSmokeX = gridX;
+        lastSmokeY = gridY;
 #if UNITY_EDITOR
 android = false;
 #elif UNITY_ANDROID
@@ -64,6 +67,10 @@ android = true;
             {
                 moved = TryMove(GridMovement.EAST);
             }
+            if(Input.GetKey(KeyCode.LeftShift) && SmokeScript.numSmokes < maxSmokes)
+            {
+                SpawnSmokeObject();
+            }
             if(!moved)
             {
                 GameManager.Instance.UseFuel(TryMove(heading) ? fuelUsedPerMove : 0);
@@ -74,6 +81,17 @@ android = true;
         }
     }
 
+    void SpawnSmokeObject()
+    {
+        if(lastSmokeX != gridX || lastSmokeY != gridY)
+        {
+            SmokeScript sms = (Instantiate(smokePrefab, new Vector3(0, 0, 0), Quaternion.identity).GetComponent(typeof(SmokeScript)) as SmokeScript);
+            sms.grid = this.grid;
+            sms.SetGridPosition(lastGridX, lastGridY);
+            lastSmokeX = gridX;
+            lastSmokeY = gridY;
+        }
+    }
     /// <summary>
     /// Figures out what player hit. If flag, pick it up; if enemy, die. 
     /// </summary>

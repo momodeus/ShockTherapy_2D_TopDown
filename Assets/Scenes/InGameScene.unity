@@ -2289,13 +2289,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e89e871b5b9fa4045a0fce3ba6a9e5ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heading: 0
   gridX: 1
   gridY: 1
-  timeToMove: 0.2
   grid: {fileID: 1383370172}
+  heading: 0
+  timeToMove: 0.2
   canTurn180: 1
   fuelUsedPerMove: 0.2
+  smokePrefab: {fileID: 7053331032546565739, guid: a7dbcae840b36fd49bf86bf232e270ea, type: 3}
 --- !u!212 &1261010326
 SpriteRenderer:
   m_ObjectHideFlags: 0

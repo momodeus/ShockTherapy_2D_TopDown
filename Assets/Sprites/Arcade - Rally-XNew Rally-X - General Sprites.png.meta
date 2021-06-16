@@ -22,7 +22,7 @@ TextureImporter:
     second: Arcade - Rally-XNew Rally-X - General Sprites_rock_green
   - first:
       213: -2363058880205785585
-    second: Arcade - Rally-XNew Rally-X - General Sprites_34
+    second: Arcade - Rally-XNew Rally-X - General Sprites_smoke
   - first:
       213: -8741205124425627449
     second: Arcade - Rally-XNew Rally-X - General Sprites_35
@@ -1129,7 +1129,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_34
+      name: Arcade - Rally-XNew Rally-X - General Sprites_smoke
       rect:
         serializedVersion: 2
         x: 72

@@ -7,12 +7,10 @@ using UnityEngine;
 /// Contains information about where it is on the grid, 
 /// speed of movement, whether it can turn around. 
 /// </summary>
-public class UTV : MonoBehaviour, GameManagerListener
+public class UTV : GridObject, GameManagerListener
 {
     public int heading = GridMovement.NORTH;
-    public int gridX, gridY; //set these to start it off
     public float timeToMove = 0.2f;
-    public GridMovement grid;
     public bool canTurn180 = true;
     protected bool isMoving = false;
     protected Vector3 origPos, targetPos;
@@ -33,43 +31,11 @@ public class UTV : MonoBehaviour, GameManagerListener
     {
         //add this as a listener to GameManager
         GameManager.Instance.AddGameManagerListener(this);
-        //have to verify that gridX and gridY are good
-        if (!grid.IsUnBlocked(gridX, gridY))
-        {
-            float bestDist = float.MaxValue;
-            int bx = gridX, by = gridY; //best grid x/y
-            List<Vector2> validPoints = grid.GetValidPoints();
-            Debug.Log(validPoints.ToString());
-            for (int i = 0; i < validPoints.Count; i++)
-            {
-                Vector2 point = validPoints[i];
-                float test = Dist2(gridX, gridY, point.x, point.y);
-                if (test < bestDist)
-                {
-                    bx = (int)point.x;
-                    by = (int)point.y;
-                    bestDist = test;
-                }
-            }
-            gridX = bx;
-            gridY = by;
-        }
-
-        transform.position = grid.GetCoords(gridX, gridY);        
+        //then do default setup
+        base.Setup();
     }
 
-    /// <summary>
-    /// Simple Euclidean distance squared
-    /// </summary>
-    /// <param name="x1"></param>
-    /// <param name="y1"></param>
-    /// <param name="x2"></param>
-    /// <param name="y2"></param>
-    /// <returns></returns>
-    protected float Dist2(float x1, float y1, float x2, float y2)
-    {
-        return (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -105,7 +71,8 @@ public class UTV : MonoBehaviour, GameManagerListener
     {
         isMoving = true;
         Vector3 direction;
-
+        lastGridX = gridX;
+        lastGridY = gridY;
         switch(newHeading)
         {
             case GridMovement.NORTH:

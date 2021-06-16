@@ -36,7 +36,31 @@ public class EnemyMovement : UTV
         }
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Smoke"))
+        {
+            StartCoroutine(SpinOut());
+        }
+    }
+
+    private IEnumerator SpinOut()
+    {
+        isMoving = true;
+        allowedToMove = false;
+
+        float elapsedTime = 0;
+        float spinoutTime = 3;
+        Quaternion spinoutOrigHeading = transform.rotation;
+        float angleToRotate = 360;
+        while(elapsedTime < spinoutTime)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+        isMoving = false;
+        allowedToMove = true;
+    }
     /// <summary>
     /// Finds the distance between a point and the player target. 
     /// </summary>

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 /// <summary>
@@ -16,68 +17,56 @@ public class PlayerMovement : UTV
     public int maxSmokes = 3;
     private int lastSmokeX = 0, lastSmokeY = 0;
     private bool android;
+    private bool shouldSmoke = false;
 
     void Start()
     {
         Setup();
         lastSmokeX = gridX;
         lastSmokeY = gridY;
-#if UNITY_EDITOR
-android = false;
-#elif UNITY_ANDROID
-android = true;
-#endif
+
     }
     // Update is called once per frame
     void Update()
     {
         if (!allowedToMove) return;
-        if(android) { 
-            if (queuedHeading == GridMovement.NONE)
+        if (queuedHeading == GridMovement.NONE)
+        {
+            GameManager.Instance.UseFuel(TryMove(heading) ? fuelUsedPerMove : 0);
+        } else
+        {
+            if (TryMove(queuedHeading))
             {
-                GameManager.Instance.UseFuel(TryMove(heading) ? fuelUsedPerMove : 0);
-            } else
-            {
-                if (TryMove(queuedHeading))
-                {
-                    queuedHeading = GridMovement.NONE;
-                    GameManager.Instance.UseFuel(fuelUsedPerMove);
-                } else
-                {
-                    GameManager.Instance.UseFuel(TryMove(heading) ? fuelUsedPerMove : 0);
-                }
-            }
-        } else {
-
-            bool moved = false;
- 
-            if(Input.GetKey(KeyCode.W))
-            {
-                moved = TryMove(GridMovement.NORTH);
-            }
-            else if (Input.GetKey(KeyCode.A))
-            {
-                moved = TryMove(GridMovement.WEST);
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                moved = TryMove(GridMovement.SOUTH);
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                moved = TryMove(GridMovement.EAST);
-            }
-            if(Input.GetKey(KeyCode.LeftShift) && SmokeScript.numSmokes < maxSmokes)
-            {
-                SpawnSmokeObject();
-            }
-            if(!moved)
-            {
-                GameManager.Instance.UseFuel(TryMove(heading) ? fuelUsedPerMove : 0);
-            } else
-            {
+                queuedHeading = GridMovement.NONE;
                 GameManager.Instance.UseFuel(fuelUsedPerMove);
+            } else
+            {
+                GameManager.Instance.UseFuel(TryMove(heading) ? fuelUsedPerMove : 0);
             }
+        }
+
+ 
+        if(Input.GetKey(KeyCode.W))
+        {
+            RequestNewMove(GridMovement.NORTH);
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            RequestNewMove(GridMovement.WEST);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            RequestNewMove(GridMovement.SOUTH);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            RequestNewMove(GridMovement.EAST);
+        }
+
+
+        if(shouldSmoke && SmokeScript.numSmokes < maxSmokes)
+        {
+            SpawnSmokeObject();
         }
     }
 
@@ -116,7 +105,11 @@ android = true;
     public void RequestNewMove(int newHeading)
     {
         queuedHeading = newHeading;
+        Debug.Log("requested: " + newHeading);
     }
 
-    
+    public void SetShouldSmoke(bool s)
+    {
+        shouldSmoke = s;
+    }
 }

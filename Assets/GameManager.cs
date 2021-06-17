@@ -47,7 +47,7 @@ public class GameManager
     {
         flagsRemaining--;
         Debug.Log("flags remaining: " + flagsRemaining);
-        UpdateScore(flagScore + (int)(flagScore * Easing(GetPercentFuelRemaining())) / 100 * 100);
+        UpdateScore(flagScore + (int)(flagScore * Easing(GetPercentFuelRemaining())) / 10 * 10);
         if(flagsRemaining == 0)
         {
             Debug.Log("0 flags remain");

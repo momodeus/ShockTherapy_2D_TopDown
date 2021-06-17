@@ -21,6 +21,8 @@ public class PlayerMovement : UTV
 
     void Start()
     {
+        gridX = (int)grid.GetPlayerSpawn().x;
+        gridY = (int)grid.GetPlayerSpawn().y;
         Setup();
         lastSmokeX = gridX;
         lastSmokeY = gridY;
@@ -105,9 +107,25 @@ public class PlayerMovement : UTV
     public void RequestNewMove(int newHeading)
     {
         queuedHeading = newHeading;
-        Debug.Log("requested: " + newHeading);
     }
 
+    public void SwipeRequestNewMove(int newHeading)
+    {
+        if(GameManager.Instance.IsSwipeControls())
+        {
+            Debug.Log("swipe requested, got");
+            RequestNewMove(newHeading);
+        }
+    }
+
+    public void ButtonRequestNewMove(int newHeading)
+    {
+        if(!GameManager.Instance.IsSwipeControls())
+        {
+            Debug.Log("button requested, got");
+            RequestNewMove(newHeading);
+        }
+    }
     public void SetShouldSmoke(bool s)
     {
         shouldSmoke = s;

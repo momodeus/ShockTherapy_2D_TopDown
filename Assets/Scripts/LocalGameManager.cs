@@ -18,6 +18,7 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
     void Awake()
     {
         GameManager.Instance.StartGame(numFlagsToSpawn, startFuel);
+        Debug.Log(GameManager.Instance.IsSwipeControls() ? "swipe" : "touch");
         GameManager.Instance.AddGameManagerListener(this);
         winSplash.SetActive(false);
         loseSplash.SetActive(false);

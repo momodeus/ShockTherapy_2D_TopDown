@@ -11,15 +11,29 @@ using UnityEngine;
 public class EnemyMovement : UTV
 {
     public UTV player;
-    public uint queueDepth;
+    private uint queueDepth;
     private Queue<int> nextMoves;
+    public FollowType followType = FollowType.BASIC;
+    public EnemySpawner source;
+    public enum FollowType
+    {
+        SINGLEASTAR,
+        QUADASTAR,
+        BASIC,
+        FULLASTAR
+    }
     // Start is called before the first frame update
     void Start()
     {
-        Setup();
+        followType = (FollowType)Random.Range(0, 4);
         nextMoves = new Queue<int>();
     }
-
+    public void SetGridPosition(int x, int y)
+    {
+        gridX = x;
+        gridY = y;
+        Setup();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -28,14 +42,67 @@ public class EnemyMovement : UTV
         {
             if (nextMoves.Count > 0)
             {
-                TryMove(nextMoves.Dequeue());
+                if(!TryMoveConsideringOthers(nextMoves.Dequeue()))
+                {
+                    nextMoves.Clear(); //reset queue if we can't move for some reason
+                }
             } else
             {
-                AStarSearch(new Pair(gridX, gridY));
+                UpdateQueue();
             }
         }
     }
 
+    private void UpdateQueue()
+    {
+        switch (followType)
+        {
+            case FollowType.SINGLEASTAR:
+                queueDepth = 1;
+                AStarSearch(new Pair(gridX, gridY));
+                break;
+            case FollowType.QUADASTAR:
+                queueDepth = 4;
+                AStarSearch(new Pair(gridX, gridY));
+                break;
+            case FollowType.BASIC:
+                int move = heading;
+                float bestDist = float.MaxValue;
+                if (grid.CanMove(GridMovement.NORTH, gridX, gridY) && bestDist > Dist2Player(gridX, gridY + 1))
+                {
+                    move = GridMovement.NORTH;
+                    bestDist = Dist2Player(gridX, gridY + 1);
+                }
+                if (grid.CanMove(GridMovement.SOUTH, gridX, gridY) && bestDist > Dist2Player(gridX, gridY - 1))
+                {
+                    move = GridMovement.SOUTH;
+                    bestDist = Dist2Player(gridX, gridY - 1);
+                }
+                if (grid.CanMove(GridMovement.EAST, gridX, gridY) && bestDist > Dist2Player(gridX + 1, gridY))
+                {
+                    move = GridMovement.EAST;
+                    bestDist = Dist2Player(gridX + 1, gridY);
+                }
+                if (grid.CanMove(GridMovement.WEST, gridX, gridY) && bestDist > Dist2Player(gridX - 1, gridY))
+                {
+                    move = GridMovement.WEST;
+                }
+                nextMoves.Enqueue(move);
+                break;
+            case FollowType.FULLASTAR:
+                queueDepth = uint.MaxValue;
+                AStarSearch(new Pair(gridX, gridY));
+                break;
+        }
+    }
+    private bool TryMoveConsideringOthers(int newHeading)
+    {
+        if (source.HasConflict(newHeading, gridX, gridY)) 
+        { 
+            return false; 
+        }
+        return base.TryMove(newHeading);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Smoke"))
@@ -56,6 +123,7 @@ public class EnemyMovement : UTV
         while(elapsedTime < spinoutTime)
         {
             elapsedTime += Time.deltaTime;
+            
             yield return new WaitForFixedUpdate();
         }
         isMoving = false;
@@ -88,6 +156,8 @@ public class EnemyMovement : UTV
         public override string ToString() => $"({x}, {y})";
         public override bool Equals(object obj) => obj is Pair && this.Equals(obj);
         private bool Equals(Pair p) => p.x == x && p.y == y;
+
+        public override int GetHashCode() { return 0x00FF00 & x + 0x0000FF & y; }
     }
 
     /// <summary>
@@ -104,6 +174,8 @@ public class EnemyMovement : UTV
         public float f { get; }
         public Pair p { get; }
         public override string ToString() => p.ToString() + ", " + f;
+
+        public override int GetHashCode() => p.GetHashCode() + 0xFF0000 & (int)f;
     }
 
     /// <summary>
@@ -124,6 +196,8 @@ public class EnemyMovement : UTV
         
         public override bool Equals(object obj) => obj is Cell && this.Equals(obj);
         public bool Equals(Cell c) => parent_x == c.parent_x && parent_y == c.parent_y;
+
+        public override int GetHashCode() => 0xFF & parent_x + 0xFF00 & parent_y;
     }
 
     /// <summary>
@@ -246,7 +320,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if(grid.IsUnBlocked(x, y + 1) && !closedList[x, y + 1])
+            else if(grid.CanMove(GridMovement.NORTH, x, y) && !closedList[x, y + 1])
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x, y + 1);
@@ -269,7 +343,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if (grid.IsUnBlocked(x, y - 1) && !closedList[x, y - 1])
+            else if (grid.CanMove(GridMovement.SOUTH, x, y) && !closedList[x, y - 1])
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x, y - 1);
@@ -291,7 +365,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if (grid.IsUnBlocked(x + 1, y) && !closedList[x + 1, y])
+            else if (grid.CanMove(GridMovement.EAST, x, y) && !closedList[x + 1, y])
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x + 1, y);
@@ -314,7 +388,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if (grid.IsUnBlocked(x - 1, y) && !closedList[x - 1, y])
+            else if (grid.CanMove(GridMovement.WEST, x, y) && !closedList[x - 1, y])
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x - 1, y);

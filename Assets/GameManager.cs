@@ -12,9 +12,21 @@ public class GameManager
     private float fuelRemaining;
     private float startFuel;
     private double gameStartTime;
+    private bool swipeControls;
+    private const string swipeControlsKey = "SwipeControls";
     private StateType state = StateType.DEFAULT;
     private List<GameManagerListener> listeners = new List<GameManagerListener>();
-    private GameManager() { }
+    private GameManager()
+    {
+        if(PlayerPrefs.HasKey(swipeControlsKey))
+        {
+            swipeControls = PlayerPrefs.GetInt(swipeControlsKey) > 0;
+        } else
+        {
+            swipeControls = true;
+            PlayerPrefs.SetInt(swipeControlsKey, 1);
+        }
+    }
 
     public static GameManager Instance
     {
@@ -33,6 +45,14 @@ public class GameManager
     public float GetFuelRemaining() { return fuelRemaining; }
     public int GetScore() { return score; }
     public StateType GetState() { return state; }
+    public bool IsSwipeControls() { Debug.Log("swipe? " + swipeControls);  return swipeControls; }
+
+    public void SetControlScheme(bool isSwipe)
+    {
+        swipeControls = isSwipe;
+        PlayerPrefs.SetInt(swipeControlsKey, swipeControls ? 1 : 0);
+        Debug.Log("prefs swipeControlKey:" + PlayerPrefs.GetInt(swipeControlsKey));
+    }
 
     public void UseFuel(float amount) {
         fuelRemaining -= amount;

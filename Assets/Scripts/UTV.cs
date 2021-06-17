@@ -20,19 +20,10 @@ public class UTV : GridObject, GameManagerListener
     // Start is called before the first frame update
     void Start()
     {
-        Setup();
-    }
-
-    /// <summary>
-    /// verifies that gridX and gridY are not in an obstructed cell, 
-    /// and moves object to its proper location based on gridX and gridY
-    /// </summary>
-    protected void Setup()
-    {
         //add this as a listener to GameManager
         GameManager.Instance.AddGameManagerListener(this);
         //then do default setup
-        base.Setup();
+        Setup();
     }
 
     

@@ -26,10 +26,12 @@ public class GridMovement : MonoBehaviour
     private int gridWidth, gridHeight; //width and height of grid
     private bool[,] collisions;     //boolean representation of text file
     private List<Vector2> validPoints; //all locations on collisions that are 0
-    
+    private List<Vector2> enemySpawns;
+    private Vector2 playerSpawn;
     //We want to do all this loading before anything else in the scene
     void Awake()
     {
+        enemySpawns = new List<Vector2>();
         //reading collision file and setting up collision matrix
         List<string> eachLine = new List<string>();
         eachLine.AddRange(collisionMap.text.Split("\n"[0]));
@@ -38,7 +40,15 @@ public class GridMovement : MonoBehaviour
         {
             for (int j = 0; j < eachLine[i].Length; j++)
             {
-                collisions[j, eachLine.Count - (i + 1)] = eachLine[i][j] == '0'; //inserting lines in inverse order, to keep +y facing North. 
+                collisions[j, eachLine.Count - (i + 1)] = eachLine[i][j] == '0' || eachLine[i][j] == 'P' || eachLine[i][j] == 'E'; //inserting lines in inverse order, to keep +y facing North. 
+                if(eachLine[i][j] == 'E')
+                {
+                    enemySpawns.Add(new Vector2(j, eachLine.Count - (i + 1)));
+                }
+                if(eachLine[i][j] == 'P')
+                {
+                    playerSpawn = new Vector2(j, eachLine.Count - (i + 1));
+                }
             }
         }
         gridWidth = collisions.GetLength(0);
@@ -84,6 +94,17 @@ public class GridMovement : MonoBehaviour
     public bool IsValid(int gridX, int gridY)
     {
         return gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight;
+    }
+
+
+    public Vector2 GetPlayerSpawn()
+    {
+        return playerSpawn;
+    }
+
+    public List<Vector2> GetEnemySpawns()
+    {
+        return enemySpawns;
     }
 
     /// <summary>

@@ -6,6 +6,7 @@ public class GameManager
 {
     private static GameManager instance = new GameManager();
 
+    private int startFlags;
     private int flagsRemaining;
     private int livesRemaining;
     private int score;
@@ -14,18 +15,17 @@ public class GameManager
     private double gameStartTime;
     private bool swipeControls;
     private const string swipeControlsKey = "SwipeControls";
+    private int money;
+    private const string moneyKey = "Money";
+    public const int winBonus = 1000;
+    public const int fuelBonus = 500;
+    public const int flagValue = 100;
+    private const float scoreMultiplier = 0.1f;
     private StateType state = StateType.DEFAULT;
     private List<GameManagerListener> listeners = new List<GameManagerListener>();
     private GameManager()
     {
-        if(PlayerPrefs.HasKey(swipeControlsKey))
-        {
-            swipeControls = PlayerPrefs.GetInt(swipeControlsKey) > 0;
-        } else
-        {
-            swipeControls = true;
-            PlayerPrefs.SetInt(swipeControlsKey, 1);
-        }
+        LoadData();
     }
 
     public static GameManager Instance
@@ -40,13 +40,13 @@ public class GameManager
             return instance;
         }
     }
-    public int GetFlagsRemaining() { return flagsRemaining; }
-    public int GetLivesRemaining() { return livesRemaining; }
-    public float GetFuelRemaining() { return fuelRemaining; }
-    public int GetScore() { return score; }
-    public StateType GetState() { return state; }
-    public bool IsSwipeControls() { Debug.Log("swipe? " + swipeControls);  return swipeControls; }
-
+    public int GetFlagsRemaining() => flagsRemaining;
+    public int GetLivesRemaining() => livesRemaining;
+    public float GetFuelRemaining() => fuelRemaining;
+    public int GetScore() => score;
+    public StateType GetState() => state;
+    public bool IsSwipeControls() => swipeControls;
+    public int GetMoney() => money;
     public void SetControlScheme(bool isSwipe)
     {
         swipeControls = isSwipe;
@@ -83,7 +83,34 @@ public class GameManager
         }
     }
 
-
+    public bool UpdateMoney(int amount)
+    {
+        if (money + amount < 0) return false;
+        money += amount;
+        PlayerPrefs.SetInt(moneyKey, money);
+        return true;
+    }
+    private void LoadData()
+    {
+        if (PlayerPrefs.HasKey(swipeControlsKey))
+        {
+            swipeControls = PlayerPrefs.GetInt(swipeControlsKey) > 0;
+        }
+        else
+        {
+            swipeControls = true;
+            PlayerPrefs.SetInt(swipeControlsKey, 1);
+        }
+        if (PlayerPrefs.HasKey(moneyKey))
+        {
+            money = PlayerPrefs.GetInt(moneyKey);
+        }
+        else
+        {
+            money = 0;
+            PlayerPrefs.SetInt(moneyKey, 0);
+        }
+    }
     public enum StateType
     {
         DEFAULT,
@@ -105,6 +132,7 @@ public class GameManager
         //if (state != StateType.MAINMENU) return false;
         state = StateType.GAMEPLAYING;
         flagsRemaining = startFlags;
+        this.startFlags = startFlags;
         this.startFuel = startFuel;
         fuelRemaining = startFuel;
         gameStartTime = Time.unscaledTimeAsDouble;
@@ -121,6 +149,7 @@ public class GameManager
     {
         if (state != StateType.GAMEPLAYING) return;
         state = StateType.GAMELOST;
+        UpdateMoney(CalculateLossMoney());
         Debug.Log("Lost!");
         foreach (GameManagerListener gml in listeners)
         {
@@ -131,6 +160,7 @@ public class GameManager
     {
         if (state != StateType.GAMEPLAYING) return;
         state = StateType.GAMEWIN;
+        UpdateMoney(CalculateWinMoney());
         Debug.Log("You Won!");
         foreach (GameManagerListener gml in listeners)
         {
@@ -138,6 +168,17 @@ public class GameManager
         }
     }
 
+    public int CalculateWinMoney()
+    {
+        return (startFlags - flagsRemaining) * flagValue + 
+            (GetPercentFuelRemaining() > 0.5 ? fuelBonus : 0) +
+            winBonus;
+    }
+
+    public int CalculateLossMoney()
+    {
+        return (int)((startFlags - flagsRemaining) * flagValue * 0.5);
+    }
     public void AddGameManagerListener(GameManagerListener gml)
     {
         listeners.Add(gml);

@@ -9,7 +9,6 @@ public class MainMenuController : MonoBehaviour
     public GameObject mainCanvas;
     public GameObject optionsCanvas;
     public Toggle controlSchemeToggle;
-    public CustomSwitcher controlSchemeToggleSwitcher;
     public void PlayGame()
     {
         SceneManager.LoadScene("InGameScene");
@@ -18,12 +17,14 @@ public class MainMenuController : MonoBehaviour
     public void Options()
     {
         mainCanvas.SetActive(false);
+        (mainCanvas.GetComponentsInChildren(typeof(Text))[0] as Text).text = "$" + GameManager.Instance.GetMoney();
         optionsCanvas.SetActive(true);
     }
 
     public void Back()
     {
         optionsCanvas.SetActive(false);
+        (mainCanvas.GetComponentsInChildren(typeof(Text))[0] as Text).text = "$" + GameManager.Instance.GetMoney();
         mainCanvas.SetActive(true);
     }
     public void ExitGame()
@@ -33,9 +34,8 @@ public class MainMenuController : MonoBehaviour
     public void Start()
     {
         controlSchemeToggle.isOn = GameManager.Instance.IsSwipeControls();
-        controlSchemeToggleSwitcher.OnToggle();
-        optionsCanvas.SetActive(false);
-        mainCanvas.SetActive(true);
+        (mainCanvas.GetComponentsInChildren(typeof(Text))[0] as Text).text = "$" + GameManager.Instance.GetMoney();
+        Back();
     }
     public void SetControlScheme()
     {

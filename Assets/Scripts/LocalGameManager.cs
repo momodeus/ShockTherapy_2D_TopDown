@@ -36,6 +36,7 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
         loseSplash.SetActive(true);
         winSplash.SetActive(false);
         (loseSplash.GetComponentsInChildren(typeof(Text))[1] as Text).text = "SCORE:\n" + GameManager.Instance.GetScore();
+        (loseSplash.GetComponentsInChildren(typeof(Text))[3] as Text).text = "REWARD:\n" + GameManager.Instance.CalculateLossMoney();
     }
     public void OnGameStarted() { }
     public void OnGameWon()
@@ -43,6 +44,7 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
         loseSplash.SetActive(false);
         winSplash.SetActive(true);
         (winSplash.GetComponentsInChildren(typeof(Text))[1] as Text).text = "SCORE:\n" + GameManager.Instance.GetScore();
+        (winSplash.GetComponentsInChildren(typeof(Text))[3] as Text).text = "REWARD:\n" + GameManager.Instance.CalculateWinMoney();
     }
     public void OnScoreChanged()
     {

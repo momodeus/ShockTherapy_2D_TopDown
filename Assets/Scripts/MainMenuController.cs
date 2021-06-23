@@ -8,6 +8,7 @@ public class MainMenuController : MonoBehaviour
 {
     public GameObject mainCanvas;
     public GameObject optionsCanvas;
+    public GameObject storeCanvas;
     public Toggle controlSchemeToggle;
     public void PlayGame()
     {
@@ -21,9 +22,16 @@ public class MainMenuController : MonoBehaviour
         optionsCanvas.SetActive(true);
     }
 
+    public void Store()
+    {
+        mainCanvas.SetActive(false);
+        (storeCanvas.GetComponentsInChildren(typeof(Text))[0] as Text).text = "$" + GameManager.Instance.GetMoney();
+        storeCanvas.SetActive(true);
+    }
     public void Back()
     {
         optionsCanvas.SetActive(false);
+        storeCanvas.SetActive(false);
         (mainCanvas.GetComponentsInChildren(typeof(Text))[0] as Text).text = "$" + GameManager.Instance.GetMoney();
         mainCanvas.SetActive(true);
     }

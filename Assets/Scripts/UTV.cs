@@ -9,6 +9,7 @@ using UnityEngine;
 /// </summary>
 public class UTV : GridObject, GameManagerListener
 {
+    [HideInInspector]
     public int heading = GridMovement.NORTH;
     public float timeToMove = 0.2f;
     public bool canTurn180 = true;

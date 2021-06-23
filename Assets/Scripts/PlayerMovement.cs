@@ -13,10 +13,10 @@ public class PlayerMovement : UTV
 {
     public float fuelUsedPerMove = 0.1f;
     public GameObject smokePrefab;
+    public Sprite[] cars = new Sprite[9];
     private int queuedHeading = -1; //holds queued heading. This imrpoves responsiveness if player tries to move slightly before they're allowed to
-    public int maxSmokes = 3;
+    private int maxSmokes = 3;
     private int lastSmokeX = 0, lastSmokeY = 0;
-    private bool android;
     private bool shouldSmoke = false;
 
     void Start()
@@ -26,7 +26,7 @@ public class PlayerMovement : UTV
         Setup();
         lastSmokeX = gridX;
         lastSmokeY = gridY;
-
+        (this.GetComponent(typeof(SpriteRenderer)) as SpriteRenderer).sprite = cars[GameManager.Instance.GetSelectedCar()];
     }
     // Update is called once per frame
     void Update()

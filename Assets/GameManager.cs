@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GameManager
 {
@@ -13,13 +14,25 @@ public class GameManager
     private float fuelRemaining;
     private float startFuel;
     private double gameStartTime;
+
+    //options stuff
     private bool swipeControls;
     private const string swipeControlsKey = "SwipeControls";
+
+    //money stuff
     private int money;
     private const string moneyKey = "Money";
-    public const int winBonus = 1000;
-    public const int fuelBonus = 500;
-    public const int flagValue = 100;
+    public const int winBonus = 50;
+    public const int fuelBonus = 50;
+    public const int flagValue = 10;
+
+    //skins information
+    private uint unlockedCars = 0; //the nth LSB of this int represents whether user has unlocked nth car. 
+    private string unlockedCarsKey = "unlockedCars";
+    private int selectedCar = 0; //0 - 8, the 9 different car types. 
+    private string selectedCarKey = "selectedCar";
+
+    //status stuff
     private const float scoreMultiplier = 0.1f;
     private StateType state = StateType.DEFAULT;
     private List<GameManagerListener> listeners = new List<GameManagerListener>();
@@ -47,11 +60,41 @@ public class GameManager
     public StateType GetState() => state;
     public bool IsSwipeControls() => swipeControls;
     public int GetMoney() => money;
+    public int GetSelectedCar() => selectedCar;
+    public uint GetUnlockRaw() => unlockedCars;
+
+    public void SetSelectedCar(int car)
+    {
+        if (car >= 0 && car <= 8) 
+        {
+            selectedCar = car;
+            PlayerPrefs.SetInt(selectedCarKey, selectedCar);
+        }
+    }
+
+    public void LockAllCars()
+    {
+        unlockedCars = 0U;
+        PlayerPrefs.SetInt(unlockedCarsKey, (int)unlockedCars);
+    }
+    public void UnlockCar(int car)
+    {
+        if (car < 0 || car > 7) return;
+        unlockedCars |= 1U << car;
+        PlayerPrefs.SetInt(unlockedCarsKey, (int)unlockedCars);
+    }
+
+    public bool IsCarUnlocked(int car)
+    {
+        if (car == -1) return true; //default car
+        if (car < 0 || car > 7) return false;
+        return ((unlockedCars & (1U << car)) > 0);
+    }
+
     public void SetControlScheme(bool isSwipe)
     {
         swipeControls = isSwipe;
         PlayerPrefs.SetInt(swipeControlsKey, swipeControls ? 1 : 0);
-        Debug.Log("prefs swipeControlKey:" + PlayerPrefs.GetInt(swipeControlsKey));
     }
 
     public void UseFuel(float amount) {
@@ -66,11 +109,9 @@ public class GameManager
     public void PickupFlag(int flagScore)
     {
         flagsRemaining--;
-        Debug.Log("flags remaining: " + flagsRemaining);
         UpdateScore(flagScore + (int)(flagScore * Easing(GetPercentFuelRemaining())) / 10 * 10);
         if(flagsRemaining == 0)
         {
-            Debug.Log("0 flags remain");
             GameWon();
         }
     }
@@ -110,6 +151,22 @@ public class GameManager
             money = 0;
             PlayerPrefs.SetInt(moneyKey, 0);
         }
+        if(PlayerPrefs.HasKey(selectedCarKey))
+        {
+            selectedCar = PlayerPrefs.GetInt(selectedCarKey);
+        } else
+        {
+            selectedCar = 0;
+            PlayerPrefs.SetInt(selectedCarKey, 0);
+        }
+        if(PlayerPrefs.HasKey(unlockedCarsKey))
+        {
+            unlockedCars = (uint)PlayerPrefs.GetInt(unlockedCarsKey);
+        } else
+        {
+            unlockedCars = 0U;
+            PlayerPrefs.SetInt(unlockedCarsKey, (int)0U);
+        }
     }
     public enum StateType
     {
@@ -134,6 +191,7 @@ public class GameManager
         flagsRemaining = startFlags;
         this.startFlags = startFlags;
         this.startFuel = startFuel;
+        gameStartTime = Time.time;
         fuelRemaining = startFuel;
         gameStartTime = Time.unscaledTimeAsDouble;
         score = 0;
@@ -150,7 +208,6 @@ public class GameManager
         if (state != StateType.GAMEPLAYING) return;
         state = StateType.GAMELOST;
         UpdateMoney(CalculateLossMoney());
-        Debug.Log("Lost!");
         foreach (GameManagerListener gml in listeners)
         {
             gml.OnGameLost();
@@ -161,7 +218,6 @@ public class GameManager
         if (state != StateType.GAMEPLAYING) return;
         state = StateType.GAMEWIN;
         UpdateMoney(CalculateWinMoney());
-        Debug.Log("You Won!");
         foreach (GameManagerListener gml in listeners)
         {
             gml.OnGameWon();

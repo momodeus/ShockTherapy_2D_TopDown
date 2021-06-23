@@ -2038,7 +2038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1106760806
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2278,10 +2278,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1261010327}
-  - component: {fileID: 1261010326}
   - component: {fileID: 1261010325}
   - component: {fileID: 1261010328}
   - component: {fileID: 1261010329}
+  - component: {fileID: 1261010326}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2309,7 +2309,16 @@ MonoBehaviour:
   canTurn180: 1
   fuelUsedPerMove: 0.2
   smokePrefab: {fileID: 7053331032546565739, guid: a7dbcae840b36fd49bf86bf232e270ea, type: 3}
-  maxSmokes: 3
+  cars:
+  - {fileID: 21300000, guid: d5a526901c2ad74479e1a83f2a7103bf, type: 3}
+  - {fileID: 21300000, guid: 1cb04656393009a4c8ffb0775dca36b3, type: 3}
+  - {fileID: 21300000, guid: ec50c50c3befbb249a68559b9d51f336, type: 3}
+  - {fileID: 21300000, guid: ab70deecb547167498ade510de0e1ac9, type: 3}
+  - {fileID: 21300000, guid: e4bf1f45d05e32847a6d6e0764d81c96, type: 3}
+  - {fileID: 21300000, guid: cdd6298f6b08237449a6f011276b4a0c, type: 3}
+  - {fileID: 21300000, guid: 37072b0afe839f5408ca259f83442858, type: 3}
+  - {fileID: 21300000, guid: 575ce8e88d509794bb13caf7149d56f5, type: 3}
+  - {fileID: 21300000, guid: 70285d965110a1745bc79fbbb178e17c, type: 3}
 --- !u!212 &1261010326
 SpriteRenderer:
   m_ObjectHideFlags: 0

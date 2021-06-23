@@ -14,7 +14,7 @@ public class GameManager
     private float fuelRemaining;
     private float startFuel;
     private double gameStartTime;
-
+    private int map;
     //options stuff
     private bool swipeControls;
     private const string swipeControlsKey = "SwipeControls";
@@ -62,7 +62,7 @@ public class GameManager
     public int GetMoney() => money;
     public int GetSelectedCar() => selectedCar;
     public uint GetUnlockRaw() => unlockedCars;
-
+    public int GetMap() => map;
     public void SetSelectedCar(int car)
     {
         if (car >= 0 && car <= 8) 
@@ -72,6 +72,11 @@ public class GameManager
         }
     }
 
+    public void SetMap(int map)
+    {
+        if (map < 0 || map > 2) return;
+        this.map = map;
+    }
     public void LockAllCars()
     {
         unlockedCars = 0U;

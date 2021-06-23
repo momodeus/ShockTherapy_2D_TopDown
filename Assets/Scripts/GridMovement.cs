@@ -7,8 +7,9 @@ using UnityEngine;
 /// </summary>
 public class GridMovement : MonoBehaviour
 {
-    public TextAsset collisionMap; //text representation of map, with 1 being a wall and 0 being a path. 
-                                   //importantly, make sure there is no extra line at the end of file. 
+    public TextAsset[] collisionMap = new TextAsset[3]; //text representation of map, with 1 being a wall and 0 being a path. 
+                                                        //important: make sure there is no extra line at the end of file. 
+    public Sprite[] mapImages = new Sprite[3];
     public float gridSize = 0.48f; //should be ~0.48
     public float offsetX, offsetY; //x-y offset to visually position objects on map
     //direction constants (don't want to see in inspector, but valuable to other places)
@@ -32,9 +33,11 @@ public class GridMovement : MonoBehaviour
     void Awake()
     {
         enemySpawns = new List<Vector2>();
+
+        (GetComponentInParent(typeof(SpriteRenderer)) as SpriteRenderer).sprite = mapImages[GameManager.Instance.GetMap()];
         //reading collision file and setting up collision matrix
         List<string> eachLine = new List<string>();
-        eachLine.AddRange(collisionMap.text.Split("\n"[0]));
+        eachLine.AddRange(collisionMap[GameManager.Instance.GetMap()].text.Split("\n"[0]));
         collisions = new bool[eachLine[0].Length, eachLine.Count];
         for (int i = 0; i < eachLine.Count; i++)
         {

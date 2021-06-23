@@ -9,12 +9,19 @@ public class MainMenuController : MonoBehaviour
     public GameObject mainCanvas;
     public GameObject optionsCanvas;
     public GameObject storeCanvas;
+    public GameObject stageSelectCanvas;
     public Toggle controlSchemeToggle;
-    public void PlayGame()
+    public void PlayGame(int mapIdx)
     {
+        GameManager.Instance.SetMap(mapIdx);
         SceneManager.LoadScene("InGameScene");
     }
 
+    public void LevelSelect()
+    {
+        mainCanvas.SetActive(false);
+        stageSelectCanvas.SetActive(true);
+    }
     public void Options()
     {
         mainCanvas.SetActive(false);
@@ -32,6 +39,7 @@ public class MainMenuController : MonoBehaviour
     {
         optionsCanvas.SetActive(false);
         storeCanvas.SetActive(false);
+        stageSelectCanvas.SetActive(false);
         (mainCanvas.GetComponentsInChildren(typeof(Text))[0] as Text).text = "$" + GameManager.Instance.GetMoney();
         mainCanvas.SetActive(true);
     }

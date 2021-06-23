@@ -18,7 +18,10 @@ public class StoreController : MonoBehaviour
         }
         RefreshUnlocks();
     }
-
+    public void AddMoney()
+    {
+        GameManager.Instance.UpdateMoney(100);
+    }
     public void RefreshUnlocks()
     {
         for (int i = 0; i < children.Length; i++)

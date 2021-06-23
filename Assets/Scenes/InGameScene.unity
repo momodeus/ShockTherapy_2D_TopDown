@@ -2831,7 +2831,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decce39e0d5d69446bb283fb4e964abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionMap: {fileID: 4900000, guid: a11d60d2b9a7c454bb27aae0fad9bd4f, type: 3}
+  collisionMap:
+  - {fileID: 4900000, guid: 23f2d58eff3a0974590971841cb5766f, type: 3}
+  - {fileID: 4900000, guid: a11d60d2b9a7c454bb27aae0fad9bd4f, type: 3}
+  - {fileID: 4900000, guid: e86641b0eca535243b9b1694f60777eb, type: 3}
+  mapImages:
+  - {fileID: 21300000, guid: c0c69993d9bea3f49ae580ba048569e2, type: 3}
+  - {fileID: 21300000, guid: ac0f3fff944a8be45b0163cae899df46, type: 3}
+  - {fileID: 21300000, guid: 28c7a99d7203d7c47b68464d990e7b95, type: 3}
   gridSize: 0.48
   offsetX: 0.48
   offsetY: 0.24

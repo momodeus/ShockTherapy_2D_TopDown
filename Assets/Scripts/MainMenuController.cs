@@ -10,6 +10,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject optionsCanvas;
     public GameObject storeCanvas;
     public GameObject stageSelectCanvas;
+    public Text highScoreText;
     public Toggle controlSchemeToggle;
     public void PlayGame(int mapIdx)
     {
@@ -32,7 +33,6 @@ public class MainMenuController : MonoBehaviour
     public void Store()
     {
         mainCanvas.SetActive(false);
-        (storeCanvas.GetComponentsInChildren(typeof(Text))[0] as Text).text = "$" + GameManager.Instance.GetMoney();
         storeCanvas.SetActive(true);
     }
     public void Back()
@@ -41,6 +41,7 @@ public class MainMenuController : MonoBehaviour
         storeCanvas.SetActive(false);
         stageSelectCanvas.SetActive(false);
         (mainCanvas.GetComponentsInChildren(typeof(Text))[0] as Text).text = "$" + GameManager.Instance.GetMoney();
+        highScoreText.text = "High Score:\n" + GameManager.Instance.GetHighScore();
         mainCanvas.SetActive(true);
     }
     public void ExitGame()

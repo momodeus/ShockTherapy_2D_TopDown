@@ -66,9 +66,6 @@ public class GridMovement : MonoBehaviour
                 if (collisions[j, i]) validPoints.Add(new Vector2(j, i));
             }
         }
-        Debug.Log("finished awake with " + gridWidth + "x" + gridHeight + " grid, and " + validPoints.Count + " valid locations");
-
-
     }
 
     // Update is called once per frame

@@ -10,10 +10,9 @@ public class GameManager
     private int startFlags;
     private int flagsRemaining;
     private int livesRemaining;
-    private int score;
     private float fuelRemaining;
     private float startFuel;
-    private double gameStartTime;
+    private float gameStartTime;
     private int map;
     //options stuff
     private bool swipeControls;
@@ -32,8 +31,12 @@ public class GameManager
     private int selectedCar = 0; //0 - 8, the 9 different car types. 
     private string selectedCarKey = "selectedCar";
 
-    //status stuff
+    //score stuff
+    private int score;
     private const float scoreMultiplier = 0.1f;
+    private int highScore;
+    private string highScoreKey = "highScore";
+    //status stuff
     private StateType state = StateType.DEFAULT;
     private List<GameManagerListener> listeners = new List<GameManagerListener>();
     private GameManager()
@@ -63,6 +66,8 @@ public class GameManager
     public int GetSelectedCar() => selectedCar;
     public uint GetUnlockRaw() => unlockedCars;
     public int GetMap() => map;
+    public float GetTimeSinceGameStart() => Time.time - gameStartTime;
+    public int GetHighScore() => highScore;
     public void SetSelectedCar(int car)
     {
         if (car >= 0 && car <= 8) 
@@ -172,6 +177,14 @@ public class GameManager
             unlockedCars = 0U;
             PlayerPrefs.SetInt(unlockedCarsKey, (int)0U);
         }
+        if(PlayerPrefs.HasKey(highScoreKey))
+        {
+            highScore = PlayerPrefs.GetInt(highScoreKey);
+        } else
+        {
+            highScore = 0;
+            PlayerPrefs.SetInt(highScoreKey, highScore);
+        }
     }
     public enum StateType
     {
@@ -198,7 +211,6 @@ public class GameManager
         this.startFuel = startFuel;
         gameStartTime = Time.time;
         fuelRemaining = startFuel;
-        gameStartTime = Time.unscaledTimeAsDouble;
         score = 0;
         foreach (GameManagerListener gml in listeners)
         {
@@ -223,6 +235,11 @@ public class GameManager
         if (state != StateType.GAMEPLAYING) return;
         state = StateType.GAMEWIN;
         UpdateMoney(CalculateWinMoney());
+        if(score > highScore)
+        {
+            highScore = score;
+            PlayerPrefs.SetInt(highScoreKey, highScore);
+        }
         foreach (GameManagerListener gml in listeners)
         {
             gml.OnGameWon();

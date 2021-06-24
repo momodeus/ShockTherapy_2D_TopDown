@@ -15,6 +15,7 @@ public class EnemyMovement : UTV
     private Queue<int> nextMoves;
     public FollowType followType = FollowType.BASIC;
     public EnemySpawner source;
+    public float delayTime = 5;
     public enum FollowType
     {
         SINGLEASTAR,
@@ -37,7 +38,7 @@ public class EnemyMovement : UTV
     // Update is called once per frame
     void Update()
     {
-        if (!allowedToMove) return;
+        if (!allowedToMove || GameManager.Instance.GetTimeSinceGameStart() < delayTime) return;
         if (!isMoving)
         {
             if (nextMoves.Count > 0)
@@ -320,7 +321,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if(grid.CanMove(GridMovement.NORTH, x, y) && !closedList[x, y + 1])
+            else if(grid.CanMove(GridMovement.NORTH, x, y) && !closedList[x, y + 1] && !source.HasConflict(GridMovement.NORTH, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x, y + 1);
@@ -343,7 +344,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if (grid.CanMove(GridMovement.SOUTH, x, y) && !closedList[x, y - 1])
+            else if (grid.CanMove(GridMovement.SOUTH, x, y) && !closedList[x, y - 1] && !source.HasConflict(GridMovement.SOUTH, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x, y - 1);
@@ -365,7 +366,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if (grid.CanMove(GridMovement.EAST, x, y) && !closedList[x + 1, y])
+            else if (grid.CanMove(GridMovement.EAST, x, y) && !closedList[x + 1, y] && !source.HasConflict(GridMovement.EAST, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x + 1, y);
@@ -388,7 +389,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if (grid.CanMove(GridMovement.WEST, x, y) && !closedList[x - 1, y])
+            else if (grid.CanMove(GridMovement.WEST, x, y) && !closedList[x - 1, y] && !source.HasConflict(GridMovement.WEST, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x - 1, y);

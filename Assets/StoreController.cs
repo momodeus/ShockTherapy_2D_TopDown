@@ -21,6 +21,8 @@ public class StoreController : MonoBehaviour
     public void AddMoney()
     {
         GameManager.Instance.UpdateMoney(100);
+        moneyText.text = "$" + GameManager.Instance.GetMoney();
+
     }
     public void RefreshUnlocks()
     {
@@ -40,6 +42,8 @@ public class StoreController : MonoBehaviour
 
         }
         (children[GameManager.Instance.GetSelectedCar()].GetComponent(typeof(Image)) as Image).color = new Color(0, 1, 0, 1);
+        moneyText.text = "$" + GameManager.Instance.GetMoney();
+
     }
     public void TryBuyCar(int i)
     {

@@ -14,6 +14,8 @@ public class PlayerMovement : UTV
     public float fuelUsedPerMove = 0.1f;
     public GameObject smokePrefab;
     public Sprite[] cars = new Sprite[9];
+    public AudioClip pickupSound, crashSound, winSound;
+    public Camera mainCamera;
     private int queuedHeading = -1; //holds queued heading. This imrpoves responsiveness if player tries to move slightly before they're allowed to
     private int maxSmokes = 3;
     private int lastSmokeX = 0, lastSmokeY = 0;
@@ -93,10 +95,13 @@ public class PlayerMovement : UTV
         if(other.gameObject.CompareTag("Pickup"))
         {
             GameManager.Instance.PickupFlag(LocalGameManager.flagScore);
+            if (GameManager.Instance.GetFlagsRemaining() == 0) AudioSource.PlayClipAtPoint(winSound, mainCamera.transform.position);
             other.gameObject.SetActive(false);
+            AudioSource.PlayClipAtPoint(pickupSound, mainCamera.transform.position);
 
         } else if (other.gameObject.CompareTag("Enemy"))
         {
+            AudioSource.PlayClipAtPoint(crashSound, mainCamera.transform.position);
             GameManager.Instance.GameLost();
         }
     }

@@ -24,7 +24,11 @@ public class CollisionGenerator : MonoBehaviour
         {
             for (int j = 0; j < eachLine[i].Length; j++)
             {
-                tilemap.SetTile(new Vector3Int(j - eachLine[i].Length/2, -i + eachLine.Count/2, 0), eachLine[i][j] == '1' ? dirtTile : pathTile); 
+                if(eachLine[i][j] == '1')
+                    tilemap.SetTile(new Vector3Int(j - eachLine[i].Length/2, -i + eachLine.Count/2, 0), dirtTile); 
+                if(eachLine[i][j] == '0' || eachLine[i][j] == 'E' || eachLine[i][j] == 'P')
+                    tilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), pathTile);
+
             }
         }
         tilemap.CompressBounds();

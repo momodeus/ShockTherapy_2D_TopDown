@@ -18,6 +18,11 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("InGameScene");
     }
 
+    public void DesignLevel()
+    {
+        SceneManager.LoadScene("levelDesign");
+    }
+
     public void LevelSelect()
     {
         mainCanvas.SetActive(false);

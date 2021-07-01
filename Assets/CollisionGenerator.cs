@@ -7,7 +7,7 @@ public class CollisionGenerator : MonoBehaviour
 {
     public Tilemap tilemap;
     public TextAsset collisionMap;
-    public RuleTile dirtTile, pathTile;
+    public RuleTile dirtTile, pathTile, borderTile;
     
     // Start is called before the first frame update
     void Start()
@@ -20,17 +20,21 @@ public class CollisionGenerator : MonoBehaviour
         tilemap.ClearAllTiles();
         List<string> eachLine = new List<string>();
         eachLine.AddRange(collisionMap.text.Split("\n"[0]));
-        for (int i = 0; i < eachLine.Count; i++)
+        for (int i = -5; i < eachLine.Count + 5; i++)
         {
-            for (int j = 0; j < eachLine[i].Length; j++)
+            for (int j = -5; j < eachLine[0].Length + 5; j++)
             {
-                if(eachLine[i][j] == '1')
-                    tilemap.SetTile(new Vector3Int(j - eachLine[i].Length/2, -i + eachLine.Count/2, 0), dirtTile); 
-                if(eachLine[i][j] == '0' || eachLine[i][j] == 'E' || eachLine[i][j] == 'P')
-                    tilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), pathTile);
-
+                tilemap.SetTile(new Vector3Int(j - eachLine[0].Length / 2, -i + eachLine.Count / 2, 0), borderTile);
+                if (i >= 0 && i < eachLine.Count && j >= 0 && j < eachLine[(int)Mathf.Max(0, Mathf.Min(eachLine.Count-1, i))].Length)
+                {
+                    if (eachLine[i][j] == '1')
+                        tilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), dirtTile);
+                    if (eachLine[i][j] == '0' || eachLine[i][j] == 'E' || eachLine[i][j] == 'P')
+                        tilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), pathTile);
+                }
             }
         }
+        
         tilemap.CompressBounds();
 
     }

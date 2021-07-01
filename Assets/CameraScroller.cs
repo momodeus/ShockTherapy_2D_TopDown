@@ -78,7 +78,7 @@ public class CameraScroller : MonoBehaviour
         float camHeight = cam.orthographicSize;
         float camWidth = cam.orthographicSize * cam.aspect;
 
-        float mapMinX = tilemap.transform.position.x - tilemap.cellBounds.size.x / 2f - border;
+        float mapMinX = tilemap.transform.position.x - tilemap.cellBounds.size.x / 2f - border*3;
         float mapMaxX = tilemap.transform.position.x + tilemap.cellBounds.size.x / 2f + border;
         float mapMinY = tilemap.transform.position.y - tilemap.cellBounds.size.y / 2f - border;
         float mapMaxY = tilemap.transform.position.y + tilemap.cellBounds.size.y / 2f + border;

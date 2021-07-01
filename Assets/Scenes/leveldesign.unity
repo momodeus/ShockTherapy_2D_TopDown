@@ -9248,6 +9248,8 @@ MonoBehaviour:
   dirtTile: {fileID: 11400000, guid: 76c18cf8ddd9c344e88ae912c8da290f, type: 2}
   pathTile: {fileID: 11400000, guid: b26f08620b218284a922442c982e2dc4, type: 2}
   borderTile: {fileID: 11400000, guid: b93ac2b732f22994ea370d74a2461560, type: 2}
+  gridWidth: 35
+  gridHeight: 58
 --- !u!4 &1392664160
 Transform:
   m_ObjectHideFlags: 0

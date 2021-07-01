@@ -8,13 +8,32 @@ public class CollisionGenerator : MonoBehaviour
     public Tilemap tilemap;
     public TextAsset collisionMap;
     public RuleTile dirtTile, pathTile, borderTile;
-    
+    public int gridWidth, gridHeight;
     // Start is called before the first frame update
     void Start()
     {
-        ReadCollisionMap();
+        CreateFromScratch();
     }
 
+    private void CreateFromScratch()
+    {
+        tilemap.ClearAllTiles();
+        for (int i = -5; i < gridHeight + 5; i++)
+        {
+            for (int j = -5; j < gridWidth + 5; j++)
+            {
+                if (i >= 0 && i < gridHeight && j >= 0 && j < gridWidth)
+                {
+                    tilemap.SetTile(new Vector3Int(j - gridWidth / 2, -i + gridHeight / 2, 0), dirtTile);
+                } else
+                {
+                    tilemap.SetTile(new Vector3Int(j - gridWidth / 2, -i + gridHeight / 2, 0), borderTile);
+                }
+            }
+        }
+
+        tilemap.CompressBounds();
+    }
     private void ReadCollisionMap()
     {
         tilemap.ClearAllTiles();
@@ -40,6 +59,7 @@ public class CollisionGenerator : MonoBehaviour
     }
     private void CreateCollisionMap()
     {
+        //TODO: take into account the border
         tilemap.CompressBounds();
         Debug.Log("width: " + (tilemap.cellBounds.xMax - tilemap.cellBounds.xMin) +
             "\nheight: " + (tilemap.cellBounds.yMax - tilemap.cellBounds.yMin));

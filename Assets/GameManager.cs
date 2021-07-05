@@ -36,9 +36,15 @@ public class GameManager
     private const float scoreMultiplier = 0.1f;
     private int highScore;
     private string highScoreKey = "highScore";
+
     //status stuff
     private StateType state = StateType.DEFAULT;
     private List<GameManagerListener> listeners = new List<GameManagerListener>();
+
+    //custom map stuff
+    private bool userMadeMap = false;
+    private string collisionMap;
+    private const string collisionMapKey = "collisionMap";
     private GameManager()
     {
         LoadData();
@@ -68,6 +74,15 @@ public class GameManager
     public int GetMap() => map;
     public float GetTimeSinceGameStart() => Time.time - gameStartTime;
     public int GetHighScore() => highScore;
+    public string GetCollisionMap() => collisionMap;
+    public bool UserMadeMap() => userMadeMap;
+
+    public void SetCollisionMap(string map)
+    {
+        userMadeMap = true;
+        collisionMap = map;
+        PlayerPrefs.SetString(collisionMapKey, collisionMap);
+    }
     public void SetSelectedCar(int car)
     {
         if (car >= 0 && car <= 8) 
@@ -184,6 +199,11 @@ public class GameManager
         {
             highScore = 0;
             PlayerPrefs.SetInt(highScoreKey, highScore);
+        }
+        if(PlayerPrefs.HasKey(collisionMapKey))
+        {
+            userMadeMap = true;
+            collisionMap = PlayerPrefs.GetString(collisionMapKey);
         }
     }
     public enum StateType

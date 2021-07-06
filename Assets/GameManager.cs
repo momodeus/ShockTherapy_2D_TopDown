@@ -94,7 +94,7 @@ public class GameManager
 
     public void SetMap(int map)
     {
-        if (map < 0 || map > 2) return;
+        if (map < -1 || map > 2) return;
         this.map = map;
     }
     public void LockAllCars()

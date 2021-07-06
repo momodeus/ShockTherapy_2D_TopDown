@@ -8,8 +8,10 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
 {
     public GameObject winSplash;
     public GameObject loseSplash;
+    public GameObject pauseSplash;
     public Text scoreText;
     public RectTransform fuelBar;
+    public Button pauseButton;
     public float startFuel = 100.0f;
     public int numFlagsToSpawn = 10;
     public static int flagScore = 1000;
@@ -19,6 +21,7 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
     {
         GameManager.Instance.StartGame(numFlagsToSpawn, startFuel);
         GameManager.Instance.AddGameManagerListener(this);
+        pauseSplash.SetActive(false);
         winSplash.SetActive(false);
         loseSplash.SetActive(false);
         //scoreText.text = "SCORE:\n" + GameManager.Instance.GetScore();
@@ -52,6 +55,7 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
 
     public void ReturnToMainMenu()
     {
+        Time.timeScale = 1;
         GameManager.Instance.ReturnToMainMenu();
         SceneManager.LoadScene("MainMenu");
     }
@@ -59,5 +63,17 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
     public void OnDestroy()
     {
         GameManager.Instance.ClearGameManagerListeners();
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        pauseSplash.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        pauseSplash.SetActive(false);
     }
 }

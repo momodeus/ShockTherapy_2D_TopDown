@@ -10,6 +10,8 @@ public class MainMenuController : MonoBehaviour
     public GameObject optionsCanvas;
     public GameObject storeCanvas;
     public GameObject stageSelectCanvas;
+
+    public Button playCustomMapButton;
     public Text highScoreText;
     public Toggle controlSchemeToggle;
     public void PlayGame(int mapIdx)
@@ -56,6 +58,7 @@ public class MainMenuController : MonoBehaviour
     public void Start()
     {
         controlSchemeToggle.isOn = GameManager.Instance.IsSwipeControls();
+        playCustomMapButton.enabled = GameManager.Instance.UserMadeMap();
         (mainCanvas.GetComponentsInChildren(typeof(Text))[0] as Text).text = "$" + GameManager.Instance.GetMoney();
         Back();
     }

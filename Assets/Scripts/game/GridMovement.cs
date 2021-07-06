@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class GridMovement : MonoBehaviour
 {
+    public MapData mapData;
+    public SpriteRenderer mapSpriteRenderer;
     public TextAsset[] collisionMap = new TextAsset[3]; //text representation of map, with 1 being a wall and 0 being a path. 
                                                         //important: make sure there is no extra line at the end of file. 
     public Sprite[] mapImages = new Sprite[3];
@@ -32,12 +34,20 @@ public class GridMovement : MonoBehaviour
     //We want to do all this loading before anything else in the scene
     void Awake()
     {
+        bool usingSavedMap = GameManager.Instance.GetMap() == -1;
         enemySpawns = new List<Vector2>();
-
-        (GetComponentInParent(typeof(SpriteRenderer)) as SpriteRenderer).sprite = mapImages[GameManager.Instance.GetMap()];
+        if (usingSavedMap)
+        {
+            CollisionGenerator.ReadCollisionMap(GameManager.Instance.GetCollisionMap(), mapData);
+            mapSpriteRenderer.gameObject.SetActive(false);
+        }
+        else
+        {
+            mapSpriteRenderer.sprite = mapImages[GameManager.Instance.GetMap()];
+        }
         //reading collision file and setting up collision matrix
         List<string> eachLine = new List<string>();
-        eachLine.AddRange(collisionMap[GameManager.Instance.GetMap()].text.Split("\n"[0]));
+        eachLine.AddRange((usingSavedMap ? GameManager.Instance.GetCollisionMap() : collisionMap[GameManager.Instance.GetMap()].text).Split("\n"[0]));
         collisions = new bool[eachLine[0].Length, eachLine.Count];
         for (int i = 0; i < eachLine.Count; i++)
         {

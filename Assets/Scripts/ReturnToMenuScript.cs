@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class ReturnToMenuScript : MonoBehaviour
 {
-    public CollisionGenerator cg;
+    public MapData mapData;
     public void ReturnToMainMenu()
     {
-        if (cg.carsTilemap.ContainsTile(cg.playerTile))
+        if (mapData.hasPlayer)
         {
-            cg.CreateAndSaveCollisionMap();
+            CollisionGenerator.CreateAndSaveCollisionMap(mapData);
             SceneManager.LoadScene("MainMenu");
         } else
         {

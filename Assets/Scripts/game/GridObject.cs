@@ -20,7 +20,6 @@ public class GridObject : MonoBehaviour
             float bestDist = float.MaxValue;
             int bx = gridX, by = gridY; //best grid x/y
             List<Vector2Int> validPoints = GridMovement.GetValidPoints();
-            Debug.Log(validPoints.ToString());
             for (int i = 0; i < validPoints.Count; i++)
             {
                 Vector2Int point = validPoints[i];

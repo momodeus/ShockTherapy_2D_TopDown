@@ -8,31 +8,36 @@ public class CollisionGenerator : MonoBehaviour
     public const int gridWidth = 35, gridHeight = 58;
     private const int borderThickness = 5;
 
-
+    
     public static void CreateFromScratch(MapData mapData)
     {
-        mapData.baseTilemap.ClearAllTiles();
-        mapData.carsTilemap.ClearAllTiles();
-        for (int i = -borderThickness; i < gridHeight + borderThickness; i++)
-        {
-            for (int j = -borderThickness; j < gridWidth + borderThickness; j++)
-            {
-                if (i >= 0 && i < gridHeight && j >= 0 && j < gridWidth)
-                {
-                    mapData.baseTilemap.SetTile(new Vector3Int(j - gridWidth / 2, -i + gridHeight / 2, 0), mapData.pathTile);
-                } else
-                {
-                    mapData.baseTilemap.SetTile(new Vector3Int(j - gridWidth / 2, -i + gridHeight / 2, 0), mapData.borderTile);
-                }
-            }
-        }
-        mapData.carsTilemap.SetTile(new Vector3Int(0, 0, 0), mapData.playerTile);
-
-        mapData.baseTilemap.CompressBounds();
+        ReadCollisionMap(BlankCollisionMap(), mapData);
     }
+
+    public static string BlankCollisionMap()
+    {
+        string collisionMap = "";
+        for (int i = 0; i < gridHeight; i++)
+        {
+            collisionMap += "1";
+            for (int j = 1; j < gridWidth-1; j++)
+            {
+                if (i < gridHeight / 2 - 3 || i > gridHeight / 2 + 3 || j < gridWidth / 2 - 3 || j > gridWidth / 2 + 3)
+                    collisionMap += "1";
+                else if (i == gridHeight / 2 && j == gridWidth / 2)
+                    collisionMap += "P";
+                else
+                    collisionMap += "0";
+            }
+            if(i < gridHeight - 1) collisionMap += "1\n";
+        }
+        return collisionMap;
+    }
+
     public static void ReadCollisionMap(string collisionMap, MapData mapData)
     {
         mapData.baseTilemap.ClearAllTiles();
+        if (mapData.carsTilemap != null) mapData.carsTilemap.ClearAllTiles();
         List<string> eachLine = new List<string>();
         eachLine.AddRange(collisionMap.Split("\n"[0]));
         for (int i = -borderThickness; i < eachLine.Count + borderThickness; i++)
@@ -73,12 +78,12 @@ public class CollisionGenerator : MonoBehaviour
         {
             for (int i = mapData.baseTilemap.cellBounds.xMin + borderThickness; i < mapData.baseTilemap.cellBounds.xMax - borderThickness; i++)
             {
-                if (!mapData.baseTilemap.GetTile(new Vector3Int(i, j, 0)).name.Equals("Border Tile"))
+                if (!mapData.baseTilemap.GetTile(new Vector3Int(i, j, 0)).name.Equals(mapData.borderTile.name))
                 {
                     if (mapData.carsTilemap.HasTile(new Vector3Int(i, j, 0)))
-                        col += mapData.carsTilemap.GetTile(new Vector3Int(i, j, 0)).name.Equals("Enemy Tile") ? "E" : "P";
+                        col += mapData.carsTilemap.GetTile(new Vector3Int(i, j, 0)).name.Equals(mapData.enemyTile.name) ? "E" : "P";
                     else
-                        col += mapData.baseTilemap.GetTile(new Vector3Int(i, j, 0)).name.Equals("Path Tile") ? "0" : "1";
+                        col += mapData.baseTilemap.GetTile(new Vector3Int(i, j, 0)).name.Equals(mapData.pathTile.name) ? "0" : "1";
                 }
             }
             if (j > mapData.baseTilemap.cellBounds.yMin + borderThickness) col += "\n";

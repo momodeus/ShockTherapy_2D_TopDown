@@ -14,7 +14,7 @@ public class ReturnToMenuScript : MonoBehaviour
             SceneManager.LoadScene("MainMenu");
         } else
         {
-
+            print("needs player");
         }
     }
 }

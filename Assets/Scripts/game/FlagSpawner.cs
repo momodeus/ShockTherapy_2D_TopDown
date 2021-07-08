@@ -24,7 +24,9 @@ public class FlagSpawner : MonoBehaviour
         while (i > 0 && possible.Count > 0)
         {
             int idx = (int)Random.Range(0, possible.Count - 0.001f);
-            Instantiate(flag, grid.GetCoords((int)possible[idx].x, (int)possible[idx].y), Quaternion.identity);
+            GridObject go = (Instantiate(flag, Vector3.zero, Quaternion.identity).GetComponent(typeof(GridObject)) as GridObject);
+            go.grid = grid;
+            go.SetGridPosition((int)possible[idx].x, (int)possible[idx].y);
             possible.RemoveAt(idx);
             i--;
         }

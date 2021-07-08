@@ -29,12 +29,7 @@ public class EnemyMovement : UTV
         followType = (FollowType)Random.Range(0, 4);
         nextMoves = new Queue<int>();
     }
-    public void SetGridPosition(int x, int y)
-    {
-        gridX = x;
-        gridY = y;
-        Setup();
-    }
+
     // Update is called once per frame
     void Update()
     {

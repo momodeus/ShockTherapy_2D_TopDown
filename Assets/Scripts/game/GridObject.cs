@@ -41,7 +41,12 @@ public class GridObject : MonoBehaviour
 
         transform.position = grid.GetCoords(gridX, gridY);
     }
-
+    public void SetGridPosition(int x, int y)
+    {
+        gridX = x;
+        gridY = y;
+        Setup();
+    }
     /// <summary>
     /// Simple Euclidean distance squared
     /// </summary>

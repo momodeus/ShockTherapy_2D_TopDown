@@ -17,12 +17,7 @@ public class SmokeScript : GridObject
         Destroy(gameObject, lifetime);
     }
     
-    public void SetGridPosition(int x, int y)
-    {
-        gridX = x;
-        gridY = y;
-        Setup();
-    }
+
     // Update is called once per frame
     void Update()
     {

@@ -25,64 +25,64 @@ TextureImporter:
     second: Arcade - Rally-XNew Rally-X - General Sprites_smoke
   - first:
       213: -8741205124425627449
-    second: Arcade - Rally-XNew Rally-X - General Sprites_35
+    second: 1path
   - first:
       213: -1342613383104338324
-    second: Arcade - Rally-XNew Rally-X - General Sprites_36
+    second: 1dirtcorner
   - first:
       213: 6285258629293022610
-    second: Arcade - Rally-XNew Rally-X - General Sprites_37
+    second: 1dirtstraight
   - first:
       213: -1763196351753270600
-    second: Arcade - Rally-XNew Rally-X - General Sprites_38
+    second: 1dirtblock
   - first:
       213: -7073404142170298807
-    second: Arcade - Rally-XNew Rally-X - General Sprites_39
+    second: 1dirtnarrowcorner
   - first:
       213: 3295677425850977290
-    second: Arcade - Rally-XNew Rally-X - General Sprites_40
+    second: 1dirtcap
   - first:
       213: -6258140607427977987
-    second: Arcade - Rally-XNew Rally-X - General Sprites_41
+    second: 3l
   - first:
       213: -7769271692347768718
-    second: Arcade - Rally-XNew Rally-X - General Sprites_42
+    second: 2m
   - first:
       213: -295175877684887380
-    second: Arcade - Rally-XNew Rally-X - General Sprites_43
+    second: 2n
   - first:
       213: 3380344860401763277
-    second: Arcade - Rally-XNew Rally-X - General Sprites_44
+    second: 2o
   - first:
       213: -7957681133144446902
-    second: Arcade - Rally-XNew Rally-X - General Sprites_45
+    second: 2p
   - first:
       213: 7559079930038525063
-    second: Arcade - Rally-XNew Rally-X - General Sprites_46
+    second: 3m
   - first:
       213: -5806806629201437562
-    second: Arcade - Rally-XNew Rally-X - General Sprites_47
+    second: 3n
   - first:
       213: 4309161725465400115
-    second: Arcade - Rally-XNew Rally-X - General Sprites_48
+    second: 3o
   - first:
       213: -8942803872351628646
-    second: Arcade - Rally-XNew Rally-X - General Sprites_49
+    second: 3p
   - first:
       213: -2983474204899399776
     second: Arcade - Rally-XNew Rally-X - General Sprites_50
   - first:
       213: -5632111666477454309
-    second: Arcade - Rally-XNew Rally-X - General Sprites_51
+    second: 1dirt
   - first:
       213: 8078456838516179540
-    second: Arcade - Rally-XNew Rally-X - General Sprites_52
+    second: 1dirt1dot
   - first:
       213: 5660464108210904464
     second: Arcade - Rally-XNew Rally-X - General Sprites_53
   - first:
       213: 6228311332108001943
-    second: Arcade - Rally-XNew Rally-X - General Sprites_54
+    second: 1dirt4dot
   - first:
       213: 6833474294852378025
     second: Arcade - Rally-XNew Rally-X - General Sprites_55
@@ -115,13 +115,13 @@ TextureImporter:
     second: Arcade - Rally-XNew Rally-X - General Sprites_64
   - first:
       213: 6039504313425261991
-    second: Arcade - Rally-XNew Rally-X - General Sprites_65
+    second: 1dirtedge
   - first:
       213: -2046243728849980331
     second: Arcade - Rally-XNew Rally-X - General Sprites_66
   - first:
       213: -8093695574876370734
-    second: Arcade - Rally-XNew Rally-X - General Sprites_67
+    second: 1dirtedgedot1
   - first:
       213: -8283874985978318545
     second: Arcade - Rally-XNew Rally-X - General Sprites_68
@@ -154,16 +154,16 @@ TextureImporter:
     second: Arcade - Rally-XNew Rally-X - General Sprites_77
   - first:
       213: 5171009690318006041
-    second: Arcade - Rally-XNew Rally-X - General Sprites_78
+    second: 1dirtedge2dot
   - first:
       213: -8781072030458592913
-    second: Arcade - Rally-XNew Rally-X - General Sprites_79
+    second: 1dirtedgedot2
   - first:
       213: -7256708330438654760
-    second: Arcade - Rally-XNew Rally-X - General Sprites_80
+    second: 1dirt2dot
   - first:
       213: 6167207043193125681
-    second: Arcade - Rally-XNew Rally-X - General Sprites_81
+    second: 1dirt3dot
   - first:
       213: -4488113408405115574
     second: Arcade - Rally-XNew Rally-X - General Sprites_82
@@ -661,76 +661,76 @@ TextureImporter:
     second: Arcade - Rally-XNew Rally-X - General Sprites_2
   - first:
       213: 2535146511308696263
-    second: Arcade - Rally-XNew Rally-X - General Sprites_3
+    second: 2a
   - first:
       213: 3375149537999341273
-    second: Arcade - Rally-XNew Rally-X - General Sprites_4
+    second: 2b
   - first:
       213: 2132492715049290896
-    second: Arcade - Rally-XNew Rally-X - General Sprites_5
+    second: 2c
   - first:
       213: -6052503882641055749
-    second: Arcade - Rally-XNew Rally-X - General Sprites_6
+    second: 2d
   - first:
       213: 165851517941184493
-    second: Arcade - Rally-XNew Rally-X - General Sprites_7
+    second: 3a
   - first:
       213: 7689759488235896298
-    second: Arcade - Rally-XNew Rally-X - General Sprites_8
+    second: 3b
   - first:
       213: -7883044674599347590
-    second: Arcade - Rally-XNew Rally-X - General Sprites_9
+    second: 3c
   - first:
       213: -3456318559380173077
-    second: Arcade - Rally-XNew Rally-X - General Sprites_10
+    second: 3d
   - first:
       213: -2062168427098406783
-    second: Arcade - Rally-XNew Rally-X - General Sprites_11
+    second: 2e
   - first:
       213: -2003310789268013186
-    second: Arcade - Rally-XNew Rally-X - General Sprites_12
+    second: 2f
   - first:
       213: 6888950052155158080
-    second: Arcade - Rally-XNew Rally-X - General Sprites_13
+    second: 2g
   - first:
       213: 6952661248213361104
-    second: Arcade - Rally-XNew Rally-X - General Sprites_14
+    second: 2h
   - first:
       213: -8234018578612065883
-    second: Arcade - Rally-XNew Rally-X - General Sprites_15
+    second: 2i
   - first:
       213: 8852188974359042540
-    second: Arcade - Rally-XNew Rally-X - General Sprites_16
+    second: 3e
   - first:
       213: 5986058844311199729
-    second: Arcade - Rally-XNew Rally-X - General Sprites_17
+    second: 3f
   - first:
       213: 5637226691985449731
-    second: Arcade - Rally-XNew Rally-X - General Sprites_18
+    second: 3g
   - first:
       213: 2674026190100809708
-    second: Arcade - Rally-XNew Rally-X - General Sprites_19
+    second: 3h
   - first:
       213: -4797854201971056212
-    second: Arcade - Rally-XNew Rally-X - General Sprites_20
+    second: 3i
   - first:
       213: -7527078961471717114
-    second: Arcade - Rally-XNew Rally-X - General Sprites_21
+    second: 2j
   - first:
       213: -8560616969823082888
     second: Arcade - Rally-XNew Rally-X - General Sprites_22
   - first:
       213: 4836026042087357689
-    second: Arcade - Rally-XNew Rally-X - General Sprites_23
+    second: 2k
   - first:
       213: 5604850813109072421
-    second: Arcade - Rally-XNew Rally-X - General Sprites_24
+    second: 2l
   - first:
       213: 2762394136029588675
-    second: Arcade - Rally-XNew Rally-X - General Sprites_28
+    second: 3j
   - first:
       213: -3796837362476055765
-    second: Arcade - Rally-XNew Rally-X - General Sprites_30
+    second: 3k
   - first:
       213: -1550326705373732754
     second: Arcade - Rally-XNew Rally-X - General Sprites_243
@@ -878,6 +878,9 @@ TextureImporter:
   - first:
       213: -7557265391724898378
     second: Arcade - Rally-XNew Rally-X - General Sprites_291
+  - first:
+      213: 7737059770893934423
+    second: 1dirtdiagdot
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1045,27 +1048,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_29
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 416
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b58c71c02264a8920800000000000000
-      internalID: 2993282014386833499
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Arcade - Rally-XNew Rally-X - General Sprites_bang
       rect:
         serializedVersion: 2
@@ -1150,7 +1132,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_35
+      name: 1path
       rect:
         serializedVersion: 2
         x: 0
@@ -1171,7 +1153,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_36
+      name: 1dirtcorner
       rect:
         serializedVersion: 2
         x: 24
@@ -1192,7 +1174,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_37
+      name: 1dirtstraight
       rect:
         serializedVersion: 2
         x: 48
@@ -1213,11 +1195,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_38
+      name: 1dirtblock
       rect:
         serializedVersion: 2
-        x: 72
-        y: 360
+        x: 48
+        y: 336
         width: 24
         height: 24
       alignment: 0
@@ -1234,10 +1216,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_39
+      name: 1dirtnarrowcorner
       rect:
         serializedVersion: 2
-        x: 96
+        x: 72
         y: 360
         width: 24
         height: 24
@@ -1255,11 +1237,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_40
+      name: 1dirtcap
       rect:
         serializedVersion: 2
-        x: 120
-        y: 360
+        x: 72
+        y: 336
         width: 24
         height: 24
       alignment: 0
@@ -1276,32 +1258,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_41
+      name: 2m
       rect:
         serializedVersion: 2
-        x: 144
-        y: 360
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dfcdecb464e9629a0800000000000000
-      internalID: -6258140607427977987
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_42
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 360
+        x: 120
+        y: 288
         width: 24
         height: 24
       alignment: 0
@@ -1318,11 +1279,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_43
+      name: 2n
       rect:
         serializedVersion: 2
-        x: 192
-        y: 360
+        x: 144
+        y: 288
         width: 24
         height: 24
       alignment: 0
@@ -1339,11 +1300,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_44
+      name: 2o
       rect:
         serializedVersion: 2
-        x: 216
-        y: 360
+        x: 168
+        y: 288
         width: 24
         height: 24
       alignment: 0
@@ -1360,11 +1321,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_45
+      name: 2p
       rect:
         serializedVersion: 2
-        x: 240
-        y: 360
+        x: 192
+        y: 288
         width: 24
         height: 24
       alignment: 0
@@ -1381,11 +1342,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_46
+      name: 3m
       rect:
         serializedVersion: 2
-        x: 264
-        y: 360
+        x: 240
+        y: 288
         width: 24
         height: 24
       alignment: 0
@@ -1402,11 +1363,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_47
+      name: 3n
       rect:
         serializedVersion: 2
-        x: 288
-        y: 360
+        x: 264
+        y: 288
         width: 24
         height: 24
       alignment: 0
@@ -1423,11 +1384,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_48
+      name: 3o
       rect:
         serializedVersion: 2
-        x: 312
-        y: 360
+        x: 288
+        y: 288
         width: 24
         height: 24
       alignment: 0
@@ -1444,52 +1405,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_49
+      name: 1dirt
       rect:
         serializedVersion: 2
         x: 0
-        y: 336
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a925e745247c4e380800000000000000
-      internalID: -8942803872351628646
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_50
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 336
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a72e6c84029896d0800000000000000
-      internalID: -2983474204899399776
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_51
-      rect:
-        serializedVersion: 2
-        x: 48
         y: 336
         width: 24
         height: 24
@@ -1507,10 +1426,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_52
+      name: 1dirt1dot
       rect:
         serializedVersion: 2
-        x: 72
+        x: 24
         y: 336
         width: 24
         height: 24
@@ -1528,32 +1447,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_53
+      name: 1dirt4dot
       rect:
         serializedVersion: 2
-        x: 96
-        y: 336
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09d52c1bd120e8e40800000000000000
-      internalID: 5660464108210904464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_54
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 336
+        x: 72
+        y: 312
         width: 24
         height: 24
       alignment: 0
@@ -1570,53 +1468,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_55
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 336
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ad50767aa065de50800000000000000
-      internalID: 6833474294852378025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_56
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 336
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8bba23f09368e290800000000000000
-      internalID: -7860923675369096310
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Arcade - Rally-XNew Rally-X - General Sprites_57
       rect:
         serializedVersion: 2
-        x: 192
-        y: 336
+        x: 120
+        y: 264
         width: 24
         height: 24
       alignment: 0
@@ -1636,8 +1492,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_58
       rect:
         serializedVersion: 2
-        x: 216
-        y: 336
+        x: 144
+        y: 264
         width: 24
         height: 24
       alignment: 0
@@ -1657,8 +1513,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_59
       rect:
         serializedVersion: 2
-        x: 240
-        y: 336
+        x: 168
+        y: 264
         width: 24
         height: 24
       alignment: 0
@@ -1678,8 +1534,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_60
       rect:
         serializedVersion: 2
-        x: 264
-        y: 336
+        x: 192
+        y: 264
         width: 24
         height: 24
       alignment: 0
@@ -1699,8 +1555,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_61
       rect:
         serializedVersion: 2
-        x: 288
-        y: 336
+        x: 240
+        y: 264
         width: 24
         height: 24
       alignment: 0
@@ -1720,8 +1576,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_62
       rect:
         serializedVersion: 2
-        x: 312
-        y: 336
+        x: 264
+        y: 264
         width: 24
         height: 24
       alignment: 0
@@ -1738,52 +1594,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_63
+      name: 1dirtedge
       rect:
         serializedVersion: 2
         x: 0
-        y: 312
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55b6c4014272220a0800000000000000
-      internalID: -6907915842587169963
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_64
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 312
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46acc888af03611c0800000000000000
-      internalID: -4533382122310940060
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_65
-      rect:
-        serializedVersion: 2
-        x: 48
         y: 312
         width: 24
         height: 24
@@ -1801,31 +1615,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_66
+      name: 1dirtedgedot1
       rect:
         serializedVersion: 2
-        x: 72
-        y: 312
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 554b60a8b284a93e0800000000000000
-      internalID: -2046243728849980331
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_67
-      rect:
-        serializedVersion: 2
-        x: 96
+        x: 48
         y: 312
         width: 24
         height: 24
@@ -1843,74 +1636,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_68
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 312
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f21b4011793c90d80800000000000000
-      internalID: -8283874985978318545
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_69
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 312
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09becefb526c7fa40800000000000000
-      internalID: 5402004143490263952
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_70
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 312
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 018ab58b401ba4050800000000000000
-      internalID: 5785631305141823504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Arcade - Rally-XNew Rally-X - General Sprites_71
       rect:
         serializedVersion: 2
-        x: 192
-        y: 312
+        x: 96
+        y: 240
         width: 24
         height: 24
       alignment: 0
@@ -1930,8 +1660,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_72
       rect:
         serializedVersion: 2
-        x: 216
-        y: 312
+        x: 120
+        y: 240
         width: 24
         height: 24
       alignment: 0
@@ -1951,8 +1681,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_73
       rect:
         serializedVersion: 2
-        x: 240
-        y: 312
+        x: 144
+        y: 240
         width: 24
         height: 24
       alignment: 0
@@ -1972,8 +1702,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_74
       rect:
         serializedVersion: 2
-        x: 264
-        y: 312
+        x: 168
+        y: 240
         width: 24
         height: 24
       alignment: 0
@@ -1993,8 +1723,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_75
       rect:
         serializedVersion: 2
-        x: 288
-        y: 312
+        x: 192
+        y: 240
         width: 24
         height: 24
       alignment: 0
@@ -2014,8 +1744,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_76
       rect:
         serializedVersion: 2
-        x: 312
-        y: 312
+        x: 216
+        y: 240
         width: 24
         height: 24
       alignment: 0
@@ -2032,31 +1762,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_77
+      name: 1dirtedge2dot
       rect:
         serializedVersion: 2
-        x: 0
-        y: 288
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f225f86af47452fa0800000000000000
-      internalID: -5826172135511469521
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_78
-      rect:
-        serializedVersion: 2
-        x: 72
+        x: 24
         y: 288
         width: 24
         height: 24
@@ -2074,10 +1783,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_79
+      name: 1dirtedgedot2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 48
         y: 288
         width: 24
         height: 24
@@ -2095,10 +1804,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_80
+      name: 1dirt2dot
       rect:
         serializedVersion: 2
-        x: 120
+        x: 72
         y: 288
         width: 24
         height: 24
@@ -2116,10 +1825,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_81
+      name: 1dirt3dot
       rect:
         serializedVersion: 2
-        x: 144
+        x: 96
         y: 288
         width: 24
         height: 24
@@ -2137,32 +1846,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_82
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 288
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4d685452a407b1c0800000000000000
-      internalID: -4488113408405115574
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Arcade - Rally-XNew Rally-X - General Sprites_83
       rect:
         serializedVersion: 2
-        x: 240
-        y: 288
+        x: 288
+        y: 240
         width: 24
         height: 24
       alignment: 0
@@ -2182,8 +1870,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_84
       rect:
         serializedVersion: 2
-        x: 264
-        y: 288
+        x: 312
+        y: 240
         width: 24
         height: 24
       alignment: 0
@@ -2203,8 +1891,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_85
       rect:
         serializedVersion: 2
-        x: 288
-        y: 288
+        x: 0
+        y: 216
         width: 24
         height: 24
       alignment: 0
@@ -2224,8 +1912,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_86
       rect:
         serializedVersion: 2
-        x: 312
-        y: 288
+        x: 48
+        y: 216
         width: 24
         height: 24
       alignment: 0
@@ -2245,8 +1933,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_87
       rect:
         serializedVersion: 2
-        x: 0
-        y: 264
+        x: 72
+        y: 216
         width: 24
         height: 24
       alignment: 0
@@ -2266,8 +1954,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_88
       rect:
         serializedVersion: 2
-        x: 24
-        y: 264
+        x: 120
+        y: 216
         width: 24
         height: 24
       alignment: 0
@@ -2287,8 +1975,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_89
       rect:
         serializedVersion: 2
-        x: 48
-        y: 264
+        x: 144
+        y: 216
         width: 24
         height: 24
       alignment: 0
@@ -2308,8 +1996,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_90
       rect:
         serializedVersion: 2
-        x: 72
-        y: 264
+        x: 168
+        y: 216
         width: 24
         height: 24
       alignment: 0
@@ -2350,8 +2038,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_92
       rect:
         serializedVersion: 2
-        x: 120
-        y: 264
+        x: 192
+        y: 216
         width: 24
         height: 24
       alignment: 0
@@ -2371,8 +2059,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_93
       rect:
         serializedVersion: 2
-        x: 144
-        y: 264
+        x: 240
+        y: 216
         width: 24
         height: 24
       alignment: 0
@@ -2392,8 +2080,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_94
       rect:
         serializedVersion: 2
-        x: 168
-        y: 264
+        x: 264
+        y: 216
         width: 24
         height: 24
       alignment: 0
@@ -2413,8 +2101,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_95
       rect:
         serializedVersion: 2
-        x: 192
-        y: 264
+        x: 288
+        y: 216
         width: 24
         height: 24
       alignment: 0
@@ -2434,8 +2122,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_96
       rect:
         serializedVersion: 2
-        x: 216
-        y: 264
+        x: 312
+        y: 216
         width: 24
         height: 24
       alignment: 0
@@ -2455,8 +2143,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_97
       rect:
         serializedVersion: 2
-        x: 240
-        y: 264
+        x: 0
+        y: 192
         width: 24
         height: 24
       alignment: 0
@@ -2476,8 +2164,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_98
       rect:
         serializedVersion: 2
-        x: 264
-        y: 264
+        x: 24
+        y: 192
         width: 24
         height: 24
       alignment: 0
@@ -2497,8 +2185,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_99
       rect:
         serializedVersion: 2
-        x: 288
-        y: 264
+        x: 48
+        y: 192
         width: 24
         height: 24
       alignment: 0
@@ -2518,8 +2206,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_100
       rect:
         serializedVersion: 2
-        x: 312
-        y: 264
+        x: 72
+        y: 192
         width: 24
         height: 24
       alignment: 0
@@ -2539,8 +2227,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_101
       rect:
         serializedVersion: 2
-        x: 0
-        y: 240
+        x: 96
+        y: 192
         width: 24
         height: 24
       alignment: 0
@@ -2560,8 +2248,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_102
       rect:
         serializedVersion: 2
-        x: 24
-        y: 240
+        x: 120
+        y: 192
         width: 24
         height: 24
       alignment: 0
@@ -2581,8 +2269,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_103
       rect:
         serializedVersion: 2
-        x: 48
-        y: 240
+        x: 144
+        y: 192
         width: 24
         height: 24
       alignment: 0
@@ -2602,8 +2290,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_104
       rect:
         serializedVersion: 2
-        x: 72
-        y: 240
+        x: 168
+        y: 192
         width: 24
         height: 24
       alignment: 0
@@ -2623,8 +2311,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_105
       rect:
         serializedVersion: 2
-        x: 96
-        y: 240
+        x: 192
+        y: 192
         width: 24
         height: 24
       alignment: 0
@@ -2644,8 +2332,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_106
       rect:
         serializedVersion: 2
-        x: 120
-        y: 240
+        x: 240
+        y: 192
         width: 24
         height: 24
       alignment: 0
@@ -2665,8 +2353,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_107
       rect:
         serializedVersion: 2
-        x: 144
-        y: 240
+        x: 264
+        y: 192
         width: 24
         height: 24
       alignment: 0
@@ -2686,8 +2374,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_108
       rect:
         serializedVersion: 2
-        x: 168
-        y: 240
+        x: 288
+        y: 192
         width: 24
         height: 24
       alignment: 0
@@ -2707,8 +2395,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_109
       rect:
         serializedVersion: 2
-        x: 192
-        y: 240
+        x: 312
+        y: 192
         width: 24
         height: 24
       alignment: 0
@@ -2728,8 +2416,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_110
       rect:
         serializedVersion: 2
-        x: 216
-        y: 240
+        x: 0
+        y: 168
         width: 24
         height: 24
       alignment: 0
@@ -2749,8 +2437,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_111
       rect:
         serializedVersion: 2
-        x: 240
-        y: 240
+        x: 24
+        y: 168
         width: 24
         height: 24
       alignment: 0
@@ -2770,8 +2458,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_112
       rect:
         serializedVersion: 2
-        x: 264
-        y: 240
+        x: 48
+        y: 168
         width: 24
         height: 24
       alignment: 0
@@ -2791,8 +2479,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_113
       rect:
         serializedVersion: 2
-        x: 288
-        y: 240
+        x: 72
+        y: 168
         width: 24
         height: 24
       alignment: 0
@@ -2812,8 +2500,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_114
       rect:
         serializedVersion: 2
-        x: 312
-        y: 240
+        x: 120
+        y: 168
         width: 24
         height: 24
       alignment: 0
@@ -2833,8 +2521,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_115
       rect:
         serializedVersion: 2
-        x: 0
-        y: 216
+        x: 144
+        y: 168
         width: 24
         height: 24
       alignment: 0
@@ -2875,8 +2563,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_117
       rect:
         serializedVersion: 2
-        x: 48
-        y: 216
+        x: 168
+        y: 168
         width: 24
         height: 24
       alignment: 0
@@ -2896,8 +2584,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_118
       rect:
         serializedVersion: 2
-        x: 72
-        y: 216
+        x: 192
+        y: 168
         width: 24
         height: 24
       alignment: 0
@@ -2917,8 +2605,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_119
       rect:
         serializedVersion: 2
-        x: 96
-        y: 216
+        x: 240
+        y: 168
         width: 24
         height: 24
       alignment: 0
@@ -2938,8 +2626,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_120
       rect:
         serializedVersion: 2
-        x: 120
-        y: 216
+        x: 264
+        y: 168
         width: 24
         height: 24
       alignment: 0
@@ -2959,8 +2647,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_121
       rect:
         serializedVersion: 2
-        x: 144
-        y: 216
+        x: 288
+        y: 168
         width: 24
         height: 24
       alignment: 0
@@ -2980,8 +2668,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_122
       rect:
         serializedVersion: 2
-        x: 168
-        y: 216
+        x: 312
+        y: 168
         width: 24
         height: 24
       alignment: 0
@@ -3001,8 +2689,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_123
       rect:
         serializedVersion: 2
-        x: 192
-        y: 216
+        x: 0
+        y: 144
         width: 24
         height: 24
       alignment: 0
@@ -3022,8 +2710,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_124
       rect:
         serializedVersion: 2
-        x: 216
-        y: 216
+        x: 24
+        y: 144
         width: 24
         height: 24
       alignment: 0
@@ -3043,8 +2731,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_125
       rect:
         serializedVersion: 2
-        x: 240
-        y: 216
+        x: 48
+        y: 144
         width: 24
         height: 24
       alignment: 0
@@ -3064,8 +2752,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_126
       rect:
         serializedVersion: 2
-        x: 264
-        y: 216
+        x: 72
+        y: 144
         width: 24
         height: 24
       alignment: 0
@@ -3085,8 +2773,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_127
       rect:
         serializedVersion: 2
-        x: 288
-        y: 216
+        x: 96
+        y: 144
         width: 24
         height: 24
       alignment: 0
@@ -3106,8 +2794,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_128
       rect:
         serializedVersion: 2
-        x: 312
-        y: 216
+        x: 120
+        y: 144
         width: 24
         height: 24
       alignment: 0
@@ -3127,8 +2815,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_129
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
+        x: 144
+        y: 144
         width: 24
         height: 24
       alignment: 0
@@ -3148,8 +2836,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_130
       rect:
         serializedVersion: 2
-        x: 72
-        y: 192
+        x: 168
+        y: 144
         width: 24
         height: 24
       alignment: 0
@@ -3169,8 +2857,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_131
       rect:
         serializedVersion: 2
-        x: 96
-        y: 192
+        x: 192
+        y: 144
         width: 24
         height: 24
       alignment: 0
@@ -3190,8 +2878,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_132
       rect:
         serializedVersion: 2
-        x: 120
-        y: 192
+        x: 216
+        y: 144
         width: 24
         height: 24
       alignment: 0
@@ -3211,8 +2899,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_133
       rect:
         serializedVersion: 2
-        x: 144
-        y: 192
+        x: 240
+        y: 144
         width: 24
         height: 24
       alignment: 0
@@ -3232,8 +2920,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_134
       rect:
         serializedVersion: 2
-        x: 168
-        y: 192
+        x: 264
+        y: 144
         width: 24
         height: 24
       alignment: 0
@@ -3253,8 +2941,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_135
       rect:
         serializedVersion: 2
-        x: 240
-        y: 192
+        x: 288
+        y: 144
         width: 24
         height: 24
       alignment: 0
@@ -3274,8 +2962,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_136
       rect:
         serializedVersion: 2
-        x: 264
-        y: 192
+        x: 312
+        y: 144
         width: 24
         height: 24
       alignment: 0
@@ -3295,8 +2983,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_137
       rect:
         serializedVersion: 2
-        x: 288
-        y: 192
+        x: 0
+        y: 120
         width: 24
         height: 24
       alignment: 0
@@ -3316,8 +3004,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_138
       rect:
         serializedVersion: 2
-        x: 312
-        y: 192
+        x: 24
+        y: 120
         width: 24
         height: 24
       alignment: 0
@@ -3337,8 +3025,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_139
       rect:
         serializedVersion: 2
-        x: 0
-        y: 168
+        x: 48
+        y: 120
         width: 24
         height: 24
       alignment: 0
@@ -3358,8 +3046,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_140
       rect:
         serializedVersion: 2
-        x: 24
-        y: 168
+        x: 72
+        y: 120
         width: 24
         height: 24
       alignment: 0
@@ -3379,8 +3067,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_141
       rect:
         serializedVersion: 2
-        x: 48
-        y: 168
+        x: 120
+        y: 120
         width: 24
         height: 24
       alignment: 0
@@ -3400,8 +3088,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_142
       rect:
         serializedVersion: 2
-        x: 72
-        y: 168
+        x: 144
+        y: 120
         width: 24
         height: 24
       alignment: 0
@@ -3421,8 +3109,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_143
       rect:
         serializedVersion: 2
-        x: 96
-        y: 168
+        x: 168
+        y: 120
         width: 24
         height: 24
       alignment: 0
@@ -3442,8 +3130,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_144
       rect:
         serializedVersion: 2
-        x: 120
-        y: 168
+        x: 192
+        y: 120
         width: 24
         height: 24
       alignment: 0
@@ -3463,8 +3151,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_145
       rect:
         serializedVersion: 2
-        x: 144
-        y: 168
+        x: 240
+        y: 120
         width: 24
         height: 24
       alignment: 0
@@ -3484,8 +3172,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_146
       rect:
         serializedVersion: 2
-        x: 168
-        y: 168
+        x: 264
+        y: 120
         width: 24
         height: 24
       alignment: 0
@@ -3505,8 +3193,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_147
       rect:
         serializedVersion: 2
-        x: 192
-        y: 168
+        x: 288
+        y: 120
         width: 24
         height: 24
       alignment: 0
@@ -3526,8 +3214,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_148
       rect:
         serializedVersion: 2
-        x: 216
-        y: 168
+        x: 312
+        y: 120
         width: 24
         height: 24
       alignment: 0
@@ -3547,8 +3235,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_149
       rect:
         serializedVersion: 2
-        x: 240
-        y: 168
+        x: 0
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -3568,8 +3256,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_150
       rect:
         serializedVersion: 2
-        x: 264
-        y: 168
+        x: 24
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -3589,8 +3277,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_151
       rect:
         serializedVersion: 2
-        x: 288
-        y: 168
+        x: 48
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -3610,8 +3298,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_152
       rect:
         serializedVersion: 2
-        x: 312
-        y: 168
+        x: 72
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -3631,8 +3319,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_153
       rect:
         serializedVersion: 2
-        x: 0
-        y: 144
+        x: 96
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -3652,8 +3340,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_154
       rect:
         serializedVersion: 2
-        x: 24
-        y: 144
+        x: 120
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -3673,8 +3361,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_155
       rect:
         serializedVersion: 2
-        x: 48
-        y: 144
+        x: 144
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -3694,8 +3382,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_156
       rect:
         serializedVersion: 2
-        x: 72
-        y: 144
+        x: 168
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -3715,8 +3403,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_157
       rect:
         serializedVersion: 2
-        x: 96
-        y: 144
+        x: 192
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -3736,8 +3424,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_158
       rect:
         serializedVersion: 2
-        x: 120
-        y: 144
+        x: 240
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -3757,8 +3445,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_159
       rect:
         serializedVersion: 2
-        x: 144
-        y: 144
+        x: 264
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -3778,8 +3466,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_160
       rect:
         serializedVersion: 2
-        x: 168
-        y: 144
+        x: 288
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -3799,8 +3487,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_161
       rect:
         serializedVersion: 2
-        x: 192
-        y: 144
+        x: 312
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -3820,8 +3508,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_162
       rect:
         serializedVersion: 2
-        x: 216
-        y: 144
+        x: 0
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -3841,8 +3529,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_163
       rect:
         serializedVersion: 2
-        x: 240
-        y: 144
+        x: 24
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -3862,8 +3550,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_164
       rect:
         serializedVersion: 2
-        x: 264
-        y: 144
+        x: 48
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -3883,8 +3571,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_165
       rect:
         serializedVersion: 2
-        x: 288
-        y: 144
+        x: 72
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -3904,8 +3592,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_166
       rect:
         serializedVersion: 2
-        x: 312
-        y: 144
+        x: 120
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -3925,8 +3613,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_167
       rect:
         serializedVersion: 2
-        x: 0
-        y: 120
+        x: 144
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -3946,8 +3634,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_168
       rect:
         serializedVersion: 2
-        x: 24
-        y: 120
+        x: 168
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -3967,8 +3655,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_169
       rect:
         serializedVersion: 2
-        x: 48
-        y: 120
+        x: 192
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -3988,8 +3676,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_170
       rect:
         serializedVersion: 2
-        x: 72
-        y: 120
+        x: 240
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -4009,8 +3697,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_171
       rect:
         serializedVersion: 2
-        x: 96
-        y: 120
+        x: 264
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -4030,8 +3718,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_172
       rect:
         serializedVersion: 2
-        x: 120
-        y: 120
+        x: 288
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -4051,8 +3739,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_173
       rect:
         serializedVersion: 2
-        x: 144
-        y: 120
+        x: 312
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -4072,8 +3760,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_174
       rect:
         serializedVersion: 2
-        x: 168
-        y: 120
+        x: 0
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -4093,8 +3781,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_175
       rect:
         serializedVersion: 2
-        x: 192
-        y: 120
+        x: 24
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -4114,8 +3802,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_176
       rect:
         serializedVersion: 2
-        x: 216
-        y: 120
+        x: 48
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -4135,8 +3823,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_177
       rect:
         serializedVersion: 2
-        x: 240
-        y: 120
+        x: 72
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -4156,8 +3844,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_178
       rect:
         serializedVersion: 2
-        x: 264
-        y: 120
+        x: 96
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -4177,8 +3865,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_179
       rect:
         serializedVersion: 2
-        x: 288
-        y: 120
+        x: 120
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -4198,8 +3886,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_180
       rect:
         serializedVersion: 2
-        x: 312
-        y: 120
+        x: 144
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -4219,8 +3907,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_181
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
+        x: 168
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -4240,8 +3928,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_182
       rect:
         serializedVersion: 2
-        x: 72
-        y: 96
+        x: 192
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -4261,8 +3949,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_183
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
+        x: 216
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -4282,8 +3970,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_184
       rect:
         serializedVersion: 2
-        x: 120
-        y: 96
+        x: 240
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -4303,8 +3991,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_185
       rect:
         serializedVersion: 2
-        x: 144
-        y: 96
+        x: 264
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -4324,8 +4012,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_186
       rect:
         serializedVersion: 2
-        x: 168
-        y: 96
+        x: 288
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -4345,8 +4033,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_187
       rect:
         serializedVersion: 2
-        x: 240
-        y: 96
+        x: 312
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -4366,8 +4054,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_188
       rect:
         serializedVersion: 2
-        x: 264
-        y: 96
+        x: 0
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -4387,8 +4075,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_189
       rect:
         serializedVersion: 2
-        x: 288
-        y: 96
+        x: 24
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -4408,8 +4096,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_190
       rect:
         serializedVersion: 2
-        x: 312
-        y: 96
+        x: 48
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -4429,8 +4117,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_191
       rect:
         serializedVersion: 2
-        x: 0
-        y: 72
+        x: 72
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -4450,8 +4138,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_192
       rect:
         serializedVersion: 2
-        x: 24
-        y: 72
+        x: 120
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -4471,8 +4159,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_193
       rect:
         serializedVersion: 2
-        x: 48
-        y: 72
+        x: 144
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -4492,8 +4180,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_194
       rect:
         serializedVersion: 2
-        x: 72
-        y: 72
+        x: 168
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -4513,8 +4201,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_195
       rect:
         serializedVersion: 2
-        x: 96
-        y: 72
+        x: 192
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -4534,8 +4222,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_196
       rect:
         serializedVersion: 2
-        x: 120
-        y: 72
+        x: 240
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -4555,8 +4243,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_197
       rect:
         serializedVersion: 2
-        x: 144
-        y: 72
+        x: 264
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -4576,8 +4264,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_198
       rect:
         serializedVersion: 2
-        x: 168
-        y: 72
+        x: 288
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -4597,8 +4285,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_199
       rect:
         serializedVersion: 2
-        x: 192
-        y: 72
+        x: 312
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -4618,8 +4306,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_200
       rect:
         serializedVersion: 2
-        x: 216
-        y: 72
+        x: 0
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -4639,8 +4327,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_201
       rect:
         serializedVersion: 2
-        x: 240
-        y: 72
+        x: 24
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -4660,8 +4348,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_202
       rect:
         serializedVersion: 2
-        x: 264
-        y: 72
+        x: 48
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -4681,8 +4369,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_203
       rect:
         serializedVersion: 2
-        x: 288
-        y: 72
+        x: 72
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -4702,8 +4390,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_204
       rect:
         serializedVersion: 2
-        x: 312
-        y: 72
+        x: 96
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -4723,8 +4411,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_205
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
+        x: 120
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -4744,8 +4432,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_206
       rect:
         serializedVersion: 2
-        x: 24
-        y: 48
+        x: 144
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -4765,8 +4453,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_207
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
+        x: 168
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -4786,8 +4474,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_208
       rect:
         serializedVersion: 2
-        x: 72
-        y: 48
+        x: 192
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -4807,8 +4495,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_209
       rect:
         serializedVersion: 2
-        x: 96
-        y: 48
+        x: 240
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -4828,8 +4516,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_210
       rect:
         serializedVersion: 2
-        x: 120
-        y: 48
+        x: 264
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -4849,8 +4537,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_211
       rect:
         serializedVersion: 2
-        x: 144
-        y: 48
+        x: 288
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -4870,8 +4558,8 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_212
       rect:
         serializedVersion: 2
-        x: 168
-        y: 48
+        x: 312
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -4883,636 +4571,6 @@ TextureImporter:
       bones: []
       spriteID: 38206baa8e96e14c0800000000000000
       internalID: -4314894944956972413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_213
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2ee7b173cee9f670800000000000000
-      internalID: 8573145888870362670
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_214
-      rect:
-        serializedVersion: 2
-        x: 216
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf16896645849cb90800000000000000
-      internalID: -7221161000176164356
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_215
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1eab4aecb42e1cc20800000000000000
-      internalID: 3225107623391312609
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_216
-      rect:
-        serializedVersion: 2
-        x: 264
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0140a6dcfa88f380800000000000000
-      internalID: -8937240641979530995
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_217
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c91bdf5c0a221cef0800000000000000
-      internalID: -89752443658849892
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_218
-      rect:
-        serializedVersion: 2
-        x: 312
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1210d35a241890460800000000000000
-      internalID: 7208434801823252769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_219
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04d1462f14080b4d0800000000000000
-      internalID: -3120853521039876800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_220
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30d1cc06250e9a7e0800000000000000
-      internalID: -1753623935468167933
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_221
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8078c5d495a2e1570800000000000000
-      internalID: 8439229314777253640
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_222
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29da0c556b4909ba0800000000000000
-      internalID: -6084199585733890670
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_223
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b4300293b30c49380800000000000000
-      internalID: -8965329597593812149
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_224
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9f6df0a70d052a40800000000000000
-      internalID: 5342690859361857436
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_225
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ef33c27d13815930800000000000000
-      internalID: 4130226495778144226
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_226
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d6862cd413487350800000000000000
-      internalID: 6014631059225216726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_227
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bea6fb373e318dec0800000000000000
-      internalID: -3542059239306466581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_228
-      rect:
-        serializedVersion: 2
-        x: 216
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b4c74ce6620de27f0800000000000000
-      internalID: -635341633926955957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_229
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 21ac32ed4d10436b0800000000000000
-      internalID: -5317623246246131182
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_230
-      rect:
-        serializedVersion: 2
-        x: 264
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3bb3e203f43fcd4e0800000000000000
-      internalID: -1955420616749335629
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_231
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed2b5bef09b63a720800000000000000
-      internalID: 2856244859175809758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_232
-      rect:
-        serializedVersion: 2
-        x: 312
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2333cc3381715b290800000000000000
-      internalID: -7875362980671769806
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_233
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a1383f8dd2961310800000000000000
-      internalID: 1375448216496517542
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_234
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d2fb8e1cb45210a0800000000000000
-      internalID: -6912369311117217065
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_235
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4e627913655195b0800000000000000
-      internalID: -5363411797104497076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_236
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93071ecdfbbe273d0800000000000000
-      internalID: -3210244375084699591
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_237
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff90d8bf9726b4070800000000000000
-      internalID: 8091669431552117247
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_238
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 03fc998b2995609a0800000000000000
-      internalID: -6267223344742281424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_239
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64886337e293abe90800000000000000
-      internalID: -7009226998384523194
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_240
-      rect:
-        serializedVersion: 2
-        x: 264
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bde1a5783e01f2d50800000000000000
-      internalID: 6714604138847149787
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_241
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2bddb610c028e1760800000000000000
-      internalID: 7430519423282961842
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_242
-      rect:
-        serializedVersion: 2
-        x: 312
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93464e607047faac0800000000000000
-      internalID: -3841724383594519495
       vertices: []
       indices: 
       edges: []
@@ -5539,13 +4597,34 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_0
+      name: 1dirtdiagdot
       rect:
         serializedVersion: 2
         x: 0
-        y: 480
-        width: 16
-        height: 16
+        y: 288
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f19127ede8f5b60800000000000000
+      internalID: 7737059770893934423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Rally-XNew Rally-X - General Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 312
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5563,10 +4642,10 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 480
-        width: 16
-        height: 16
+        x: 0
+        y: 431
+        width: 331
+        height: 65
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5584,10 +4663,10 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 480
-        width: 16
-        height: 16
+        x: 180
+        y: 409
+        width: 129
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5602,13 +4681,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_3
+      name: 2a
       rect:
         serializedVersion: 2
-        x: 48
-        y: 480
-        width: 16
-        height: 16
+        x: 120
+        y: 360
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5623,13 +4702,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_4
+      name: 2b
       rect:
         serializedVersion: 2
-        x: 64
-        y: 480
-        width: 16
-        height: 16
+        x: 144
+        y: 360
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5644,13 +4723,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_5
+      name: 2c
       rect:
         serializedVersion: 2
-        x: 80
-        y: 480
-        width: 16
-        height: 16
+        x: 168
+        y: 360
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5665,13 +4744,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_6
+      name: 2d
       rect:
         serializedVersion: 2
-        x: 96
-        y: 480
-        width: 16
-        height: 16
+        x: 192
+        y: 360
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5686,13 +4765,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_7
+      name: 3a
       rect:
         serializedVersion: 2
-        x: 112
-        y: 480
-        width: 16
-        height: 16
+        x: 240
+        y: 360
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5707,13 +4786,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_8
+      name: 3b
       rect:
         serializedVersion: 2
-        x: 128
-        y: 480
-        width: 16
-        height: 16
+        x: 264
+        y: 360
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5728,13 +4807,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_9
+      name: 3c
       rect:
         serializedVersion: 2
-        x: 144
-        y: 480
-        width: 16
-        height: 16
+        x: 288
+        y: 360
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5749,13 +4828,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_10
+      name: 3d
       rect:
         serializedVersion: 2
-        x: 160
-        y: 480
-        width: 16
-        height: 16
+        x: 312
+        y: 360
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5770,13 +4849,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_11
+      name: 2e
       rect:
         serializedVersion: 2
-        x: 176
-        y: 480
-        width: 16
-        height: 16
+        x: 96
+        y: 336
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5791,13 +4870,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_12
+      name: 2f
       rect:
         serializedVersion: 2
-        x: 192
-        y: 480
-        width: 16
-        height: 16
+        x: 120
+        y: 336
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5812,13 +4891,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_13
+      name: 2g
       rect:
         serializedVersion: 2
-        x: 208
-        y: 480
-        width: 16
-        height: 16
+        x: 144
+        y: 336
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5833,13 +4912,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_14
+      name: 2h
       rect:
         serializedVersion: 2
-        x: 224
-        y: 480
-        width: 16
-        height: 16
+        x: 168
+        y: 336
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5854,13 +4933,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_15
+      name: 2i
       rect:
         serializedVersion: 2
-        x: 240
-        y: 480
-        width: 16
-        height: 16
+        x: 192
+        y: 336
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5875,13 +4954,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_16
+      name: 3e
       rect:
         serializedVersion: 2
-        x: 256
-        y: 480
-        width: 16
-        height: 16
+        x: 216
+        y: 336
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5896,13 +4975,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_17
+      name: 3f
       rect:
         serializedVersion: 2
-        x: 272
-        y: 480
-        width: 16
-        height: 16
+        x: 240
+        y: 336
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5917,13 +4996,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_18
+      name: 3g
       rect:
         serializedVersion: 2
-        x: 288
-        y: 480
-        width: 16
-        height: 16
+        x: 264
+        y: 336
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5938,13 +5017,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_19
+      name: 3h
       rect:
         serializedVersion: 2
-        x: 0
-        y: 464
-        width: 16
-        height: 16
+        x: 288
+        y: 336
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5959,13 +5038,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_20
+      name: 3i
       rect:
         serializedVersion: 2
-        x: 16
-        y: 464
-        width: 16
-        height: 16
+        x: 312
+        y: 336
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5980,13 +5059,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_21
+      name: 2j
       rect:
         serializedVersion: 2
-        x: 32
-        y: 464
-        width: 16
-        height: 16
+        x: 120
+        y: 312
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6004,10 +5083,10 @@ TextureImporter:
       name: Arcade - Rally-XNew Rally-X - General Sprites_22
       rect:
         serializedVersion: 2
-        x: 48
-        y: 464
-        width: 16
-        height: 16
+        x: 144
+        y: 312
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6022,13 +5101,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_23
+      name: 2k
       rect:
         serializedVersion: 2
-        x: 64
-        y: 464
-        width: 16
-        height: 16
+        x: 168
+        y: 312
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6043,13 +5122,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_24
+      name: 2l
       rect:
         serializedVersion: 2
-        x: 80
-        y: 464
-        width: 16
-        height: 16
+        x: 192
+        y: 312
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6064,13 +5143,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_28
+      name: 3j
       rect:
         serializedVersion: 2
-        x: 96
-        y: 464
-        width: 16
-        height: 16
+        x: 240
+        y: 312
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6085,13 +5164,34 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_30
+      name: Arcade - Rally-XNew Rally-X - General Sprites_29
       rect:
         serializedVersion: 2
-        x: 112
-        y: 464
-        width: 16
-        height: 16
+        x: 264
+        y: 312
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b58c71c02264a8920800000000000000
+      internalID: 2993282014386833499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3k
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 312
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6106,13 +5206,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_243
+      name: 3l
       rect:
         serializedVersion: 2
-        x: 128
-        y: 464
-        width: 16
-        height: 16
+        x: 312
+        y: 312
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6120,20 +5220,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e60a56053122c7ae0800000000000000
-      internalID: -1550326705373732754
+      spriteID: dfcdecb464e9629a0800000000000000
+      internalID: -6258140607427977987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_244
+      name: 3p
       rect:
         serializedVersion: 2
-        x: 144
-        y: 464
-        width: 16
-        height: 16
+        x: 312
+        y: 288
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6141,20 +5241,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ac456257707d2f60800000000000000
-      internalID: 8011182969947770016
+      spriteID: a925e745247c4e380800000000000000
+      internalID: -8942803872351628646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_245
+      name: Arcade - Rally-XNew Rally-X - General Sprites_50
       rect:
         serializedVersion: 2
-        x: 160
-        y: 464
-        width: 16
-        height: 16
+        x: 0
+        y: 264
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6162,20 +5262,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9033d3335fc32df0800000000000000
-      internalID: -206093201670197090
+      spriteID: 0a72e6c84029896d0800000000000000
+      internalID: -2983474204899399776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_246
+      name: Arcade - Rally-XNew Rally-X - General Sprites_53
       rect:
         serializedVersion: 2
-        x: 176
-        y: 464
-        width: 16
-        height: 16
+        x: 24
+        y: 264
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6183,20 +5283,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64fad34ed5c40bcd0800000000000000
-      internalID: -2544449823319412922
+      spriteID: 09d52c1bd120e8e40800000000000000
+      internalID: 5660464108210904464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_247
+      name: Arcade - Rally-XNew Rally-X - General Sprites_55
       rect:
         serializedVersion: 2
-        x: 192
-        y: 464
-        width: 16
-        height: 16
+        x: 48
+        y: 264
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6204,20 +5304,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f98e4dea6cfc8c030800000000000000
-      internalID: 3515287961406335135
+      spriteID: 9ad50767aa065de50800000000000000
+      internalID: 6833474294852378025
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_248
+      name: Arcade - Rally-XNew Rally-X - General Sprites_56
       rect:
         serializedVersion: 2
-        x: 208
-        y: 464
-        width: 16
-        height: 16
+        x: 72
+        y: 264
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6225,104 +5325,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9658a9e7a008a0a0800000000000000
-      internalID: -6870240510374029666
+      spriteID: a8bba23f09368e290800000000000000
+      internalID: -7860923675369096310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_249
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6f8284cc6418b3f0800000000000000
-      internalID: -884934869392388242
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_250
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea88ce54c736f2550800000000000000
-      internalID: 6138234202529499310
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_251
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87a5f16efff182240800000000000000
-      internalID: 4767095389509606008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_252
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19040e1aa639b0970800000000000000
-      internalID: 8722227189524742289
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_253
+      name: Arcade - Rally-XNew Rally-X - General Sprites_63
       rect:
         serializedVersion: 2
         x: 288
-        y: 464
-        width: 16
-        height: 16
+        y: 264
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6330,20 +5346,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3816ceb498fe4730800000000000000
-      internalID: 3985396038008969279
+      spriteID: 55b6c4014272220a0800000000000000
+      internalID: -6907915842587169963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_254
+      name: Arcade - Rally-XNew Rally-X - General Sprites_64
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 264
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46acc888af03611c0800000000000000
+      internalID: -4533382122310940060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arcade - Rally-XNew Rally-X - General Sprites_66
       rect:
         serializedVersion: 2
         x: 0
-        y: 448
-        width: 16
-        height: 16
+        y: 240
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6351,20 +5388,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd17fcea2c3f65770800000000000000
-      internalID: 8599328555992576475
+      spriteID: 554b60a8b284a93e0800000000000000
+      internalID: -2046243728849980331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_255
+      name: Arcade - Rally-XNew Rally-X - General Sprites_68
       rect:
         serializedVersion: 2
-        x: 16
-        y: 448
-        width: 16
-        height: 16
+        x: 24
+        y: 240
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6372,41 +5409,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 859389e58ac0db680800000000000000
-      internalID: -8737813784747820712
+      spriteID: f21b4011793c90d80800000000000000
+      internalID: -8283874985978318545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_256
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ac00c1369cec0080800000000000000
-      internalID: -9219734207310328663
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_257
+      name: Arcade - Rally-XNew Rally-X - General Sprites_69
       rect:
         serializedVersion: 2
         x: 48
-        y: 448
-        width: 16
-        height: 16
+        y: 240
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6414,20 +5430,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6348dbcbfb81138c0800000000000000
-      internalID: -4021405780480785354
+      spriteID: 09becefb526c7fa40800000000000000
+      internalID: 5402004143490263952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_258
+      name: Arcade - Rally-XNew Rally-X - General Sprites_70
       rect:
         serializedVersion: 2
-        x: 64
-        y: 448
-        width: 16
-        height: 16
+        x: 72
+        y: 240
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6435,230 +5451,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcca026ccb95e6960800000000000000
-      internalID: 7597108288733359311
+      spriteID: 018ab58b401ba4050800000000000000
+      internalID: 5785631305141823504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_259
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa933c9a197418a80800000000000000
-      internalID: -8466407133535848017
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_260
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e27788626add0f810800000000000000
-      internalID: 1797179957001615150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_261
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11a3392b2ce0000d0800000000000000
-      internalID: -3458748284438103535
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_262
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12eca87c6f83e9590800000000000000
-      internalID: -7665626883177132511
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_263
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d254bdba1b338aaa0800000000000000
-      internalID: -6149608452988910291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_264
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5186efd9d99594e00800000000000000
-      internalID: 1029452523326302229
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_265
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1638b48a77046cb60800000000000000
-      internalID: 7765965490115806049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_266
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f441c90532775be30800000000000000
-      internalID: 4518648794696127567
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_267
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eec2f8e5dd2e8b1e0800000000000000
-      internalID: -2181744579058914066
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_268
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8282472fc4810510800000000000000
-      internalID: 1513636975024964234
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_269
+      name: Arcade - Rally-XNew Rally-X - General Sprites_77
       rect:
         serializedVersion: 2
         x: 240
-        y: 448
-        width: 16
-        height: 16
+        y: 240
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6666,20 +5472,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 644d233f4b96223b0800000000000000
-      internalID: -5538748365817064378
+      spriteID: f225f86af47452fa0800000000000000
+      internalID: -5826172135511469521
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_270
+      name: Arcade - Rally-XNew Rally-X - General Sprites_82
       rect:
         serializedVersion: 2
-        x: 256
-        y: 448
-        width: 16
-        height: 16
+        x: 264
+        y: 240
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6687,449 +5493,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45e09c12fbb310b50800000000000000
-      internalID: 6557588224519769684
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_271
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 448
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 884ebfe1bfae7b6f0800000000000000
-      internalID: -668807655363713912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_272
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d1b83f11ad8123f0800000000000000
-      internalID: -927304325108551209
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_273
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb07e996404c77770800000000000000
-      internalID: 8608564735972896958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_274
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a68dddf7dc4f9dfb0800000000000000
-      internalID: -4622394379068385174
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_275
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef2e174600a283c70800000000000000
-      internalID: 8950950440572412670
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_276
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6bc0b0849258c9970800000000000000
-      internalID: 8763025387304979638
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_277
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65a3e37acd3e425f0800000000000000
-      internalID: -782249898417440170
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_278
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1dec3e72db56c5be0800000000000000
-      internalID: -1487201913846640943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_279
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76d85c9793afef470800000000000000
-      internalID: 8430450677247216999
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_280
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 367e0d467a6ea9c80800000000000000
-      internalID: -8315080155360860317
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_281
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e21d9fceb57dcd430800000000000000
-      internalID: 3809156174666387758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_282
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f907ee4de11b0d10800000000000000
-      internalID: 2092786162772412913
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_283
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ccb742ae1a6694ae0800000000000000
-      internalID: -1564606549930509364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_284
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 31e0f3e45b84b9650800000000000000
-      internalID: 6240661652190989843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_285
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec033ac022ca713a0800000000000000
-      internalID: -6694693058822065970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_286
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e59213b3803460040800000000000000
-      internalID: 4613448570919528798
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_287
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d36905ec4b5a8d20800000000000000
-      internalID: 3281535664311067601
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_288
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 617291bafbf879ab0800000000000000
-      internalID: -5001370807799568618
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_289
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2347a4bc7af2d7e0800000000000000
-      internalID: -1742054692325211345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_290
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 416
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff34df0380f81bc40800000000000000
-      internalID: 5526355483104723967
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_291
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 416
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b752e49a233f1790800000000000000
-      internalID: -7557265391724898378
+      spriteID: a4d685452a407b1c0800000000000000
+      internalID: -4488113408405115574
       vertices: []
       indices: 
       edges: []

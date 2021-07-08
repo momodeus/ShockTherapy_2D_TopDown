@@ -54,11 +54,33 @@ public class GridMovement
 
         //finding valid points
         validPoints = new List<Vector2Int>();
-        for (int i = 0; i < gridHeight; i++)
+        bool[,] visited = new bool[collisions.GetLength(0), collisions.GetLength(1)];
+        visited[playerSpawn.x, playerSpawn.y] = true;
+        Queue<Vector2Int> toVisit = new Queue<Vector2Int>();
+        toVisit.Enqueue(new Vector2Int(playerSpawn.x, playerSpawn.y));
+        while(toVisit.Count > 0)
         {
-            for (int j = 0; j < gridWidth; j++)
+            Vector2Int next = toVisit.Dequeue();
+            validPoints.Add(next);
+            if (IsUnBlocked(next + Vector2Int.up) && !visited[next.x, next.y + 1])
             {
-                if (collisions[j, i]) validPoints.Add(new Vector2Int(j, i));
+                toVisit.Enqueue(next + Vector2Int.up);
+                visited[next.x, next.y + 1] = true;
+            }
+            if (IsUnBlocked(next + Vector2Int.left) && !visited[next.x - 1, next.y])
+            {
+                toVisit.Enqueue(next + Vector2Int.left);
+                visited[next.x - 1, next.y] = true;
+            }
+            if (IsUnBlocked(next + Vector2Int.right) && !visited[next.x + 1, next.y])
+            {
+                toVisit.Enqueue(next + Vector2Int.right);
+                visited[next.x + 1, next.y] = true;
+            }
+            if (IsUnBlocked(next + Vector2Int.down) && !visited[next.x, next.y - 1])
+            {
+                toVisit.Enqueue(next + Vector2Int.down);
+                visited[next.x, next.y - 1] = true;
             }
         }
     }
@@ -74,6 +96,10 @@ public class GridMovement
         return IsValid(gridX, gridY) && collisions[gridX, gridY];
     }
 
+    public static bool IsUnBlocked(Vector2Int v)
+    {
+        return IsUnBlocked(v.x, v.y);
+    }
     /// <summary>
     /// Checks if a grid location is inside the map
     /// </summary>
@@ -85,6 +111,10 @@ public class GridMovement
         return gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight;
     }
 
+    public static bool IsValid(Vector2Int v)
+    {
+        return v.x >= 0 && v.x < gridWidth && v.y >= 0 && v.y < gridHeight;
+    }
 
     public static Vector2Int GetPlayerSpawn()
     {

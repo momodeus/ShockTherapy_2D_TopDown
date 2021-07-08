@@ -6,7 +6,6 @@ public class GridObject : MonoBehaviour
 {
     public int gridX, gridY;
     protected int lastGridX, lastGridY;
-    public GridMovement grid;
 
     // Start is called before the first frame update
     void Start()
@@ -16,15 +15,15 @@ public class GridObject : MonoBehaviour
 
     protected void Setup()
     {
-        if (!grid.IsUnBlocked(gridX, gridY))
+        if (!GridMovement.IsUnBlocked(gridX, gridY))
         {
             float bestDist = float.MaxValue;
             int bx = gridX, by = gridY; //best grid x/y
-            List<Vector2> validPoints = grid.GetValidPoints();
+            List<Vector2Int> validPoints = GridMovement.GetValidPoints();
             Debug.Log(validPoints.ToString());
             for (int i = 0; i < validPoints.Count; i++)
             {
-                Vector2 point = validPoints[i];
+                Vector2Int point = validPoints[i];
                 float test = Dist2(gridX, gridY, point.x, point.y);
                 if (test < bestDist)
                 {
@@ -39,12 +38,19 @@ public class GridObject : MonoBehaviour
             lastGridY = gridY;
         }
 
-        transform.position = grid.GetCoords(gridX, gridY);
+        transform.position = GridMovement.GetCoords(gridX, gridY);
     }
     public void SetGridPosition(int x, int y)
     {
         gridX = x;
         gridY = y;
+        Setup();
+    }
+
+    public void SetGridPosition(Vector2Int spawn)
+    {
+        gridX = spawn.x;
+        gridY = spawn.y;
         Setup();
     }
     /// <summary>
@@ -58,11 +64,5 @@ public class GridObject : MonoBehaviour
     protected float Dist2(float x1, float y1, float x2, float y2)
     {
         return (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

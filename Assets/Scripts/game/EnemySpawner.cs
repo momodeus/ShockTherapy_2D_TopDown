@@ -4,33 +4,22 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GridMovement grid;
-    public PlayerMovement player;
-    public GameObject enemyPrefab;
-
-    private List<EnemyMovement> enemies = new List<EnemyMovement>();
-    // Start is called before the first frame update
-    void Start()
+    private static List<EnemyMovement> enemies;
+    
+    public static void SpawnEnemies(GameObject enemyPrefab, PlayerMovement player)
     {
-        List<Vector2> spawnPositions = grid.GetEnemySpawns();
-        foreach (Vector2 pos in spawnPositions)
+        enemies = new List<EnemyMovement>();
+        List<Vector2Int> spawnPositions = GridMovement.GetEnemySpawns();
+        foreach (Vector2Int pos in spawnPositions)
         {
             EnemyMovement em = (Instantiate(enemyPrefab, new Vector3(0, 0, 0), Quaternion.identity).GetComponent(typeof(EnemyMovement)) as EnemyMovement);
-            em.grid = grid;
             em.player = player;
-            em.SetGridPosition((int)pos.x, (int)pos.y);
-            em.source = this;
+            em.SetGridPosition(pos.x, pos.y);
             enemies.Add(em);
         }
-    }
+    } 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public bool HasConflict(int heading, int gridX, int gridY)
+    public static bool HasConflict(int heading, int gridX, int gridY)
     {
         int nx = gridX + (heading % 2 == 0 ? 0 : (heading == GridMovement.EAST ? 1 : -1));
         int ny = gridY + (heading % 2 == 0 ? (heading == GridMovement.NORTH ? 1 : -1) : 0);

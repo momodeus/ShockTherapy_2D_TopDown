@@ -5,15 +5,9 @@ using UnityEngine;
 /// <summary>
 /// Class that stores the collision grid and performs functions related to it. 
 /// </summary>
-public class GridMovement : MonoBehaviour
+public class GridMovement
 {
-    public MapData mapData;
-    public SpriteRenderer mapSpriteRenderer;
-    public TextAsset[] collisionMap = new TextAsset[3]; //text representation of map, with 1 being a wall and 0 being a path. 
-                                                        //important: make sure there is no extra line at the end of file. 
-    public Sprite[] mapImages = new Sprite[3];
-    public float gridSize = 0.48f; //should be ~0.48
-    public float offsetX, offsetY; //x-y offset to visually position objects on map
+
     //direction constants (don't want to see in inspector, but valuable to other places)
     [HideInInspector]
     public const int NORTH = 0;
@@ -26,28 +20,19 @@ public class GridMovement : MonoBehaviour
     [HideInInspector]
     public const int NONE = -1;
     [HideInInspector]
-    private int gridWidth, gridHeight; //width and height of grid
-    private bool[,] collisions;     //boolean representation of text file
-    private List<Vector2> validPoints; //all locations on collisions that are 0
-    private List<Vector2> enemySpawns;
-    private Vector2 playerSpawn;
-    //We want to do all this loading before anything else in the scene
-    void Awake()
+    private static int gridWidth, gridHeight; //width and height of grid
+    private static bool[,] collisions;     //boolean representation of text file
+    private static List<Vector2Int> validPoints; //all locations on collisions that are 0
+    private static List<Vector2Int> enemySpawns;
+    private static Vector2Int playerSpawn;
+
+    public static void LoadMap(string map)
     {
-        bool usingSavedMap = GameManager.Instance.GetMap() == -1;
-        enemySpawns = new List<Vector2>();
-        if (usingSavedMap)
-        {
-            CollisionGenerator.ReadCollisionMap(GameManager.Instance.GetCollisionMap(), mapData);
-            mapSpriteRenderer.gameObject.SetActive(false);
-        }
-        else
-        {
-            mapSpriteRenderer.sprite = mapImages[GameManager.Instance.GetMap()];
-        }
+        enemySpawns = new List<Vector2Int>();
+
         //reading collision file and setting up collision matrix
         List<string> eachLine = new List<string>();
-        eachLine.AddRange((usingSavedMap ? GameManager.Instance.GetCollisionMap() : collisionMap[GameManager.Instance.GetMap()].text).Split("\n"[0]));
+        eachLine.AddRange(map.Split("\n"[0]));
         collisions = new bool[eachLine[0].Length, eachLine.Count];
         for (int i = 0; i < eachLine.Count; i++)
         {
@@ -56,11 +41,11 @@ public class GridMovement : MonoBehaviour
                 collisions[j, eachLine.Count - (i + 1)] = eachLine[i][j] == '0' || eachLine[i][j] == 'P' || eachLine[i][j] == 'E'; //inserting lines in inverse order, to keep +y facing North. 
                 if(eachLine[i][j] == 'E')
                 {
-                    enemySpawns.Add(new Vector2(j, eachLine.Count - (i + 1)));
+                    enemySpawns.Add(new Vector2Int(j, eachLine.Count - (i + 1)));
                 }
                 if(eachLine[i][j] == 'P')
                 {
-                    playerSpawn = new Vector2(j, eachLine.Count - (i + 1));
+                    playerSpawn = new Vector2Int(j, eachLine.Count - (i + 1));
                 }
             }
         }
@@ -68,20 +53,14 @@ public class GridMovement : MonoBehaviour
         gridHeight = collisions.GetLength(1);
 
         //finding valid points
-        validPoints = new List<Vector2>();
+        validPoints = new List<Vector2Int>();
         for (int i = 0; i < gridHeight; i++)
         {
             for (int j = 0; j < gridWidth; j++)
             {
-                if (collisions[j, i]) validPoints.Add(new Vector2(j, i));
+                if (collisions[j, i]) validPoints.Add(new Vector2Int(j, i));
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //might want to keep track of all cars here somehow, or to update some game manager stuff
     }
 
     /// <summary>
@@ -90,7 +69,7 @@ public class GridMovement : MonoBehaviour
     /// <param name="gridX"></param>
     /// <param name="gridY"></param>
     /// <returns>true if path, false if wall</returns>
-    public bool IsUnBlocked(int gridX, int gridY)
+    public static bool IsUnBlocked(int gridX, int gridY)
     {
         return IsValid(gridX, gridY) && collisions[gridX, gridY];
     }
@@ -101,18 +80,18 @@ public class GridMovement : MonoBehaviour
     /// <param name="gridX"></param>
     /// <param name="gridY"></param>
     /// <returns>true if in bounds of map, false if out of bounds</returns>
-    public bool IsValid(int gridX, int gridY)
+    public static bool IsValid(int gridX, int gridY)
     {
         return gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight;
     }
 
 
-    public Vector2 GetPlayerSpawn()
+    public static Vector2Int GetPlayerSpawn()
     {
         return playerSpawn;
     }
 
-    public List<Vector2> GetEnemySpawns()
+    public static List<Vector2Int> GetEnemySpawns()
     {
         return enemySpawns;
     }
@@ -124,7 +103,7 @@ public class GridMovement : MonoBehaviour
     /// <param name="gridX"></param>
     /// <param name="gridY"></param>
     /// <returns>true if it can move, false if it is blocked. </returns>
-    public bool CanMove(int heading, int gridX, int gridY)
+    public static bool CanMove(int heading, int gridX, int gridY)
     {
         if (gridX >= 1 && gridX < gridWidth-1 && gridY >= 1 && gridY < gridHeight-1)
         {
@@ -146,7 +125,7 @@ public class GridMovement : MonoBehaviour
     }
 
     
-    public List<Vector2> GetValidPoints()
+    public static List<Vector2Int> GetValidPoints()
     {
         return validPoints;
     }
@@ -157,21 +136,17 @@ public class GridMovement : MonoBehaviour
     /// <param name="gx"></param>
     /// <param name="gy"></param>
     /// <returns>worldspace coords for given gridspace coords</returns>
-    public Vector3 GetCoords(int gx, int gy)
+    public static Vector3 GetCoords(int gx, int gy)
     {
-        return new Vector3(gridSize * (gx - 0.5f*GetWidth()) + offsetX, gridSize * (gy - 0.5f*GetHeight()) + offsetY, 0);
+        return new Vector3((gx - 0.5f*GetWidth()), (gy - 0.5f*GetHeight()), 0);
     }
-    public int GetWidth()
+    public static int GetWidth()
     {
         return gridWidth;
     }
 
-    public int GetHeight()
+    public static int GetHeight()
     {
         return gridHeight;
-    }
-    public float GetGridSize()
-    {
-        return gridSize;
     }
 }

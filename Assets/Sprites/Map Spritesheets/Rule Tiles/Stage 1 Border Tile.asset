@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: Border Tile
+  m_Name: Stage 1 Border Tile
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: -6569214031452544683, guid: 8870c75ef2783ce40a5d47e94d909f40, type: 3}
   m_DefaultGameObject: {fileID: 0}

@@ -9,14 +9,20 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
     public GameObject winSplash;
     public GameObject loseSplash;
     public GameObject pauseSplash;
+    public GameObject flag;
+    public GameObject enemy;
+    public PlayerMovement player;
     public Text scoreText;
     public RectTransform fuelBar;
     public Button pauseButton;
     public float startFuel = 100.0f;
-    public int numFlagsToSpawn = 10;
-    public static int flagScore = 1000;
+    private int numFlagsToSpawn = 10;
+    public SpriteRenderer mapSpriteRenderer;
     public float fuelBarInitialWidth; //figure out a better way, but for now it's ok
-
+    public TextAsset[] collisionMap = new TextAsset[3]; //text representation of map, with 1 being a wall and 0 being a path. 
+                                                        //important: make sure there is no extra line at the end of file. 
+    public Sprite[] mapImages = new Sprite[3];
+    public MapData mapData;
     // Start is called before the first frame update
     void Awake()
     {
@@ -25,9 +31,43 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
         pauseSplash.SetActive(false);
         winSplash.SetActive(false);
         loseSplash.SetActive(false);
+        LoadMap();
+        SpawnEntities();
         //scoreText.text = "SCORE:\n" + GameManager.Instance.GetScore();
     }
 
+    private void LoadMap()
+    {
+        if(GameManager.Instance.GetMap() == -1)
+        {
+            mapSpriteRenderer.gameObject.SetActive(false);
+            GridMovement.LoadMap(GameManager.Instance.GetCollisionMap());
+            CollisionGenerator.ReadCollisionMap(GameManager.Instance.GetCollisionMap(), mapData);
+        } else
+        {
+            mapSpriteRenderer.sprite = mapImages[GameManager.Instance.GetMap()];
+            GridMovement.LoadMap(collisionMap[GameManager.Instance.GetMap()].text);
+        }
+    }
+
+    private void SpawnEntities()
+    {
+        //spawn flags
+        List<Vector2Int> possible = GridMovement.GetValidPoints();
+        GameManager.Instance.SetFlagsRemaining(numFlagsToSpawn);
+        int i = numFlagsToSpawn;
+        while (i > 0 && possible.Count > 0)
+        {
+            int idx = (int)Random.Range(0, possible.Count - 0.001f);
+            GridObject go = (Instantiate(flag, Vector3.zero, Quaternion.identity).GetComponent(typeof(GridObject)) as GridObject);
+            go.SetGridPosition(possible[idx]);
+            possible.RemoveAt(idx);
+            i--;
+        }
+
+        EnemySpawner.SpawnEnemies(enemy, player);
+        player.SetGridPosition(GridMovement.GetPlayerSpawn());
+    }
     // Update is called once per frame
     void Update()
     {

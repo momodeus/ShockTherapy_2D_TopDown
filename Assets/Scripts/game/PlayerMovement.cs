@@ -23,8 +23,8 @@ public class PlayerMovement : UTV
 
     void Start()
     {
-        gridX = (int)grid.GetPlayerSpawn().x;
-        gridY = (int)grid.GetPlayerSpawn().y;
+        gridX = GridMovement.GetPlayerSpawn().x;
+        gridY = GridMovement.GetPlayerSpawn().y;
         Setup();
         lastSmokeX = gridX;
         lastSmokeY = gridY;
@@ -80,7 +80,6 @@ public class PlayerMovement : UTV
         if(lastSmokeX != gridX || lastSmokeY != gridY)
         {
             SmokeScript sms = (Instantiate(smokePrefab, new Vector3(0, 0, 0), Quaternion.identity).GetComponent(typeof(SmokeScript)) as SmokeScript);
-            sms.grid = this.grid;
             sms.SetGridPosition(lastGridX, lastGridY);
             lastSmokeX = gridX;
             lastSmokeY = gridY;
@@ -94,7 +93,7 @@ public class PlayerMovement : UTV
     {
         if(other.gameObject.CompareTag("Pickup"))
         {
-            GameManager.Instance.PickupFlag(LocalGameManager.flagScore);
+            GameManager.Instance.PickupFlag(GameManager.flagScore);
             if (GameManager.Instance.GetFlagsRemaining() == 0) AudioSource.PlayClipAtPoint(winSound, mainCamera.transform.position);
             other.gameObject.SetActive(false);
             AudioSource.PlayClipAtPoint(pickupSound, mainCamera.transform.position);

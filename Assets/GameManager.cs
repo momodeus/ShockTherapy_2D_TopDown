@@ -32,6 +32,7 @@ public class GameManager
     private string selectedCarKey = "selectedCar";
 
     //score stuff
+    public const int flagScore = 1000;
     private int score;
     private const float scoreMultiplier = 0.1f;
     private int highScore;

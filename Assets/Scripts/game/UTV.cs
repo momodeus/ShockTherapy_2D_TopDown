@@ -45,7 +45,7 @@ public class UTV : GridObject, GameManagerListener
         if (!allowedToMove) return false;
         if (newHeading == GridMovement.NONE) return false; //might want this to be true, since success; however, doesn't move
         if ((newHeading % 4) != (heading + 2) % 4 && !canTurn180) return false;
-        if (!isMoving && grid.CanMove(newHeading, gridX, gridY))
+        if (!isMoving && GridMovement.CanMove(newHeading, gridX, gridY))
         {
             StartCoroutine(MoveRoutine(newHeading));
             return true;
@@ -92,7 +92,7 @@ public class UTV : GridObject, GameManagerListener
 
         float elapsedTime = 0; //this might be source of problems with jitter
         origPos = transform.position;
-        targetPos = origPos + direction * grid.GetGridSize();
+        targetPos = origPos + direction;
 
         origHeading = transform.rotation;
         targetHeading = Quaternion.Euler(0, 0, heading * 90);

@@ -49,12 +49,12 @@ public class CollisionGenerator : MonoBehaviour
                     if (eachLine[i][j] == 'E')
                     {
                         mapData.enemyPositions.Enqueue(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
-                        if(mapData.creatorMode) mapData.carsTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.enemyTile);
+                        if(mapData.carsTilemap != null) mapData.carsTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.enemyTile);
                     }
                     if (eachLine[i][j] == 'P')
                     {
                         mapData.SetPlayerPosition(j - eachLine[i].Length / 2, -i + eachLine.Count / 2);
-                        if (mapData.creatorMode) mapData.carsTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.playerTile);
+                        if (mapData.carsTilemap != null) mapData.carsTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.playerTile);
                     }
                 }
             }

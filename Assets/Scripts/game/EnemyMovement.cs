@@ -14,7 +14,6 @@ public class EnemyMovement : UTV
     private uint queueDepth;
     private Queue<int> nextMoves;
     public FollowType followType = FollowType.BASIC;
-    public EnemySpawner source;
     public float delayTime = 5;
     public enum FollowType
     {
@@ -64,22 +63,22 @@ public class EnemyMovement : UTV
             case FollowType.BASIC:
                 int move = heading;
                 float bestDist = float.MaxValue;
-                if (grid.CanMove(GridMovement.NORTH, gridX, gridY) && bestDist > Dist2Player(gridX, gridY + 1))
+                if (GridMovement.CanMove(GridMovement.NORTH, gridX, gridY) && bestDist > Dist2Player(gridX, gridY + 1))
                 {
                     move = GridMovement.NORTH;
                     bestDist = Dist2Player(gridX, gridY + 1);
                 }
-                if (grid.CanMove(GridMovement.SOUTH, gridX, gridY) && bestDist > Dist2Player(gridX, gridY - 1))
+                if (GridMovement.CanMove(GridMovement.SOUTH, gridX, gridY) && bestDist > Dist2Player(gridX, gridY - 1))
                 {
                     move = GridMovement.SOUTH;
                     bestDist = Dist2Player(gridX, gridY - 1);
                 }
-                if (grid.CanMove(GridMovement.EAST, gridX, gridY) && bestDist > Dist2Player(gridX + 1, gridY))
+                if (GridMovement.CanMove(GridMovement.EAST, gridX, gridY) && bestDist > Dist2Player(gridX + 1, gridY))
                 {
                     move = GridMovement.EAST;
                     bestDist = Dist2Player(gridX + 1, gridY);
                 }
-                if (grid.CanMove(GridMovement.WEST, gridX, gridY) && bestDist > Dist2Player(gridX - 1, gridY))
+                if (GridMovement.CanMove(GridMovement.WEST, gridX, gridY) && bestDist > Dist2Player(gridX - 1, gridY))
                 {
                     move = GridMovement.WEST;
                 }
@@ -93,7 +92,7 @@ public class EnemyMovement : UTV
     }
     private bool TryMoveConsideringOthers(int newHeading)
     {
-        if (source.HasConflict(newHeading, gridX, gridY)) 
+        if (EnemySpawner.HasConflict(newHeading, gridX, gridY)) 
         { 
             return false; 
         }
@@ -268,14 +267,14 @@ public class EnemyMovement : UTV
     {
         if (isDestination(src.x, src.y)) return;
 
-        bool[,] closedList = new bool[grid.GetWidth(), grid.GetHeight()]; //should be all null...
+        bool[,] closedList = new bool[GridMovement.GetWidth(), GridMovement.GetHeight()]; //should be all null...
 
-        Cell[,] cellDetails = new Cell[grid.GetWidth(), grid.GetHeight()];
+        Cell[,] cellDetails = new Cell[GridMovement.GetWidth(), GridMovement.GetHeight()];
 
         int x, y;
-        for(x = 0; x < grid.GetWidth(); x++)
+        for(x = 0; x < GridMovement.GetWidth(); x++)
         {
-            for(y = 0; y < grid.GetHeight(); y++)
+            for(y = 0; y < GridMovement.GetHeight(); y++)
             {
                 cellDetails[x, y] = new Cell(-1, -1, float.MaxValue, float.MaxValue, float.MaxValue);
             }
@@ -316,7 +315,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if(grid.CanMove(GridMovement.NORTH, x, y) && !closedList[x, y + 1] && !source.HasConflict(GridMovement.NORTH, x, y))
+            else if(GridMovement.CanMove(GridMovement.NORTH, x, y) && !closedList[x, y + 1] && !EnemySpawner.HasConflict(GridMovement.NORTH, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x, y + 1);
@@ -339,7 +338,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if (grid.CanMove(GridMovement.SOUTH, x, y) && !closedList[x, y - 1] && !source.HasConflict(GridMovement.SOUTH, x, y))
+            else if (GridMovement.CanMove(GridMovement.SOUTH, x, y) && !closedList[x, y - 1] && !EnemySpawner.HasConflict(GridMovement.SOUTH, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x, y - 1);
@@ -361,7 +360,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if (grid.CanMove(GridMovement.EAST, x, y) && !closedList[x + 1, y] && !source.HasConflict(GridMovement.EAST, x, y))
+            else if (GridMovement.CanMove(GridMovement.EAST, x, y) && !closedList[x + 1, y] && !EnemySpawner.HasConflict(GridMovement.EAST, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x + 1, y);
@@ -384,7 +383,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if (grid.CanMove(GridMovement.WEST, x, y) && !closedList[x - 1, y] && !source.HasConflict(GridMovement.WEST, x, y))
+            else if (GridMovement.CanMove(GridMovement.WEST, x, y) && !closedList[x - 1, y] && !EnemySpawner.HasConflict(GridMovement.WEST, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x - 1, y);

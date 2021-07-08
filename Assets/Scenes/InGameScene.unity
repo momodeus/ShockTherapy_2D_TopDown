@@ -173,12 +173,24 @@ MonoBehaviour:
   winSplash: {fileID: 1288879248}
   loseSplash: {fileID: 1106760805}
   pauseSplash: {fileID: 1259642710}
+  flag: {fileID: 8975159312344386393, guid: 33bedf8194b25964fb6c8f4141f53b6a, type: 3}
+  enemy: {fileID: 2175595906891231863, guid: ce11bce84f8dae943adc2e623c02c2cd, type: 3}
+  player: {fileID: 1261010325}
   scoreText: {fileID: 854735299}
   fuelBar: {fileID: 99991029}
   pauseButton: {fileID: 1474548184}
   startFuel: 100
-  numFlagsToSpawn: 10
+  mapSpriteRenderer: {fileID: 398744712}
   fuelBarInitialWidth: 90.6311
+  collisionMap:
+  - {fileID: 4900000, guid: 23f2d58eff3a0974590971841cb5766f, type: 3}
+  - {fileID: 4900000, guid: a11d60d2b9a7c454bb27aae0fad9bd4f, type: 3}
+  - {fileID: 4900000, guid: e86641b0eca535243b9b1694f60777eb, type: 3}
+  mapImages:
+  - {fileID: 21300000, guid: c0c69993d9bea3f49ae580ba048569e2, type: 3}
+  - {fileID: 21300000, guid: ac0f3fff944a8be45b0163cae899df46, type: 3}
+  - {fileID: 21300000, guid: 28c7a99d7203d7c47b68464d990e7b95, type: 3}
+  mapData: {fileID: 682056361}
 --- !u!1 &40521368
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +752,7 @@ Transform:
   - {fileID: 2053013155}
   - {fileID: 68996062}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &449163286
 GameObject:
@@ -1561,7 +1573,6 @@ MonoBehaviour:
   enemyTile: {fileID: 11400000, guid: 49e6d57d279c46649b17b97d0bdb8855, type: 2}
   playerPosition: {x: 0, y: 0, z: 0}
   hasPlayer: 0
-  creatorMode: 0
 --- !u!1 &702788495
 GameObject:
   m_ObjectHideFlags: 0
@@ -2662,7 +2673,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 1
   gridY: 1
-  grid: {fileID: 1383370172}
   heading: 0
   timeToMove: 0.2
   canTurn180: 1
@@ -3385,62 +3395,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1 &1383370171
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1383370173}
-  - component: {fileID: 1383370172}
-  m_Layer: 0
-  m_Name: GridController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1383370172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383370171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: decce39e0d5d69446bb283fb4e964abb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mapData: {fileID: 682056361}
-  mapSpriteRenderer: {fileID: 398744712}
-  collisionMap:
-  - {fileID: 4900000, guid: 23f2d58eff3a0974590971841cb5766f, type: 3}
-  - {fileID: 4900000, guid: a11d60d2b9a7c454bb27aae0fad9bd4f, type: 3}
-  - {fileID: 4900000, guid: e86641b0eca535243b9b1694f60777eb, type: 3}
-  mapImages:
-  - {fileID: 21300000, guid: c0c69993d9bea3f49ae580ba048569e2, type: 3}
-  - {fileID: 21300000, guid: ac0f3fff944a8be45b0163cae899df46, type: 3}
-  - {fileID: 21300000, guid: 28c7a99d7203d7c47b68464d990e7b95, type: 3}
-  gridSize: 1
-  offsetX: 0
-  offsetY: 0
---- !u!4 &1383370173
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383370171}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1433416583
 GameObject:
   m_ObjectHideFlags: 0
@@ -4545,9 +4499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef42927e48fd124a92ddb42714d71e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flag: {fileID: 8975159312344386393, guid: 33bedf8194b25964fb6c8f4141f53b6a, type: 3}
-  gameManager: {fileID: 15042587}
-  grid: {fileID: 1383370172}
 --- !u!4 &1833715518
 Transform:
   m_ObjectHideFlags: 0
@@ -4975,9 +4926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c71322b9db7d2458f0fcfe332496b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grid: {fileID: 1383370172}
-  player: {fileID: 1261010325}
-  enemyPrefab: {fileID: 2175595906891231863, guid: ce11bce84f8dae943adc2e623c02c2cd, type: 3}
 --- !u!1 &2130448550
 GameObject:
   m_ObjectHideFlags: 0

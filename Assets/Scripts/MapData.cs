@@ -4,19 +4,34 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 public class MapData : MonoBehaviour
 {
+    public const int NUM_THEMES = 5;
     public Tilemap baseTilemap;
     public Tilemap carsTilemap;
-    public RuleTile dirtTile, pathTile, borderTile;
+    public RuleTile[] dirtTiles = new RuleTile[NUM_THEMES], pathTiles = new RuleTile[NUM_THEMES], borderTiles = new RuleTile[NUM_THEMES];
     public Tile playerTile, enemyTile;
+    [HideInInspector]
     public Vector3Int playerPosition;
+    [HideInInspector]
     public Queue<Vector3Int> enemyPositions;
+    [HideInInspector]
     public bool hasPlayer = false;
     void Awake()
     {
         enemyPositions = new Queue<Vector3Int>(9);
     }
 
-
+    public RuleTile GetBorderTile()
+    {
+        return borderTiles[GameManager.Instance.GetSelectedTheme()];
+    }
+    public RuleTile GetDirtTile()
+    {
+        return dirtTiles[GameManager.Instance.GetSelectedTheme()];
+    }
+    public RuleTile GetPathTile()
+    {
+        return pathTiles[GameManager.Instance.GetSelectedTheme()];
+    }
     public void CullEnemies(int enemiesCount)
     {
         while (enemyPositions.Count > enemiesCount)

@@ -40,7 +40,6 @@ public class BotMovement : UTV
 
     private void UpdateQueue()
     {
-        print("queue updated for pos: " + target.gridX + ", " + target.gridY);
         target.SetGridPosition(GridMovement.GetValidPoints()[
             (int)(Random.Range(0, 0.9999f) * GridMovement.GetValidPoints().Count)
             ]);

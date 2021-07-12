@@ -9,12 +9,7 @@ public class MenuDemoController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        GridMovement.LoadMap(GameManager.Instance.UserMadeMap() ? 
-                                GameManager.Instance.GetCollisionMap() : 
-                                CollisionGenerator.BlankCollisionMap());
-        CollisionGenerator.ReadCollisionMap(GameManager.Instance.UserMadeMap() ? 
-                                GameManager.Instance.GetCollisionMap() : 
-                                CollisionGenerator.BlankCollisionMap(), mapData);
+        LoadMap();
         bot.SetGridPosition(GridMovement.GetPlayerSpawn());
     }
 
@@ -22,5 +17,15 @@ public class MenuDemoController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void LoadMap()
+    {
+        GridMovement.LoadMap(GameManager.Instance.UserMadeMap() ?
+                                GameManager.Instance.GetCollisionMap() :
+                                CollisionGenerator.BlankCollisionMap());
+        CollisionGenerator.ReadCollisionMap(GameManager.Instance.UserMadeMap() ?
+                                GameManager.Instance.GetCollisionMap() :
+                                CollisionGenerator.BlankCollisionMap(), mapData);
     }
 }

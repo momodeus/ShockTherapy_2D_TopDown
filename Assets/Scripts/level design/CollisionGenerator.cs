@@ -44,13 +44,13 @@ public class CollisionGenerator : MonoBehaviour
         {
             for (int j = -borderThickness; j < eachLine[0].Length + borderThickness; j++)
             {
-                mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[0].Length / 2, -i + eachLine.Count / 2, 0), mapData.borderTile);
+                mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[0].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetBorderTile());
                 if (i >= 0 && i < eachLine.Count && j >= 0 && j < eachLine[(int)Mathf.Max(0, Mathf.Min(eachLine.Count-1, i))].Length)
                 {
                     if (eachLine[i][j] == '1')
-                        mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.dirtTile);
+                        mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetDirtTile());
                     if (eachLine[i][j] == '0' || eachLine[i][j] == 'E' || eachLine[i][j] == 'P')
-                        mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.pathTile);
+                        mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetPathTile());
                     if (eachLine[i][j] == 'E')
                     {
                         mapData.enemyPositions.Enqueue(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
@@ -78,12 +78,12 @@ public class CollisionGenerator : MonoBehaviour
         {
             for (int i = mapData.baseTilemap.cellBounds.xMin + borderThickness; i < mapData.baseTilemap.cellBounds.xMax - borderThickness; i++)
             {
-                if (!mapData.baseTilemap.GetTile(new Vector3Int(i, j, 0)).name.Equals(mapData.borderTile.name))
+                if (!mapData.baseTilemap.GetTile(new Vector3Int(i, j, 0)).name.Equals(mapData.GetBorderTile().name))
                 {
                     if (mapData.carsTilemap.HasTile(new Vector3Int(i, j, 0)))
                         col += mapData.carsTilemap.GetTile(new Vector3Int(i, j, 0)).name.Equals(mapData.enemyTile.name) ? "E" : "P";
                     else
-                        col += mapData.baseTilemap.GetTile(new Vector3Int(i, j, 0)).name.Equals(mapData.pathTile.name) ? "0" : "1";
+                        col += mapData.baseTilemap.GetTile(new Vector3Int(i, j, 0)).name.Equals(mapData.GetPathTile().name) ? "0" : "1";
                 }
             }
             if (j > mapData.baseTilemap.cellBounds.yMin + borderThickness) col += "\n";

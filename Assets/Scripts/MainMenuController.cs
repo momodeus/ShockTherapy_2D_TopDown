@@ -8,7 +8,8 @@ public class MainMenuController : MonoBehaviour
 {
     public GameObject mainCanvas;
     public GameObject optionsCanvas;
-    public GameObject storeCanvas;
+    public GameObject carsCanvas;
+    public GameObject themesCanvas;
     public GameObject stageSelectCanvas;
 
     public Button playCustomMapButton;
@@ -40,13 +41,27 @@ public class MainMenuController : MonoBehaviour
     public void Store()
     {
         mainCanvas.SetActive(false);
-        storeCanvas.SetActive(true);
+        carsCanvas.SetActive(true);
+        themesCanvas.SetActive(false);
+    }
+
+    public void CarStore()
+    {
+        themesCanvas.SetActive(false);
+        carsCanvas.SetActive(true);
+    }
+
+    public void ThemeStore()
+    {
+        carsCanvas.SetActive(false);
+        themesCanvas.SetActive(true);
     }
     public void Back()
     {
         optionsCanvas.SetActive(false);
-        storeCanvas.SetActive(false);
+        carsCanvas.SetActive(false);
         stageSelectCanvas.SetActive(false);
+        themesCanvas.SetActive(false);
         (mainCanvas.GetComponentsInChildren(typeof(Text))[0] as Text).text = "$" + GameManager.Instance.GetMoney();
         highScoreText.text = "High Score:\n" + GameManager.Instance.GetHighScore();
         mainCanvas.SetActive(true);

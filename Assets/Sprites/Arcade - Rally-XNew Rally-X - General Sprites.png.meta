@@ -10,7 +10,7 @@ TextureImporter:
     second: Arcade - Rally-XNew Rally-X - General Sprites_flag_s
   - first:
       213: 2993282014386833499
-    second: Arcade - Rally-XNew Rally-X - General Sprites_29
+    second: 3z
   - first:
       213: 4064020132282661047
     second: Arcade - Rally-XNew Rally-X - General Sprites_bang
@@ -277,16 +277,16 @@ TextureImporter:
     second: Arcade - Rally-XNew Rally-X - General Sprites_118
   - first:
       213: 9205352452829755354
-    second: Arcade - Rally-XNew Rally-X - General Sprites_119
+    second: 9a
   - first:
       213: 5983070929520392371
-    second: Arcade - Rally-XNew Rally-X - General Sprites_120
+    second: 9b
   - first:
       213: 5347015065675616328
-    second: Arcade - Rally-XNew Rally-X - General Sprites_121
+    second: 9c
   - first:
       213: -1653500421337434187
-    second: Arcade - Rally-XNew Rally-X - General Sprites_122
+    second: 9d
   - first:
       213: 7618715200937281833
     second: Arcade - Rally-XNew Rally-X - General Sprites_123
@@ -316,19 +316,19 @@ TextureImporter:
     second: Arcade - Rally-XNew Rally-X - General Sprites_131
   - first:
       213: 8438982600243390320
-    second: Arcade - Rally-XNew Rally-X - General Sprites_132
+    second: 9e
   - first:
       213: -1619418725293102383
-    second: Arcade - Rally-XNew Rally-X - General Sprites_133
+    second: 9f
   - first:
       213: -5773014141594687434
-    second: Arcade - Rally-XNew Rally-X - General Sprites_134
+    second: 9g
   - first:
       213: -3910833286332797973
-    second: Arcade - Rally-XNew Rally-X - General Sprites_135
+    second: 9h
   - first:
       213: -5909747895929402563
-    second: Arcade - Rally-XNew Rally-X - General Sprites_136
+    second: 9i
   - first:
       213: -6694685450970682916
     second: Arcade - Rally-XNew Rally-X - General Sprites_137
@@ -355,16 +355,16 @@ TextureImporter:
     second: Arcade - Rally-XNew Rally-X - General Sprites_144
   - first:
       213: 670072207530565942
-    second: Arcade - Rally-XNew Rally-X - General Sprites_145
+    second: 9j
   - first:
       213: -677568474875382357
-    second: Arcade - Rally-XNew Rally-X - General Sprites_146
+    second: 9z
   - first:
       213: 8907221649499053045
-    second: Arcade - Rally-XNew Rally-X - General Sprites_147
+    second: 9l
   - first:
       213: 2280667092039539057
-    second: Arcade - Rally-XNew Rally-X - General Sprites_148
+    second: 9m
   - first:
       213: 5195701741580435235
     second: Arcade - Rally-XNew Rally-X - General Sprites_149
@@ -394,16 +394,16 @@ TextureImporter:
     second: Arcade - Rally-XNew Rally-X - General Sprites_157
   - first:
       213: 4970557288831258227
-    second: Arcade - Rally-XNew Rally-X - General Sprites_158
+    second: 9n
   - first:
       213: -3250455752158100302
-    second: Arcade - Rally-XNew Rally-X - General Sprites_159
+    second: 9o
   - first:
       213: -2674256929686326903
-    second: Arcade - Rally-XNew Rally-X - General Sprites_160
+    second: 9p
   - first:
       213: -2487270405819707752
-    second: Arcade - Rally-XNew Rally-X - General Sprites_161
+    second: 9q
   - first:
       213: 2063463840448674110
     second: Arcade - Rally-XNew Rally-X - General Sprites_162
@@ -652,7 +652,7 @@ TextureImporter:
     second: Arcade - Rally-XNew Rally-X - General Sprites_flag_l
   - first:
       213: 3198944155568080717
-    second: Arcade - Rally-XNew Rally-X - General Sprites_0
+    second: 1z
   - first:
       213: -3246339689119233054
     second: Arcade - Rally-XNew Rally-X - General Sprites_1
@@ -718,7 +718,7 @@ TextureImporter:
     second: 2j
   - first:
       213: -8560616969823082888
-    second: Arcade - Rally-XNew Rally-X - General Sprites_22
+    second: 2z
   - first:
       213: 4836026042087357689
     second: 2k
@@ -2602,7 +2602,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_119
+      name: 9a
       rect:
         serializedVersion: 2
         x: 240
@@ -2623,7 +2623,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_120
+      name: 9b
       rect:
         serializedVersion: 2
         x: 264
@@ -2644,7 +2644,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_121
+      name: 9c
       rect:
         serializedVersion: 2
         x: 288
@@ -2665,7 +2665,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_122
+      name: 9d
       rect:
         serializedVersion: 2
         x: 312
@@ -2875,7 +2875,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_132
+      name: 9e
       rect:
         serializedVersion: 2
         x: 216
@@ -2896,7 +2896,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_133
+      name: 9f
       rect:
         serializedVersion: 2
         x: 240
@@ -2917,7 +2917,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_134
+      name: 9g
       rect:
         serializedVersion: 2
         x: 264
@@ -2938,7 +2938,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_135
+      name: 9h
       rect:
         serializedVersion: 2
         x: 288
@@ -2959,7 +2959,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_136
+      name: 9i
       rect:
         serializedVersion: 2
         x: 312
@@ -3148,7 +3148,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_145
+      name: 9j
       rect:
         serializedVersion: 2
         x: 240
@@ -3169,7 +3169,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_146
+      name: 9k
       rect:
         serializedVersion: 2
         x: 264
@@ -3190,7 +3190,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_147
+      name: 9l
       rect:
         serializedVersion: 2
         x: 288
@@ -3211,7 +3211,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_148
+      name: 9m
       rect:
         serializedVersion: 2
         x: 312
@@ -3421,7 +3421,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_158
+      name: 9n
       rect:
         serializedVersion: 2
         x: 240
@@ -3442,7 +3442,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_159
+      name: 9o
       rect:
         serializedVersion: 2
         x: 264
@@ -3463,7 +3463,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_160
+      name: 9p
       rect:
         serializedVersion: 2
         x: 288
@@ -3484,7 +3484,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arcade - Rally-XNew Rally-X - General Sprites_161
+      name: 9q
       rect:
         serializedVersion: 2
         x: 312

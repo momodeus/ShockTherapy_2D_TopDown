@@ -77,19 +77,19 @@ public class TouchLevelDesign : MonoBehaviour
     }
     private void PlaceTile(Vector3Int position)
     {
-        if (mapData.baseTilemap.GetTile(position).name.Equals(mapData.borderTile.name)) return;
+        if (mapData.baseTilemap.GetTile(position).name.Equals(mapData.GetBorderTile().name)) return;
         print(mapData.baseTilemap.GetTile(position).name);
         switch (selectedTile)
         {
             case 0: //placing dirt
-                mapData.baseTilemap.SetTile(position, mapData.dirtTile);
+                mapData.baseTilemap.SetTile(position, mapData.GetDirtTile());
                 mapData.carsTilemap.SetTile(position, null);
                 break;
             case 1: //placing path
-                mapData.baseTilemap.SetTile(position, mapData.pathTile);
+                mapData.baseTilemap.SetTile(position, mapData.GetPathTile());
                 break;
             case 2: //placing enemy
-                if (mapData.baseTilemap.GetTile(position).name.Equals(mapData.pathTile.name) && !position.Equals(mapData.playerPosition))
+                if (mapData.baseTilemap.GetTile(position).name.Equals(mapData.GetPathTile().name) && !position.Equals(mapData.playerPosition))
                 {
                     mapData.carsTilemap.SetTile(position, mapData.enemyTile);
                     mapData.enemyPositions.Enqueue(position);
@@ -97,7 +97,7 @@ public class TouchLevelDesign : MonoBehaviour
                 }
                 break;
             case 3: //placing player
-                if (mapData.baseTilemap.GetTile(position).name.Equals(mapData.pathTile.name))
+                if (mapData.baseTilemap.GetTile(position).name.Equals(mapData.GetPathTile().name))
                 {
                     mapData.carsTilemap.SetTile(mapData.playerPosition, null);
                     mapData.carsTilemap.SetTile(position, mapData.playerTile);

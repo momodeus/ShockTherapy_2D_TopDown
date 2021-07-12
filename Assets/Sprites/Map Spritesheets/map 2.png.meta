@@ -1,7 +1,118 @@
 fileFormatVersion: 2
 guid: a8bc6b783671545429eecb2a1fac5db5
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5365641596338113546
+    second: map 2_cap
+  - first:
+      213: -3844284297642058161
+    second: map 2_edge_l
+  - first:
+      213: -8169316525697580855
+    second: map 2_edge
+  - first:
+      213: -1755583215763866842
+    second: map 2_corner
+  - first:
+      213: -2665117582439570076
+    second: map 2_edge_r
+  - first:
+      213: 8733448514917317836
+    second: map 2_5
+  - first:
+      213: -7734870218372537302
+    second: map 2_hall
+  - first:
+      213: 8961507703547306016
+    second: map 2_1dot
+  - first:
+      213: -3584399489484097246
+    second: map 2_default
+  - first:
+      213: -4382237507933771380
+    second: map 2_block
+  - first:
+      213: -7179045417191404996
+    second: map 2_tightcorner
+  - first:
+      213: 2646305951311129108
+    second: map 2_11
+  - first:
+      213: -7691602258704294478
+    second: map 2_p_hall
+  - first:
+      213: -6221554373200797037
+    second: map 2_p_tightcorner
+  - first:
+      213: -8823583387321716908
+    second: map 2_p_edge2dot
+  - first:
+      213: 5546069950162068597
+    second: map 2_p_corner
+  - first:
+      213: 1901319581337131465
+    second: map 2_p_edge
+  - first:
+      213: 2374571881602338991
+    second: map 2_p_1dot
+  - first:
+      213: -4618471872835480401
+    second: map 2_p_edgedotl
+  - first:
+      213: -486292532835372870
+    second: map 2_p_4dot
+  - first:
+      213: -2561184837124924096
+    second: map 2_b_corner
+  - first:
+      213: 4070713367563699302
+    second: map 2_b_edge
+  - first:
+      213: 8150700692210619810
+    second: map 2_b_edgedge
+  - first:
+      213: 5508766244332673366
+    second: map 2_b_cornercorner
+  - first:
+      213: -4387568150620897080
+    second: map 2_b
+  - first:
+      213: 4436592647610358112
+    second: map 2_b_cornercornerl
+  - first:
+      213: 9155287696154012771
+    second: map 2_edge2dot
+  - first:
+      213: -7496193555008441086
+    second: map 2_dot2
+  - first:
+      213: 6405070975801697643
+    second: map 2_dot3
+  - first:
+      213: -7457857752295815640
+    second: map 2_dot4
+  - first:
+      213: 818216295098230676
+    second: map 2_p_default
+  - first:
+      213: 83662166837782746
+    second: map 2_p_2dot
+  - first:
+      213: -7729954554168063811
+    second: map 2_p_cap
+  - first:
+      213: 2771260569707821852
+    second: map 2_p_edgercorner
+  - first:
+      213: 4093832515065908379
+    second: map 2_p_dot3
+  - first:
+      213: 2526119372462355178
+    second: map 2_p_block
+  - first:
+      213: -6729736219303128358
+    second: map 2_p_dot2diag
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -33,20 +144,20 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -65,7 +176,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -77,7 +188,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -101,7 +212,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -125,7 +236,784 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: map 2_cap
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 2544
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3f43285696985b0800000000000000
+      internalID: -5365641596338113546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_edge_l
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 2544
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4ede679ccb56aac0800000000000000
+      internalID: -3844284297642058161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_edge
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 2544
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0411c17e1c0ae80800000000000000
+      internalID: -8169316525697580855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_corner
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 2544
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62bb1c2ed5ae2a7e0800000000000000
+      internalID: -1755583215763866842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_edge_r
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2448
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465aa0edda9930bd0800000000000000
+      internalID: -2665117582439570076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3024
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc3fcb0721733970800000000000000
+      internalID: 8733448514917317836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_hall
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 2400
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24282a748838a490800000000000000
+      internalID: -7734870218372537302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_1dot
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 2352
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0202dd9b6cbad5c70800000000000000
+      internalID: 8961507703547306016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_default
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2112
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2297530c7a7a14ec0800000000000000
+      internalID: -3584399489484097246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_block
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89e632643a2f23c0800000000000000
+      internalID: -4382237507933771380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_tightcorner
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1872
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a09e1ba38ee5c90800000000000000
+      internalID: -7179045417191404996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_11
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 1680
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ae6e2fd3199b420800000000000000
+      internalID: 2646305951311129108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_p_hall
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 2496
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd96506f70f14590800000000000000
+      internalID: -7691602258704294478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_p_tightcorner
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 2592
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 392a692c24998a9a0800000000000000
+      internalID: -6221554373200797037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_p_edge2dot
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 2592
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45fa6a898a55c8580800000000000000
+      internalID: -8823583387321716908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_p_corner
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 2160
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 574e0ee3c3997fc40800000000000000
+      internalID: 5546069950162068597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_p_edge
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 2160
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9181ae518d26a10800000000000000
+      internalID: 1901319581337131465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_p_1dot
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 2160
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa0d9889b8c24f020800000000000000
+      internalID: 2374571881602338991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_p_edgedotl
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 1968
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa412862d44e7efb0800000000000000
+      internalID: -4618471872835480401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_p_4dot
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1728
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab03c6394875049f0800000000000000
+      internalID: -486292532835372870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_b_corner
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 2880
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04d5d0bd5f7d47cd0800000000000000
+      internalID: -2561184837124924096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_b_edge
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 2880
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66481108d341e7830800000000000000
+      internalID: 4070713367563699302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_b_edgedge
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 2928
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a59eb5681b1d1170800000000000000
+      internalID: 8150700692210619810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_b_cornercorner
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 2928
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6599c1866b1137c40800000000000000
+      internalID: 5508766244332673366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_b
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 2928
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c08c6a630a3c13c0800000000000000
+      internalID: -4387568150620897080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_b_cornercornerl
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 2880
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 069dce5c181f19d30800000000000000
+      internalID: 4436592647610358112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_edge2dot
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 2705
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36ca3c127ad1e0f70800000000000000
+      internalID: 9155287696154012771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_dot2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 2705
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2053622adab28f790800000000000000
+      internalID: -7496193555008441086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_dot3
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 2655
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6523d1fd1263e850800000000000000
+      internalID: 6405070975801697643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_dot4
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 2655
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 826c30143ed508890800000000000000
+      internalID: -7457857752295815640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_p_default
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 2118
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49724c2a263ea5b00800000000000000
+      internalID: 818216295098230676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_p_2dot
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1392
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad861872c4a392100800000000000000
+      internalID: 83662166837782746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_p_cap
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1776
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db846ecb94fa9b490800000000000000
+      internalID: -7729954554168063811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_p_edgercorner
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 2605
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b3b7d2ece757620800000000000000
+      internalID: 2771260569707821852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_p_dot3
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 2605
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c827e7bf630d830800000000000000
+      internalID: 4093832515065908379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_p_block
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 2555
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2f9df6f249e0320800000000000000
+      internalID: 2526119372462355178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map 2_p_dot2diag
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 2555
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad25b50709c2b92a0800000000000000
+      internalID: -6729736219303128358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &353286673074917647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 353286673074917645}
+  - component: {fileID: 353286673074917646}
+  m_Layer: 0
+  m_Name: MapData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &353286673074917645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353286673074917647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.76599485, y: 2.6866322, z: -6.4792633}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &353286673074917646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353286673074917647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b921d2c0d3e22d4299d78f1e814ddaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseTilemap: {fileID: 0}
+  carsTilemap: {fileID: 0}
+  dirtTiles:
+  - {fileID: 11400000, guid: 76c18cf8ddd9c344e88ae912c8da290f, type: 2}
+  - {fileID: 11400000, guid: cc9b61f457f4628479c5bb82a4259627, type: 2}
+  - {fileID: 11400000, guid: a083b650f956ba94db35ddc8fa301bcd, type: 2}
+  - {fileID: 11400000, guid: 06c802c114b01d04d8b17a6d59af2c8e, type: 2}
+  - {fileID: 11400000, guid: 83bc27f14222d0e45b85c52c62a67413, type: 2}
+  - {fileID: 11400000, guid: 80aba18eef1fcda44b88402c13eedf1c, type: 2}
+  pathTiles:
+  - {fileID: 11400000, guid: b26f08620b218284a922442c982e2dc4, type: 2}
+  - {fileID: 11400000, guid: 8fa132618e7018b479fbc8869a9b19af, type: 2}
+  - {fileID: 11400000, guid: a784f020cc1c5ee479e32e8262b50d16, type: 2}
+  - {fileID: 11400000, guid: 7a7d3a9bf5251b84d9c8f6ff096d026d, type: 2}
+  - {fileID: 11400000, guid: 06737c389a1a89f46855d78aa407a2f7, type: 2}
+  - {fileID: 11400000, guid: 0c0366e2e23d58c4eb27fd92ce772ffb, type: 2}
+  borderTiles:
+  - {fileID: 11400000, guid: b93ac2b732f22994ea370d74a2461560, type: 2}
+  - {fileID: 11400000, guid: c540c2d2c5afe6a4b9bd0899a27afdf5, type: 2}
+  - {fileID: 11400000, guid: a083b650f956ba94db35ddc8fa301bcd, type: 2}
+  - {fileID: 11400000, guid: 06c802c114b01d04d8b17a6d59af2c8e, type: 2}
+  - {fileID: 11400000, guid: 83bc27f14222d0e45b85c52c62a67413, type: 2}
+  - {fileID: 11400000, guid: 80aba18eef1fcda44b88402c13eedf1c, type: 2}
+  playerTile: {fileID: 11400000, guid: d746517573c3e474981a4628edb106dc, type: 2}
+  enemyTile: {fileID: 11400000, guid: 49e6d57d279c46649b17b97d0bdb8855, type: 2}
+  playerPosition: {x: 0, y: 0, z: 0}
+  hasPlayer: 0

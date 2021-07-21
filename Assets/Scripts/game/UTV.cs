@@ -9,15 +9,17 @@ using UnityEngine;
 /// </summary>
 public class UTV : GridObject, GameManagerListener
 {
-    [HideInInspector]
-    public int heading = GridMovement.NORTH;
+    [Header("Movement")]
+    [Min(0.001f)]
     public float timeToMove = 0.2f;
     public bool canTurn180 = true;
     protected bool isMoving = false;
     protected Vector3 origPos, targetPos;
     protected Quaternion origHeading, targetHeading;
-    protected bool allowedToMove = true;
-
+    [HideInInspector]
+    public bool allowedToMove = true;
+    [HideInInspector]
+    public int heading = GridMovement.NORTH;
     // Start is called before the first frame update
     void Start()
     {

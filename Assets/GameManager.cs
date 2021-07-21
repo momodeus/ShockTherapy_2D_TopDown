@@ -14,6 +14,7 @@ public class GameManager
     private float startFuel;
     private float gameStartTime;
     private int map;
+    private bool firstFlagGot = false;
     //options stuff
     private bool swipeControls;
     private const string swipeControlsKey = "SwipeControls";
@@ -173,12 +174,19 @@ public class GameManager
 
     public void PickupFlag(int flagScore)
     {
+        firstFlagGot = true;
         flagsRemaining--;
         UpdateScore(flagScore + (int)(flagScore * Easing(GetPercentFuelRemaining())) / 10 * 10);
         if(flagsRemaining == 0)
         {
             GameWon();
         }
+    }
+
+    public void PickupSpecialFlag(int flagScore)
+    {
+        PickupFlag(flagScore + (firstFlagGot ? flagScore * 10 : flagScore));
+
     }
 
     public void UpdateScore(int amount)
@@ -278,6 +286,7 @@ public class GameManager
         //if (state != StateType.MAINMENU) return false;
         state = StateType.GAMEPLAYING;
         flagsRemaining = startFlags;
+        firstFlagGot = false;
         this.startFlags = startFlags;
         this.startFuel = startFuel;
         gameStartTime = Time.time;

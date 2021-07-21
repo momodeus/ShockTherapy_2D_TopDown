@@ -103,7 +103,6 @@ public class StoreController : MonoBehaviour
         if (GameManager.Instance.IsThemeUnlocked(i - 1))
         {
             GameManager.Instance.SetSelectedTheme(i);
-            print("selected: " + GameManager.Instance.GetSelectedTheme());
             RefreshUnlocks();
         } else
             print("not unlocked: " + i + "!");

@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
         int ny = gridY + (heading % 2 == 0 ? (heading == GridMovement.NORTH ? 1 : -1) : 0);
         foreach (EnemyMovement em in enemies)
         {
-            if (em.gridX == nx && em.gridY == ny) return true;
+            if (!em.allowedToMove && em.gridX == nx && em.gridY == ny) return true;
         }
         return false;
     }

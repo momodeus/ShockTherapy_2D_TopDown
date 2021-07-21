@@ -11,19 +11,19 @@ public class MainMenuController : MonoBehaviour
     public GameObject carsCanvas;
     public GameObject themesCanvas;
     public GameObject stageSelectCanvas;
-
+    public TransitionSceneLoader sceneLoader;
     public Button playCustomMapButton;
     public Text highScoreText;
     public Toggle controlSchemeToggle;
     public void PlayGame(int mapIdx)
     {
         GameManager.Instance.SetMap(mapIdx);
-        SceneManager.LoadScene("InGameScene");
+        sceneLoader.LoadScene("InGameScene");
     }
 
     public void DesignLevel()
     {
-        SceneManager.LoadScene("levelDesign");
+        sceneLoader.LoadScene("levelDesign");
     }
 
     public void LevelSelect()

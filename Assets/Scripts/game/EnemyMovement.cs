@@ -110,17 +110,10 @@ public class EnemyMovement : UTV
     {
         isMoving = true;
         allowedToMove = false;
-
-        float elapsedTime = 0;
         float spinoutTime = 3;
-        Quaternion spinoutOrigHeading = transform.rotation;
-        float angleToRotate = 360;
-        while(elapsedTime < spinoutTime)
-        {
-            elapsedTime += Time.deltaTime;
-            
-            yield return new WaitForFixedUpdate();
-        }
+        gameObject.GetComponent<Animation>().Play();
+        yield return new WaitForSeconds(spinoutTime);
+        gameObject.GetComponent<Animation>().Stop();
         isMoving = false;
         allowedToMove = true;
     }

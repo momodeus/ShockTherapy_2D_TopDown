@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GridObject : MonoBehaviour
 {
+    
     public int gridX, gridY;
     protected int lastGridX, lastGridY;
 

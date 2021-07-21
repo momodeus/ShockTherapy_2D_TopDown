@@ -11,15 +11,20 @@ using UnityEngine.UI;
 /// </summary>
 public class PlayerMovement : UTV
 {
+    [Header("Game Parameters")]
     public float fuelUsedPerMove = 0.1f;
     public GameObject smokePrefab;
     public Sprite[] cars = new Sprite[9];
-    public AudioClip pickupSound, crashSound, winSound;
-    public Camera mainCamera;
+    [Header("Audio")]
+    public AudioClip pickupSound;
+    public AudioClip crashSound; 
+    public AudioClip winSound;
+    public AudioSource audioSource;
     private int queuedHeading = -1; //holds queued heading. This imrpoves responsiveness if player tries to move slightly before they're allowed to
     private int maxSmokes = 3;
     private int lastSmokeX = 0, lastSmokeY = 0;
     private bool shouldSmoke = false;
+    private bool playing = true;
 
     void Start()
     {
@@ -34,7 +39,7 @@ public class PlayerMovement : UTV
     // Update is called once per frame
     void Update()
     {
-        if (!allowedToMove) return;
+        if (!allowedToMove || GameManager.Instance.GetTimeSinceGameStart() < 1) return;
         if (queuedHeading == GridMovement.NONE)
         {
             GameManager.Instance.UseFuel(TryMove(heading) ? fuelUsedPerMove : 0);
@@ -94,14 +99,37 @@ public class PlayerMovement : UTV
         if(other.gameObject.CompareTag("Pickup"))
         {
             GameManager.Instance.PickupFlag(GameManager.flagScore);
-            if (GameManager.Instance.GetFlagsRemaining() == 0) AudioSource.PlayClipAtPoint(winSound, mainCamera.transform.position);
+            if (GameManager.Instance.GetFlagsRemaining() == 0)
+            {
+                (Camera.main.gameObject.GetComponent(typeof(AudioSource)) as AudioSource).Pause();
+                audioSource.Pause();
+                audioSource.PlayOneShot(winSound, 0.7f);
+                playing = false;
+            }
             other.gameObject.SetActive(false);
-            AudioSource.PlayClipAtPoint(pickupSound, mainCamera.transform.position);
+            audioSource.PlayOneShot(pickupSound, 0.5f);
 
-        } else if (other.gameObject.CompareTag("Enemy"))
+        } else if (other.gameObject.CompareTag("Special Pickup"))
         {
-            AudioSource.PlayClipAtPoint(crashSound, mainCamera.transform.position);
+            GameManager.Instance.PickupSpecialFlag(GameManager.flagScore);
+            if (GameManager.Instance.GetFlagsRemaining() == 0)
+            {
+                (Camera.main.gameObject.GetComponent(typeof(AudioSource)) as AudioSource).Pause();
+                audioSource.Pause();
+                audioSource.PlayOneShot(winSound, 0.7f);
+                playing = false;
+            }
+            other.gameObject.SetActive(false);
+            audioSource.PlayOneShot(pickupSound, 0.5f);
+
+        }
+        else if (other.gameObject.CompareTag("Enemy") && playing)
+        {
+            (Camera.main.gameObject.GetComponent(typeof(AudioSource)) as AudioSource).Pause();
+            audioSource.Pause();
+            audioSource.PlayOneShot(crashSound, 0.5f);
             GameManager.Instance.GameLost();
+            playing = false;
         }
     }
 

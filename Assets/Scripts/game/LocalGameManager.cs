@@ -6,23 +6,33 @@ using UnityEngine.SceneManagement;
 
 public class LocalGameManager : MonoBehaviour, GameManagerListener
 {
+    [Header("UI")]
     public GameObject winSplash;
     public GameObject loseSplash;
     public GameObject pauseSplash;
-    public GameObject flag;
-    public GameObject enemy;
-    public PlayerMovement player;
+
     public Text scoreText;
     public RectTransform fuelBar;
     public Button pauseButton;
+    public float fuelBarInitialWidth; //figure out a better way, but for now it's ok
+
+    public TransitionSceneLoader sceneLoader;
+    [Header("Game Elements")]
+    public GameObject flag;
+    public GameObject specialFlag;
+    public GameObject enemy;
+    public PlayerMovement player;
+    
     public float startFuel = 100.0f;
     private int numFlagsToSpawn = 10;
     public SpriteRenderer mapSpriteRenderer;
-    public float fuelBarInitialWidth; //figure out a better way, but for now it's ok
+
+    [Header("Maps")]
+    public MapData mapData;
+
     public TextAsset[] collisionMap = new TextAsset[3]; //text representation of map, with 1 being a wall and 0 being a path. 
                                                         //important: make sure there is no extra line at the end of file. 
     public Sprite[] mapImages = new Sprite[3];
-    public MapData mapData;
     // Start is called before the first frame update
     void Awake()
     {
@@ -59,7 +69,7 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
         while (i > 0 && possible.Count > 0)
         {
             int idx = (int)Random.Range(0, possible.Count - 0.001f);
-            GridObject go = (Instantiate(flag, Vector3.zero, Quaternion.identity).GetComponent(typeof(GridObject)) as GridObject);
+            GridObject go = (Instantiate(i == 1 ? specialFlag : flag, Vector3.zero, Quaternion.identity).GetComponent(typeof(GridObject)) as GridObject);
             go.SetGridPosition(possible[idx]);
             possible.RemoveAt(idx);
             i--;
@@ -99,7 +109,7 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
     {
         Time.timeScale = 1;
         GameManager.Instance.ReturnToMainMenu();
-        SceneManager.LoadScene("MainMenu");
+        sceneLoader.LoadScene("MainMenu");
     }
 
     public void OnDestroy()

@@ -53,9 +53,7 @@ public class GameManager
     private const string collisionMapKey = "collisionMap";
     private GameManager()
     {
-        PlayerPrefs.DeleteAll();
         LoadData();
-        UpdateMoney(20000);
     }
 
     public static GameManager Instance

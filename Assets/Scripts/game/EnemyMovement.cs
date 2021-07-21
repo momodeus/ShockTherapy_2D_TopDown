@@ -14,7 +14,7 @@ public class EnemyMovement : UTV
     private uint queueDepth;
     private Queue<int> nextMoves;
     public FollowType followType = FollowType.BASIC;
-    public float delayTime = 5;
+    public float delayTime = 8;
     public enum FollowType
     {
         SINGLEASTAR,

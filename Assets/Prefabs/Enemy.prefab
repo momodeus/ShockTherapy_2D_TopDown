@@ -108,7 +108,7 @@ MonoBehaviour:
   heading: 0
   player: {fileID: 0}
   followType: 2
-  delayTime: 5
+  delayTime: 8
 --- !u!50 &2175595906891231865
 Rigidbody2D:
   serializedVersion: 4

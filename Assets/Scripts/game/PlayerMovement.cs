@@ -39,7 +39,7 @@ public class PlayerMovement : UTV
     // Update is called once per frame
     void Update()
     {
-        if (!allowedToMove || GameManager.Instance.GetTimeSinceGameStart() < 1) return;
+        if (!allowedToMove || GameManager.Instance.GetTimeSinceGameStart() < 3) return;
         if (queuedHeading == GridMovement.NONE)
         {
             GameManager.Instance.UseFuel(TryMove(heading) ? fuelUsedPerMove : 0);
@@ -102,7 +102,7 @@ public class PlayerMovement : UTV
             if (GameManager.Instance.GetFlagsRemaining() == 0)
             {
                 (Camera.main.gameObject.GetComponent(typeof(AudioSource)) as AudioSource).Pause();
-                audioSource.Pause();
+                audioSource.Stop();
                 audioSource.PlayOneShot(winSound, 0.7f);
                 playing = false;
             }
@@ -115,7 +115,7 @@ public class PlayerMovement : UTV
             if (GameManager.Instance.GetFlagsRemaining() == 0)
             {
                 (Camera.main.gameObject.GetComponent(typeof(AudioSource)) as AudioSource).Pause();
-                audioSource.Pause();
+                audioSource.Stop();
                 audioSource.PlayOneShot(winSound, 0.7f);
                 playing = false;
             }
@@ -126,7 +126,7 @@ public class PlayerMovement : UTV
         else if (other.gameObject.CompareTag("Enemy") && playing)
         {
             (Camera.main.gameObject.GetComponent(typeof(AudioSource)) as AudioSource).Pause();
-            audioSource.Pause();
+            audioSource.Stop();
             audioSource.PlayOneShot(crashSound, 0.5f);
             GameManager.Instance.GameLost();
             playing = false;

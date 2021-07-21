@@ -2727,7 +2727,7 @@ MonoBehaviour:
   canTurn180: 1
   allowedToMove: 1
   heading: 0
-  fuelUsedPerMove: 0.5
+  fuelUsedPerMove: 0.2
   smokePrefab: {fileID: 7053331032546565739, guid: a7dbcae840b36fd49bf86bf232e270ea, type: 3}
   cars:
   - {fileID: 21300000, guid: d5a526901c2ad74479e1a83f2a7103bf, type: 3}

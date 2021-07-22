@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class CollisionGenerator : MonoBehaviour
 {
     public const int gridWidth = 35, gridHeight = 58;
-    private const int borderThickness = 10;
+    private const int borderThickness = 8;
 
     
     public static void CreateFromScratch(MapData mapData)
@@ -49,15 +49,17 @@ public class CollisionGenerator : MonoBehaviour
                 {
                     if (eachLine[i][j] == '1')
                         mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetDirtTile());
-                    if (eachLine[i][j] == '0' || eachLine[i][j] == 'E' || eachLine[i][j] == 'P')
+                    if (eachLine[i][j] == '0')
                         mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetPathTile());
                     if (eachLine[i][j] == 'E')
                     {
+                        mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetPathTile());
                         mapData.enemyPositions.Enqueue(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
                         if(mapData.carsTilemap != null) mapData.carsTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.enemyTile);
                     }
                     if (eachLine[i][j] == 'P')
                     {
+                        mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetPathTile());
                         mapData.SetPlayerPosition(j - eachLine[i].Length / 2, -i + eachLine.Count / 2);
                         if (mapData.carsTilemap != null) mapData.carsTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.playerTile);
                     }

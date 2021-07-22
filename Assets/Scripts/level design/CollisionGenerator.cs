@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class CollisionGenerator : MonoBehaviour
 {
     public const int gridWidth = 35, gridHeight = 58;
-    private const int borderThickness = 5;
+    private const int borderThickness = 10;
 
     
     public static void CreateFromScratch(MapData mapData)

@@ -48,22 +48,22 @@ MonoBehaviour:
   dirtTiles:
   - {fileID: 11400000, guid: 76c18cf8ddd9c344e88ae912c8da290f, type: 2}
   - {fileID: 11400000, guid: cc9b61f457f4628479c5bb82a4259627, type: 2}
+  - {fileID: 11400000, guid: d6e76850242822d4582028d6bc0c9198, type: 2}
   - {fileID: 11400000, guid: a083b650f956ba94db35ddc8fa301bcd, type: 2}
-  - {fileID: 11400000, guid: 06c802c114b01d04d8b17a6d59af2c8e, type: 2}
   - {fileID: 11400000, guid: 83bc27f14222d0e45b85c52c62a67413, type: 2}
   - {fileID: 11400000, guid: 80aba18eef1fcda44b88402c13eedf1c, type: 2}
   pathTiles:
   - {fileID: 11400000, guid: b26f08620b218284a922442c982e2dc4, type: 2}
   - {fileID: 11400000, guid: 8fa132618e7018b479fbc8869a9b19af, type: 2}
+  - {fileID: 11400000, guid: 2cd1491efb23d5946bf693b50c353b3d, type: 2}
   - {fileID: 11400000, guid: a784f020cc1c5ee479e32e8262b50d16, type: 2}
-  - {fileID: 11400000, guid: 7a7d3a9bf5251b84d9c8f6ff096d026d, type: 2}
   - {fileID: 11400000, guid: 06737c389a1a89f46855d78aa407a2f7, type: 2}
   - {fileID: 11400000, guid: 0c0366e2e23d58c4eb27fd92ce772ffb, type: 2}
   borderTiles:
   - {fileID: 11400000, guid: b93ac2b732f22994ea370d74a2461560, type: 2}
   - {fileID: 11400000, guid: c540c2d2c5afe6a4b9bd0899a27afdf5, type: 2}
+  - {fileID: 11400000, guid: c9a38aaebc82acb448c4acab0465e166, type: 2}
   - {fileID: 11400000, guid: a083b650f956ba94db35ddc8fa301bcd, type: 2}
-  - {fileID: 11400000, guid: 06c802c114b01d04d8b17a6d59af2c8e, type: 2}
   - {fileID: 11400000, guid: 83bc27f14222d0e45b85c52c62a67413, type: 2}
   - {fileID: 11400000, guid: 80aba18eef1fcda44b88402c13eedf1c, type: 2}
   playerTile: {fileID: 11400000, guid: d746517573c3e474981a4628edb106dc, type: 2}

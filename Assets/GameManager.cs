@@ -53,6 +53,7 @@ public class GameManager
     private const string collisionMapKey = "collisionMap";
     private GameManager()
     {
+        PlayerPrefs.DeleteAll();
         LoadData();
     }
 
@@ -313,7 +314,7 @@ public class GameManager
         if (state != StateType.GAMEPLAYING) return;
         state = StateType.GAMEWIN;
         if(map != -1) UpdateMoney(CalculateWinMoney());
-        if(score > highScore)
+        if(score > highScore && map != -1)
         {
             highScore = score;
             PlayerPrefs.SetInt(highScoreKey, highScore);

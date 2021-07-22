@@ -78,7 +78,7 @@ public class TouchLevelDesign : MonoBehaviour
     private void PlaceTile(Vector3Int position)
     {
         if (mapData.baseTilemap.GetTile(position).name.Equals(mapData.GetBorderTile().name)) return;
-        print(mapData.baseTilemap.GetTile(position).name);
+        //print(mapData.baseTilemap.GetTile(position).name);
         switch (selectedTile)
         {
             case 0: //placing dirt

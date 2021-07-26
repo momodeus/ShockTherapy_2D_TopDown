@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class GameManager
 {
@@ -39,7 +38,6 @@ public class GameManager
     //score stuff
     public const int flagScore = 1000;
     private int score;
-    private const float scoreMultiplier = 0.1f;
     private int highScore;
     private string highScoreKey = "highScore";
 
@@ -51,9 +49,10 @@ public class GameManager
     private bool userMadeMap = false;
     private string collisionMap;
     private const string collisionMapKey = "collisionMap";
+
+
     private GameManager()
     {
-        PlayerPrefs.DeleteAll();
         LoadData();
     }
 
@@ -92,6 +91,7 @@ public class GameManager
         collisionMap = map;
         PlayerPrefs.SetString(collisionMapKey, collisionMap);
     }
+
     public void SetSelectedCar(int car)
     {
         if (car >= 0 && car <= 8) 
@@ -369,6 +369,11 @@ public class GameManager
     private static float Easing(float x)
     {
         return x * x * x * x;
+    }
+
+    private void ThreadLoop()
+    {
+        
     }
 }
 

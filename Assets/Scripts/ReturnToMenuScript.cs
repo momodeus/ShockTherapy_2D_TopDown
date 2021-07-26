@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Threading;
 
 public class ReturnToMenuScript : MonoBehaviour
 {
@@ -11,12 +12,12 @@ public class ReturnToMenuScript : MonoBehaviour
     {
         if (mapData.hasPlayer)
         {
-            CollisionGenerator.CreateAndSaveCollisionMap(mapData);
-            
+            GameManager.Instance.SetCollisionMap(CollisionGenerator.CreateCollisionMap(mapData));
             sceneLoader.LoadScene("MainMenu");
         } else
         {
             print("needs player");
         }
     }
+
 }

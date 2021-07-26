@@ -5,8 +5,8 @@ using UnityEngine.Tilemaps;
 
 public class CollisionGenerator : MonoBehaviour
 {
-    public const int gridWidth = 35, gridHeight = 58;
-    private const int borderThickness = 8;
+    public const int gridWidth = 34, gridHeight = 58;
+    private const int borderThickness = 5;
 
     
     public static void CreateFromScratch(MapData mapData)
@@ -40,41 +40,63 @@ public class CollisionGenerator : MonoBehaviour
         if (mapData.carsTilemap != null) mapData.carsTilemap.ClearAllTiles();
         List<string> eachLine = new List<string>();
         eachLine.AddRange(collisionMap.Split("\n"[0]));
+
+        List<Vector3Int> dirtPositions = new List<Vector3Int>();
+        List<Vector3Int> pathPositions = new List<Vector3Int>();
+        List<Vector3Int> borderPositions = new List<Vector3Int>();
+        List<RuleTile> dirtTiles = new List<RuleTile>();
+        List<RuleTile> pathTiles = new List<RuleTile>();
+        List<RuleTile> borderTiles = new List<RuleTile>();
         for (int i = -borderThickness; i < eachLine.Count + borderThickness; i++)
         {
             for (int j = -borderThickness; j < eachLine[0].Length + borderThickness; j++)
             {
-                mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[0].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetBorderTile());
                 if (i >= 0 && i < eachLine.Count && j >= 0 && j < eachLine[(int)Mathf.Max(0, Mathf.Min(eachLine.Count-1, i))].Length)
                 {
                     if (eachLine[i][j] == '1')
-                        mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetDirtTile());
-                    if (eachLine[i][j] == '0')
-                        mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetPathTile());
-                    if (eachLine[i][j] == 'E')
                     {
-                        mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetPathTile());
-                        mapData.enemyPositions.Enqueue(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
-                        if(mapData.carsTilemap != null) mapData.carsTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.enemyTile);
+                        dirtPositions.Add(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
+                        dirtTiles.Add(mapData.GetDirtTile());
+                        //mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetDirtTile());
                     }
-                    if (eachLine[i][j] == 'P')
+                    else if (eachLine[i][j] == '0')
                     {
-                        mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetPathTile());
+                        pathPositions.Add(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
+                        pathTiles.Add(mapData.GetPathTile());
+                        //mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetPathTile());
+                    }
+                    else if (eachLine[i][j] == 'E')
+                    {
+                        pathPositions.Add(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
+                        pathTiles.Add(mapData.GetPathTile());
+                        //mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetPathTile());
+                        mapData.enemyPositions.Enqueue(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
+                        if (mapData.carsTilemap != null) mapData.carsTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.enemyTile);
+                    }
+                    else if (eachLine[i][j] == 'P')
+                    {
+                        pathPositions.Add(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
+                        pathTiles.Add(mapData.GetPathTile());
+                        //mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetPathTile());
                         mapData.SetPlayerPosition(j - eachLine[i].Length / 2, -i + eachLine.Count / 2);
                         if (mapData.carsTilemap != null) mapData.carsTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.playerTile);
                     }
+                } else
+                {
+                    borderPositions.Add(new Vector3Int(j - eachLine[0].Length / 2, -i + eachLine.Count / 2, 0));
+                    borderTiles.Add(mapData.GetBorderTile());
                 }
             }
         }
+        
+        mapData.baseTilemap.SetTiles(dirtPositions.ToArray(), dirtTiles.ToArray());
+        mapData.baseTilemap.SetTiles(pathPositions.ToArray(), pathTiles.ToArray());
+        mapData.baseTilemap.SetTiles(borderPositions.ToArray(), borderTiles.ToArray());
         mapData.baseTilemap.CompressBounds();
     }
 
     public static string CreateCollisionMap(MapData mapData)
     {
-        mapData.baseTilemap.CompressBounds();
-        Debug.Log("width: " + (mapData.baseTilemap.cellBounds.xMax - mapData.baseTilemap.cellBounds.xMin) +
-            "\nheight: " + (mapData.baseTilemap.cellBounds.yMax - mapData.baseTilemap.cellBounds.yMin));
-
         string col = "";
         for (int j = mapData.baseTilemap.cellBounds.yMax - 1 - borderThickness; j >= mapData.baseTilemap.cellBounds.yMin + borderThickness; j--)
         {
@@ -92,8 +114,5 @@ public class CollisionGenerator : MonoBehaviour
         }
         return col;
     }
-    public static void CreateAndSaveCollisionMap(MapData mapData)
-    {
-        GameManager.Instance.SetCollisionMap(CreateCollisionMap(mapData));
-    }
+
 }

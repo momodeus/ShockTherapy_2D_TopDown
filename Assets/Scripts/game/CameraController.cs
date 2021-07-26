@@ -11,7 +11,7 @@ using UnityEngine;
 /// </summary>
 public class CameraController : MonoBehaviour
 {
-    public GameObject player;
+    public UTV player;
     public Vector2 offset = Vector2.zero;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,12 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x + offset.x, player.transform.position.y + offset.y, transform.position.z);
+        transform.position = new Vector3(player.transform.position.x + offset.x,
+            player.transform.position.y + offset.y, transform.position.z);
+        if (player.IsMoving())
+        {
+            transform.position += new Vector3(0.03f * Random.Range(-player.roughness, player.roughness),
+            0.03f * Random.Range(-player.roughness, player.roughness), 0);
+        }
     }
 }

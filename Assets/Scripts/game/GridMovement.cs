@@ -6,8 +6,7 @@ using UnityEngine;
 /// Class that stores the collision grid and performs functions related to it. 
 /// </summary>
 public class GridMovement
-{
-
+{    
     //direction constants (don't want to see in inspector, but valuable to other places)
     [HideInInspector]
     public const int NORTH = 0;

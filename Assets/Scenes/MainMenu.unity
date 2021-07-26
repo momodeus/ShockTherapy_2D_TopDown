@@ -9677,7 +9677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b936bcadd774a7e48b27607b0db8c129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 929577977}
+  player: {fileID: 929577978}
   offset: {x: 0, y: 0.3}
 --- !u!1 &766107564
 GameObject:
@@ -11078,6 +11078,8 @@ MonoBehaviour:
   gridX: 0
   gridY: 0
   timeToMove: 0.3
+  timeToTurn: 0.2
+  roughness: 0
   canTurn180: 1
   allowedToMove: 1
   heading: 0

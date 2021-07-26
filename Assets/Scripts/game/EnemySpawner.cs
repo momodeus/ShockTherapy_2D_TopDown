@@ -29,4 +29,15 @@ public class EnemySpawner : MonoBehaviour
         }
         return false;
     }
+
+    public static bool HasBlockage(int heading, int gridX, int gridY)
+    {
+        int nx = gridX + (heading % 2 == 0 ? 0 : (heading == GridMovement.EAST ? 1 : -1));
+        int ny = gridY + (heading % 2 == 0 ? (heading == GridMovement.NORTH ? 1 : -1) : 0);
+        foreach (EnemyMovement em in enemies)
+        {
+            if (em.gridX == nx && em.gridY == ny && !em.IsMoving()) return true;
+        }
+        return false;
+    }
 }

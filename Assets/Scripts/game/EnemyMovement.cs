@@ -25,7 +25,15 @@ public class EnemyMovement : UTV
     // Start is called before the first frame update
     void Start()
     {
-        followType = (FollowType)Random.Range(0, 4);
+        float rand = Random.value;
+        if (rand < 0.3)
+            followType = FollowType.SINGLEASTAR;
+        else if (rand < 0.6)
+            followType = FollowType.QUADASTAR;
+        else if (rand < 0.8)
+            followType = FollowType.BASIC;
+        else
+            followType = FollowType.FULLASTAR;
         nextMoves = new Queue<int>();
     }
 
@@ -308,7 +316,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if(GridMovement.CanMove(GridMovement.NORTH, x, y) && !closedList[x, y + 1])
+            else if(GridMovement.CanMove(GridMovement.NORTH, x, y) && !closedList[x, y + 1] && !EnemySpawner.HasBlockage(GridMovement.NORTH, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x, y + 1);
@@ -331,7 +339,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if (GridMovement.CanMove(GridMovement.SOUTH, x, y) && !closedList[x, y - 1])
+            else if (GridMovement.CanMove(GridMovement.SOUTH, x, y) && !closedList[x, y - 1] && !EnemySpawner.HasBlockage(GridMovement.SOUTH, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x, y - 1);
@@ -353,7 +361,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if (GridMovement.CanMove(GridMovement.EAST, x, y) && !closedList[x + 1, y])
+            else if (GridMovement.CanMove(GridMovement.EAST, x, y) && !closedList[x + 1, y] && !EnemySpawner.HasBlockage(GridMovement.EAST, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x + 1, y);
@@ -376,7 +384,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if (GridMovement.CanMove(GridMovement.WEST, x, y) && !closedList[x - 1, y])
+            else if (GridMovement.CanMove(GridMovement.WEST, x, y) && !closedList[x - 1, y] && !EnemySpawner.HasBlockage(GridMovement.WEST, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x - 1, y);

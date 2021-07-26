@@ -10,8 +10,10 @@ using UnityEngine;
 public class UTV : GridObject, GameManagerListener
 {
     [Header("Movement")]
-    [Min(0.001f)]
-    public float timeToMove = 0.2f;
+    [Min(0.001f)]public float timeToMove = 0.2f;
+    [Min(0.001f)]public float timeToTurn = 0.2f;
+    [Range(0, 1)]public float roughness = 0f; //between 0 and 1, rougness introduces camera shake and inconsistient movement speed. 
+
     public bool canTurn180 = true;
     protected bool isMoving = false;
     protected Vector3 origPos, targetPos;
@@ -90,26 +92,32 @@ public class UTV : GridObject, GameManagerListener
                 gridY++;
                 break;
         }
-        heading = newHeading;
 
-        float elapsedTime = 0; //this might be source of problems with jitter
+        float elapsedTime = 0;
+        float time = heading == newHeading ? timeToMove : timeToTurn;
+        heading = newHeading;
         origPos = transform.position;
         targetPos = origPos + direction;
 
         origHeading = transform.rotation;
         targetHeading = Quaternion.Euler(0, 0, heading * 90);
-        while(elapsedTime < timeToMove && allowedToMove)
+        while(elapsedTime < time && allowedToMove)
         {
-            transform.position = Vector3.Lerp(origPos, targetPos, (elapsedTime / timeToMove));
-            transform.rotation = Quaternion.Slerp(origHeading, targetHeading, (elapsedTime / timeToMove));
+            transform.position = Vector3.Lerp(origPos, targetPos, (elapsedTime / time));
+            transform.rotation = Quaternion.Slerp(origHeading, targetHeading, (elapsedTime / time));
             elapsedTime += Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
         }
 
-        transform.rotation = Quaternion.Slerp(origHeading, targetHeading, 1);
+        transform.rotation = targetHeading;
         transform.position = targetPos;
 
         isMoving = false;
+    }
+
+    public bool IsMoving()
+    {
+        return isMoving;
     }
 
     public void OnGameLost() { allowedToMove = false; }

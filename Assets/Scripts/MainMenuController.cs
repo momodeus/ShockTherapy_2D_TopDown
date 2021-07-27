@@ -25,6 +25,10 @@ public class MainMenuController : MonoBehaviour
     {
         sceneLoader.LoadScene("levelDesign");
     }
+    public void EnterGarage()
+    {
+        sceneLoader.LoadScene("Garage");
+    }
 
     public void LevelSelect()
     {

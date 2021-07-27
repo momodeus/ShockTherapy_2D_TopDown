@@ -20,4 +20,17 @@ public class TransitionSceneLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(sceneName);
     }
+
+    public void LoadScene(int idx)
+    {
+        StartCoroutine(TransitionOut(idx));
+    }
+
+
+    IEnumerator TransitionOut(int idx)
+    {
+        animator.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(idx);
+    }
 }

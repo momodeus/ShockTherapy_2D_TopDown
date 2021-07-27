@@ -10,7 +10,7 @@ public class TouchLevelDesign : MonoBehaviour
     public MapData mapData;
     public Image dirtButton, pathButton, enemyButton, playerButton;
     public Toggle panToggle;
-    
+    GraphicRaycaster raycaster;
     public GameObject saveButton;
     public GameObject needsPlayerText;
     public Dropdown enemiesDropdown;
@@ -32,10 +32,12 @@ public class TouchLevelDesign : MonoBehaviour
         }
         
     }
+
     void Update()
     {
         if(!panToggle.isOn) return;
         if (EventSystem.current.IsPointerOverGameObject()) return;
+        
         if(Input.touchCount > 0)
         {
             theTouch = Input.GetTouch(0);
@@ -128,4 +130,5 @@ public class TouchLevelDesign : MonoBehaviour
         playerButton.color = i == 3 ? Color.green : Color.clear;
         selectedTile = i;
     }
+
 }

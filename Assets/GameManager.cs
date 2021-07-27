@@ -35,6 +35,10 @@ public class GameManager
     private string unlockedThemesKey = "unlockedThemes";
     private int selectedTheme = 0;
     private string selectedThemeKey = "selectedTheme";
+
+    private uint unlockedUpgrades = 0;
+    private string unlockedUpgradesKey = "unlockedUpgrades";
+
     //score stuff
     public const int flagScore = 1000;
     private int score;
@@ -50,6 +54,22 @@ public class GameManager
     private string collisionMap;
     private const string collisionMapKey = "collisionMap";
 
+
+    //speed, turn, accel, tank, rough
+    public static int[,] UPGRADE_VALUES = new int[,]{ { 0, 0, 3, 2, 2 },
+                                            { 1, 0, 2, 0, 2 },
+                                            { 0, 5, 0, 1, 2 },
+                                            { 4, 0, 0, 0, 2 } };
+                                            //5, 5, 5, 3, 8
+    public static int[,] CAR_VALUES = new int[,]{ { 2, 2, 1, 3, 0 },
+                                        { 3, 2, 2, 2, 0 },
+                                        { 1, 5, 1, 4, 1 },
+                                        { 5, 2, 2, 3, 1 },
+                                        { 3, 4, 6, 2, 1 },
+                                        { 1, 6, 4, 7, 2 },
+                                        { 6, 5, 1, 1, 2 },
+                                        { 4, 4, 6, 7, 2 },
+                                        { 6, 6, 4, 8, 3 } };
 
     private GameManager()
     {
@@ -77,14 +97,31 @@ public class GameManager
     public int GetMoney() => money;
     public int GetSelectedCar() => selectedCar;
     public int GetSelectedTheme() => selectedTheme;
-    public uint GetUnlockedCarsRaw() => unlockedCars;
-    public uint GetUnlockedThemesRaw() => unlockedThemes;
     public int GetMap() => map;
     public float GetTimeSinceGameStart() => Time.time - gameStartTime;
     public int GetHighScore() => highScore;
     public string GetCollisionMap() => collisionMap;
     public bool UserMadeMap() => userMadeMap;
-
+    
+    public int[] GetStatValues()
+    {
+        int[] ret = new int[] { 0, 0, 0, 0, 0 };
+        for(int i = 0; i < UPGRADE_VALUES.GetLength(0); i++)
+        {
+            if(IsUpgradeUnlocked(i))
+            {
+                for(int j = 0; j < ret.Length; j++)
+                {
+                    ret[j] += UPGRADE_VALUES[i, j];
+                }
+            }
+        }
+        for(int j = 0; j < ret.Length; j++)
+        {
+            ret[j] = Mathf.Min(11, ret[j] + CAR_VALUES[selectedCar, j]);
+        }
+        return ret;
+    }
     public void SetCollisionMap(string map)
     {
         userMadeMap = true;
@@ -127,6 +164,12 @@ public class GameManager
         unlockedThemes = 0U;
         PlayerPrefs.SetInt(unlockedThemesKey, (int)unlockedThemes);
     }
+
+    public void LockAllUpgrades()
+    {
+        unlockedUpgrades = 0U;
+        PlayerPrefs.SetInt(unlockedUpgradesKey, (int)unlockedUpgrades);
+    }
     public void UnlockCar(int car)
     {
         if (car < 0 || car > 7) return;
@@ -143,6 +186,14 @@ public class GameManager
             PlayerPrefs.SetInt(unlockedThemesKey, (int)unlockedThemes);
         }
     }
+    public void UnlockUpgrade(int upgrade)
+    {
+        if(upgrade >= 0 && upgrade < 4)
+        {
+            unlockedUpgrades |= 1U << upgrade;
+            PlayerPrefs.SetInt(unlockedUpgradesKey, (int)unlockedUpgrades);
+        }
+    }
     public bool IsCarUnlocked(int car)
     {
         if (car == -1) return true; //default car
@@ -156,6 +207,12 @@ public class GameManager
         if (theme < 0 || theme > MapData.NUM_THEMES) return false;
         return ((unlockedThemes & (1U << theme)) > 0U);
     }
+    public bool IsUpgradeUnlocked(int upgrade)
+    {
+        if (upgrade < 0 || upgrade > 3) return false;
+        return ((unlockedUpgrades & (1U << upgrade)) > 0U);
+    }
+
     public void SetControlScheme(bool isSwipe)
     {
         swipeControls = isSwipe;
@@ -195,7 +252,11 @@ public class GameManager
             gml.OnScoreChanged();
         }
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="amount"></param>
+    /// <returns>true if adding amount results in positive balance, false otherwise</returns>
     public bool UpdateMoney(int amount)
     {
         if (money + amount < 0) return false;

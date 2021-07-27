@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/leveldesign.unity
     guid: 8ccab1f9afdfbb24d8f716880881657d
+  - enabled: 1
+    path: Assets/Scenes/Garage.unity
+    guid: fb6eb72730a64ee4f9bdc377737b7fe4
   m_configObjects: {}

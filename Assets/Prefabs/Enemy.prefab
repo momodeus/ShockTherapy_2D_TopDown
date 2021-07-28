@@ -103,6 +103,8 @@ MonoBehaviour:
   gridX: 3
   gridY: 3
   timeToMove: 0.22
+  timeToTurn: 0.2
+  roughness: 0
   canTurn180: 1
   allowedToMove: 1
   heading: 0

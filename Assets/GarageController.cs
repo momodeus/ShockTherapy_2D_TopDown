@@ -37,11 +37,12 @@ public class GarageController : MonoBehaviour
     void SetPreviewedCar(int car)
     {
         if (car < 0 || car > 8) return;
-        foreach(UpgradeUnlocker uu in upgrades)
+        previewedUpgrade = -1;
+        foreach (UpgradeUnlocker uu in upgrades)
         {
             uu.UnPreview();
-            previewedUpgrade = -1;
         }
+        PreviewUpgrade();
         previewedCar = car;
         carSelectorImage.sprite = cars[previewedCar];
         carNameText.text = carNames[previewedCar];

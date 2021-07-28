@@ -80,6 +80,8 @@ public class TouchLevelDesign : MonoBehaviour
     private void PlaceTile(Vector3Int position)
     {
         TileBase tb = mapData.baseTilemap.GetTile(position);
+        if (tb == null) mapData.baseTilemap.SetTile(position, mapData.GetDirtTile());
+        tb = mapData.GetDirtTile();
         if (tb.name.Equals(mapData.GetBorderTile().name)) return;
         //print(mapData.baseTilemap.GetTile(position).name);
         switch (selectedTile)

@@ -64,11 +64,13 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
     {
         //spawn flags
         List<Vector2Int> possible = GridMovement.GetValidPoints();
+        if (possible.Count == 1) return;
         GameManager.Instance.SetFlagsRemaining(numFlagsToSpawn);
         int i = numFlagsToSpawn;
         while (i > 0 && possible.Count > 0)
         {
             int idx = (int)Random.Range(0, possible.Count - 0.001f);
+            if (possible[idx].x == player.gridX && possible[idx].y == player.gridY) continue;
             GridObject go = (Instantiate(i == 1 ? specialFlag : flag, Vector3.zero, Quaternion.identity).GetComponent(typeof(GridObject)) as GridObject);
             go.SetGridPosition(possible[idx]);
             possible.RemoveAt(idx);

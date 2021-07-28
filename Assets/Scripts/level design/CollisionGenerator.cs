@@ -29,8 +29,9 @@ public class CollisionGenerator : MonoBehaviour
                 else
                     collisionMap += "0";
             }
-            if(i < gridHeight - 1) collisionMap += "1\n";
+            if(i < gridHeight) collisionMap += "1\n";
         }
+        print(collisionMap);
         return collisionMap;
     }
 
@@ -57,19 +58,16 @@ public class CollisionGenerator : MonoBehaviour
                     {
                         dirtPositions.Add(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
                         dirtTiles.Add(mapData.GetDirtTile());
-                        //mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetDirtTile());
                     }
                     else if (eachLine[i][j] == '0')
                     {
                         pathPositions.Add(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
                         pathTiles.Add(mapData.GetPathTile());
-                        //mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetPathTile());
                     }
                     else if (eachLine[i][j] == 'E')
                     {
                         pathPositions.Add(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
                         pathTiles.Add(mapData.GetPathTile());
-                        //mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetPathTile());
                         mapData.enemyPositions.Enqueue(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
                         if (mapData.carsTilemap != null) mapData.carsTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.enemyTile);
                     }
@@ -77,7 +75,6 @@ public class CollisionGenerator : MonoBehaviour
                     {
                         pathPositions.Add(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
                         pathTiles.Add(mapData.GetPathTile());
-                        //mapData.baseTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.GetPathTile());
                         mapData.SetPlayerPosition(j - eachLine[i].Length / 2, -i + eachLine.Count / 2);
                         if (mapData.carsTilemap != null) mapData.carsTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.playerTile);
                     }

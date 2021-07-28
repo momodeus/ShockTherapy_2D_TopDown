@@ -28,9 +28,9 @@ public class EnemyMovement : UTV
         float rand = Random.value;
         if (rand < 0.3)
             followType = FollowType.SINGLEASTAR;
-        else if (rand < 0.6)
+        else if (rand < 0.625)
             followType = FollowType.QUADASTAR;
-        else if (rand < 0.8)
+        else if (rand < 0.95)
             followType = FollowType.BASIC;
         else
             followType = FollowType.FULLASTAR;

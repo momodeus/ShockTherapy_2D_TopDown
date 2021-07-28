@@ -34,7 +34,12 @@ public class PlayerMovement : UTV
         lastSmokeX = gridX;
         lastSmokeY = gridY;
         (this.GetComponent(typeof(SpriteRenderer)) as SpriteRenderer).sprite = cars[GameManager.Instance.GetSelectedCar()];
-        timeToMove = 0.20f - GameManager.Instance.GetSelectedCar() * 0.005f;
+        int[] stats = GameManager.Instance.GetStatValues();
+        timeToMove = 0.25f - stats[0]*0.005f;
+        timeToTurn = 0.25f - stats[1] * 0.005f;
+        //acceleration
+        fuelUsedPerMove = 0.5f - stats[3] * 0.03f;
+        roughness = 1 - stats[4]/11f;
     }
     // Update is called once per frame
     void Update()

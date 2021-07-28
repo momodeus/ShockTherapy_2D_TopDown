@@ -74,7 +74,6 @@ public class GameManager
     private GameManager()
     {
         LoadData();
-        UpdateMoney(10000);
     }
 
     public static GameManager Instance
@@ -104,24 +103,13 @@ public class GameManager
     public string GetCollisionMap() => collisionMap;
     public bool UserMadeMap() => userMadeMap;
     
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns>array in form: [speed, turn, accel, fuel, shock]</returns>
     public int[] GetStatValues()
     {
-        int[] ret = new int[] { 0, 0, 0, 0, 0 };
-        for(int i = 0; i < UPGRADE_VALUES.GetLength(0); i++)
-        {
-            if(IsUpgradeUnlocked(i))
-            {
-                for(int j = 0; j < ret.Length; j++)
-                {
-                    ret[j] += UPGRADE_VALUES[i, j];
-                }
-            }
-        }
-        for(int j = 0; j < ret.Length; j++)
-        {
-            ret[j] = Mathf.Min(11, ret[j] + CAR_VALUES[selectedCar, j]);
-        }
-        return ret;
+        return GetStatValues(selectedCar) ;
     }
     public int[] GetStatValues(int car)
     {
@@ -201,7 +189,6 @@ public class GameManager
     {
         if(theme >= 0 && theme <= MapData.NUM_THEMES)
         {
-            Debug.Log("unlocking: " + theme);
             unlockedThemes |= 1U << theme;
             PlayerPrefs.SetInt(unlockedThemesKey, (int)unlockedThemes);
         }

@@ -196,8 +196,8 @@ public class GameManager
     }
     public bool IsCarUnlocked(int car)
     {
-        if (car == -1) return true; //default car
-        if (car < 0 || car > 7) return false;
+        if (car == 0) return true; //default car
+        if (car < 0 || car > 8) return false;
         return ((unlockedCars & (1U << car)) > 0U);
     }
 
@@ -311,6 +311,13 @@ public class GameManager
         {
             unlockedThemes = 0U;
             PlayerPrefs.SetInt(unlockedThemesKey, (int)0U);
+        }
+        if (PlayerPrefs.HasKey(unlockedUpgradesKey))
+            unlockedUpgrades = (uint)PlayerPrefs.GetInt(unlockedUpgradesKey);
+        else
+        {
+            unlockedUpgrades = 0U;
+            PlayerPrefs.SetInt(unlockedUpgradesKey, (int)0U);
         }
         if(PlayerPrefs.HasKey(highScoreKey))
             highScore = PlayerPrefs.GetInt(highScoreKey);

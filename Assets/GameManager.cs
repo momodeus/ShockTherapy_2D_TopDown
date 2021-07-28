@@ -74,6 +74,7 @@ public class GameManager
     private GameManager()
     {
         LoadData();
+        UpdateMoney(10000);
     }
 
     public static GameManager Instance
@@ -119,6 +120,25 @@ public class GameManager
         for(int j = 0; j < ret.Length; j++)
         {
             ret[j] = Mathf.Min(11, ret[j] + CAR_VALUES[selectedCar, j]);
+        }
+        return ret;
+    }
+    public int[] GetStatValues(int car)
+    {
+        int[] ret = new int[] { 0, 0, 0, 0, 0 };
+        for (int i = 0; i < UPGRADE_VALUES.GetLength(0); i++)
+        {
+            if (IsUpgradeUnlocked(i))
+            {
+                for (int j = 0; j < ret.Length; j++)
+                {
+                    ret[j] += UPGRADE_VALUES[i, j];
+                }
+            }
+        }
+        for (int j = 0; j < ret.Length; j++)
+        {
+            ret[j] = Mathf.Min(11, ret[j] + CAR_VALUES[car, j]);
         }
         return ret;
     }
@@ -172,7 +192,7 @@ public class GameManager
     }
     public void UnlockCar(int car)
     {
-        if (car < 0 || car > 7) return;
+        if (car < 0 || car > 8) return;
         unlockedCars |= 1U << car;
         PlayerPrefs.SetInt(unlockedCarsKey, (int)unlockedCars);
     }
@@ -317,7 +337,7 @@ public class GameManager
         else
         {
             unlockedUpgrades = 0U;
-            PlayerPrefs.SetInt(unlockedUpgradesKey, (int)0U);
+            PlayerPrefs.SetInt(unlockedUpgradesKey, (int)0U); 
         }
         if(PlayerPrefs.HasKey(highScoreKey))
             highScore = PlayerPrefs.GetInt(highScoreKey);

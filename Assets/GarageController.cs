@@ -16,6 +16,7 @@ public class GarageController : MonoBehaviour
     public Text carNameText;
     public Text carPriceText;
     public Text moneyText;
+    public Image carSelectorImage;
     public Image carImage;
     int[] upgradePrices = new int[]{ 270, 550, 995, 550 };
     int[] carPrices = new int[] { 0, 300, 400, 700, 1000, 1200, 1500, 2000, 5000};
@@ -28,42 +29,64 @@ public class GarageController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        carImage.sprite = cars[GameManager.Instance.GetSelectedCar()];
         moneyText.text = "$" + GameManager.Instance.GetMoney();
         PreviewUpgrade();
-        SetCar(GameManager.Instance.GetSelectedCar());
+        SetPreviewedCar(GameManager.Instance.GetSelectedCar());
     }
-    void SetCar(int car)
+    void SetPreviewedCar(int car)
     {
         if (car < 0 || car > 8) return;
+        foreach(UpgradeUnlocker uu in upgrades)
+        {
+            uu.UnPreview();
+            previewedUpgrade = -1;
+        }
         previewedCar = car;
-        carImage.sprite = cars[previewedCar];
+        carSelectorImage.sprite = cars[previewedCar];
+        carNameText.text = carNames[previewedCar];
         if (GameManager.Instance.IsCarUnlocked(previewedCar))
         {
-            carImage.color = Color.white;
+            carSelectorImage.color = Color.white;
             carPriceText.text = "";
             buyCarButton.gameObject.SetActive(!(GameManager.Instance.GetSelectedCar() == previewedCar));
             buyCarButton.GetComponentInChildren<Text>().text = "Select";
         }
         else
         {
-            carImage.color = Color.black;
+            carSelectorImage.color = Color.black;
             carPriceText.text = "$" + carPrices[previewedCar];
             buyCarButton.gameObject.SetActive(true);
             buyCarButton.interactable = GameManager.Instance.GetMoney() >= carPrices[previewedCar];
             buyCarButton.GetComponentInChildren<Text>().text = "Buy";
         }
+        ShowBars();
     }
     public void SwitchCar(bool next)
     {
-        SetCar(previewedCar + (next ? 1 : -1));
+        SetPreviewedCar(previewedCar + (next ? 1 : -1));
     }
 
     public void PressedCarButton()
     {
-
+        if(GameManager.Instance.IsCarUnlocked(previewedCar))
+        {
+            GameManager.Instance.SetSelectedCar(previewedCar);
+            carImage.sprite = cars[GameManager.Instance.GetSelectedCar()];
+            SetPreviewedCar(previewedCar);
+        } else
+        {
+            if(GameManager.Instance.UpdateMoney(-carPrices[previewedCar]))
+            {
+                GameManager.Instance.UnlockCar(previewedCar);
+                SetPreviewedCar(previewedCar);
+                moneyText.text = "$" + GameManager.Instance.GetMoney();
+            }
+        }
     }
     public void PressedUpgrade(int type)
     {
+        SetPreviewedCar(GameManager.Instance.GetSelectedCar());
         foreach(UpgradeUnlocker ul in upgrades)
         {
             ul.UnPreview();
@@ -84,18 +107,22 @@ public class GarageController : MonoBehaviour
         {
             buyUpgradeButton.gameObject.SetActive(true);
             buyUpgradeButton.interactable = GameManager.Instance.GetMoney() >= upgradePrices[previewedUpgrade];
-            print(upgradePrices[previewedUpgrade]);
             upgradePriceText.text = "$" + upgradePrices[previewedUpgrade];
             buyUpgradeButton.GetComponentInChildren<Text>().text = "Buy " + upgradeNames[previewedUpgrade];
         }
+        ShowBars();
+    }
+
+    void ShowBars()
+    {
         int j = 0;
+        int[] previewedCarValues = GameManager.Instance.GetStatValues(previewedCar);
         foreach (int i in GameManager.Instance.GetStatValues())
         {
-            bars[j].SetValue(i + (previewedUpgrade == -1 ? 0 : GameManager.UPGRADE_VALUES[previewedUpgrade, j]));
+            bars[j].SetValues(i, previewedCarValues[j] + (previewedUpgrade == -1 ? 0 : GameManager.UPGRADE_VALUES[previewedUpgrade, j]));
             j++;
         }
     }
-
 
     public void ViewProduct()
     {

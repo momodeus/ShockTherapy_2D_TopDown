@@ -370,6 +370,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 893341532}
     m_Modifications:
+    - target: {fileID: 7605906002085436868, guid: ada86bcea8583e04cb3177b6f34a9723, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2132520112}
+    - target: {fileID: 7605906002085436868, guid: ada86bcea8583e04cb3177b6f34a9723, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PressedCarButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605906002085436868, guid: ada86bcea8583e04cb3177b6f34a9723, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GarageController, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7605906002085436870, guid: ada86bcea8583e04cb3177b6f34a9723, type: 3}
       propertyPath: m_Name
       value: Buy Car button
@@ -2736,7 +2748,6 @@ GameObject:
   - component: {fileID: 1695110309}
   - component: {fileID: 1695110312}
   - component: {fileID: 1695110311}
-  - component: {fileID: 1695110310}
   m_Layer: 5
   m_Name: Car
   m_TagString: Untagged
@@ -2763,28 +2774,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 800, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1695110310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695110308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f7f7420ea09c2c4b98360a17b938e0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cars:
-  - {fileID: 21300000, guid: d5a526901c2ad74479e1a83f2a7103bf, type: 3}
-  - {fileID: 21300000, guid: 1cb04656393009a4c8ffb0775dca36b3, type: 3}
-  - {fileID: 21300000, guid: ec50c50c3befbb249a68559b9d51f336, type: 3}
-  - {fileID: 21300000, guid: ab70deecb547167498ade510de0e1ac9, type: 3}
-  - {fileID: 21300000, guid: e4bf1f45d05e32847a6d6e0764d81c96, type: 3}
-  - {fileID: 21300000, guid: cdd6298f6b08237449a6f011276b4a0c, type: 3}
-  - {fileID: 21300000, guid: 37072b0afe839f5408ca259f83442858, type: 3}
-  - {fileID: 21300000, guid: 575ce8e88d509794bb13caf7149d56f5, type: 3}
-  - {fileID: 21300000, guid: 70285d965110a1745bc79fbbb178e17c, type: 3}
 --- !u!114 &1695110311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3753,7 +3742,8 @@ MonoBehaviour:
   carNameText: {fileID: 1895022327}
   carPriceText: {fileID: 617881603}
   moneyText: {fileID: 1322701121}
-  carImage: {fileID: 380945854}
+  carSelectorImage: {fileID: 380945854}
+  carImage: {fileID: 1695110311}
   urls:
   - http://shocktherapyst.com/all-products/limit-straps/
   - http://shocktherapyst.com/all-products/aftermarket-shocks/

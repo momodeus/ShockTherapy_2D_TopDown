@@ -20,7 +20,7 @@ public class PlayerMovement : UTV
     public AudioClip crashSound; 
     public AudioClip winSound;
     public AudioSource audioSource;
-    private int queuedHeading = -1; //holds queued heading. This imrpoves responsiveness if player tries to move slightly before they're allowed to
+    private GridMovement.Direction queuedHeading = GridMovement.NONE; //holds queued heading. This imrpoves responsiveness if player tries to move slightly before they're allowed to
     private int maxSmokes = 3;
     private int lastSmokeX = 0, lastSmokeY = 0;
     private bool shouldSmoke = false;
@@ -142,12 +142,12 @@ public class PlayerMovement : UTV
     /// Allows queueing of next move
     /// </summary>
     /// <param name="newHeading">next move to queue</param>
-    public void RequestNewMove(int newHeading)
+    public void RequestNewMove(GridMovement.Direction newHeading)
     {
         queuedHeading = newHeading;
     }
 
-    public void SwipeRequestNewMove(int newHeading)
+    public void SwipeRequestNewMove(GridMovement.Direction newHeading)
     {
         if(GameManager.Instance.IsSwipeControls())
         {
@@ -161,7 +161,7 @@ public class PlayerMovement : UTV
         if(!GameManager.Instance.IsSwipeControls())
         {
             Debug.Log("button requested, got");
-            RequestNewMove(newHeading);
+            RequestNewMove((GridMovement.Direction)newHeading);
         }
     }
     public void SetShouldSmoke(bool s)

@@ -12,7 +12,7 @@ public class EnemyMovement : UTV
 {
     public UTV player;
     private uint queueDepth;
-    private Queue<int> nextMoves;
+    private Queue<GridMovement.Direction> nextMoves;
     public FollowType followType = FollowType.BASIC;
     public float delayTime = 8;
     public enum FollowType
@@ -20,7 +20,7 @@ public class EnemyMovement : UTV
         SINGLEASTAR,
         QUADASTAR,
         BASIC,
-        FULLASTAR
+        BIGASTAR
     }
     // Start is called before the first frame update
     void Start()
@@ -33,8 +33,8 @@ public class EnemyMovement : UTV
         else if (rand < 0.95)
             followType = FollowType.BASIC;
         else
-            followType = FollowType.FULLASTAR;
-        nextMoves = new Queue<int>();
+            followType = FollowType.BIGASTAR;
+        nextMoves = new Queue<GridMovement.Direction>();
     }
 
     // Update is called once per frame
@@ -56,20 +56,25 @@ public class EnemyMovement : UTV
         }
     }
 
+
     private void UpdateQueue()
     {
         switch (followType)
         {
             case FollowType.SINGLEASTAR:
-                queueDepth = 1;
+                queueDepth = 1; 
                 AStarSearch(new Pair(gridX, gridY));
                 break;
             case FollowType.QUADASTAR:
                 queueDepth = 4;
                 AStarSearch(new Pair(gridX, gridY));
                 break;
+            case FollowType.BIGASTAR:
+                queueDepth = 16;
+                AStarSearch(new Pair(gridX, gridY));
+                break;
             case FollowType.BASIC:
-                int move = heading;
+                GridMovement.Direction move = heading;
                 float bestDist = float.MaxValue;
                 if (GridMovement.CanMove(GridMovement.NORTH, gridX, gridY) && bestDist > Dist2Player(gridX, gridY + 1))
                 {
@@ -92,13 +97,9 @@ public class EnemyMovement : UTV
                 }
                 nextMoves.Enqueue(move);
                 break;
-            case FollowType.FULLASTAR:
-                queueDepth = uint.MaxValue;
-                AStarSearch(new Pair(gridX, gridY));
-                break;
         }
     }
-    private bool TryMoveConsideringOthers(int newHeading)
+    private bool TryMoveConsideringOthers(GridMovement.Direction newHeading)
     {
         if (EnemySpawner.HasConflict(newHeading, gridX, gridY)) 
         { 
@@ -221,7 +222,7 @@ public class EnemyMovement : UTV
     private void TracePath(Cell[, ] cellDetails)
     {
         nextMoves.Clear();
-        Stack<int> tempStack = new Stack<int>(); //we need this to be able to get the first queueDepth moves
+        Stack<GridMovement.Direction> tempStack = new Stack<GridMovement.Direction>(); //we need this to be able to get the first queueDepth moves
         int x = player.gridX;
         int y = player.gridY;
 
@@ -316,7 +317,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if(GridMovement.CanMove(GridMovement.NORTH, x, y) && !closedList[x, y + 1] && !EnemySpawner.HasBlockage(GridMovement.NORTH, x, y))
+            else if(GridMovement.CanMove(GridMovement.Direction.NORTH, x, y) && !closedList[x, y + 1] && !EnemySpawner.HasBlockage(GridMovement.Direction.NORTH, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x, y + 1);
@@ -339,7 +340,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if (GridMovement.CanMove(GridMovement.SOUTH, x, y) && !closedList[x, y - 1] && !EnemySpawner.HasBlockage(GridMovement.SOUTH, x, y))
+            else if (GridMovement.CanMove(GridMovement.Direction.SOUTH, x, y) && !closedList[x, y - 1] && !EnemySpawner.HasBlockage(GridMovement.Direction.SOUTH, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x, y - 1);
@@ -361,7 +362,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if (GridMovement.CanMove(GridMovement.EAST, x, y) && !closedList[x + 1, y] && !EnemySpawner.HasBlockage(GridMovement.EAST, x, y))
+            else if (GridMovement.CanMove(GridMovement.Direction.EAST, x, y) && !closedList[x + 1, y] && !EnemySpawner.HasBlockage(GridMovement.Direction.EAST, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x + 1, y);
@@ -384,7 +385,7 @@ public class EnemyMovement : UTV
                 TracePath(cellDetails);
                 return;
             }
-            else if (GridMovement.CanMove(GridMovement.WEST, x, y) && !closedList[x - 1, y] && !EnemySpawner.HasBlockage(GridMovement.WEST, x, y))
+            else if (GridMovement.CanMove(GridMovement.Direction.WEST, x, y) && !closedList[x - 1, y] && !EnemySpawner.HasBlockage(GridMovement.Direction.WEST, x, y))
             {
                 gNew = cellDetails[x, y].g + 1;
                 hNew = CalculateHValue(x - 1, y);

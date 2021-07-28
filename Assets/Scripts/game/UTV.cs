@@ -21,7 +21,7 @@ public class UTV : GridObject, GameManagerListener
     [HideInInspector]
     public bool allowedToMove = true;
     [HideInInspector]
-    public int heading = GridMovement.NORTH;
+    public GridMovement.Direction heading = GridMovement.NORTH;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,11 +44,11 @@ public class UTV : GridObject, GameManagerListener
     /// </summary>
     /// <param name="newHeading">new direction to move</param>
     /// <returns>whether the move was successful</returns>
-    protected bool TryMove(int newHeading)
+    protected bool TryMove(GridMovement.Direction newHeading)
     {
         if (!allowedToMove) return false;
         if (newHeading == GridMovement.NONE) return false; //might want this to be true, since success; however, doesn't move
-        if ((newHeading % 4) != (heading + 2) % 4 && !canTurn180) return false;
+        if (((int)newHeading % 4) != ((int)heading + 2) % 4 && !canTurn180) return false;
         if (!isMoving && GridMovement.CanMove(newHeading, gridX, gridY))
         {
             StartCoroutine(MoveRoutine(newHeading));
@@ -63,7 +63,7 @@ public class UTV : GridObject, GameManagerListener
     /// </summary>
     /// <param name="newHeading"></param>
     /// <returns></returns>
-    private IEnumerator MoveRoutine(int newHeading)
+    private IEnumerator MoveRoutine(GridMovement.Direction newHeading)
     {
         isMoving = true;
         Vector3 direction;
@@ -100,7 +100,7 @@ public class UTV : GridObject, GameManagerListener
         targetPos = origPos + direction;
 
         origHeading = transform.rotation;
-        targetHeading = Quaternion.Euler(0, 0, heading * 90);
+        targetHeading = Quaternion.Euler(0, 0, (int)(heading) * 90);
         while(elapsedTime < time && allowedToMove)
         {
             transform.position = Vector3.Lerp(origPos, targetPos, (elapsedTime / time));

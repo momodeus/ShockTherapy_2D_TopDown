@@ -12,12 +12,12 @@ public class BotMovement : UTV
 {
     public GridObject target;
     private uint queueDepth;
-    private Queue<int> nextMoves;
+    private Queue<GridMovement.Direction> nextMoves;
 
     // Start is called before the first frame update
     void Start()
     {
-        nextMoves = new Queue<int>();
+        nextMoves = new Queue<GridMovement.Direction>();
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class BotMovement : UTV
         queueDepth = uint.MaxValue;
         AStarSearch(new Pair(gridX, gridY));
     }
-    private bool TryMoveConsideringOthers(int newHeading)
+    private bool TryMoveConsideringOthers(GridMovement.Direction newHeading)
     {
         return base.TryMove(newHeading);
     }
@@ -147,7 +147,7 @@ public class BotMovement : UTV
     private void TracePath(Cell[, ] cellDetails)
     {
         nextMoves.Clear();
-        Stack<int> tempStack = new Stack<int>(); //we need this to be able to get the first queueDepth moves
+        Stack<GridMovement.Direction> tempStack = new Stack<GridMovement.Direction>(); //we need this to be able to get the first queueDepth moves
         int x = target.gridX;
         int y = target.gridY;
 

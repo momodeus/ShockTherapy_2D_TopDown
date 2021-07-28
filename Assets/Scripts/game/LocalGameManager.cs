@@ -30,7 +30,7 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
     [Header("Maps")]
     public MapData mapData;
 
-    public TextAsset[] collisionMap = new TextAsset[3]; //text representation of map, with 1 being a wall and 0 being a path. 
+    public TextAsset[] collisionMap = new TextAsset[4]; //text representation of map, with 1 being a wall and 0 being a path. 
                                                         //important: make sure there is no extra line at the end of file. 
     public Sprite[] mapImages = new Sprite[3];
     // Start is called before the first frame update
@@ -53,6 +53,11 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
             mapSpriteRenderer.gameObject.SetActive(false);
             GridMovement.LoadMap(GameManager.Instance.GetCollisionMap());
             CollisionGenerator.ReadCollisionMap(GameManager.Instance.GetCollisionMap(), mapData);
+        } else if(GameManager.Instance.GetMap() == 3)
+        {
+            mapSpriteRenderer.gameObject.SetActive(false);
+            GridMovement.LoadMap(collisionMap[GameManager.Instance.GetMap()].text);
+            CollisionGenerator.ReadCollisionMap(collisionMap[GameManager.Instance.GetMap()].text, mapData, 5);
         } else
         {
             mapSpriteRenderer.sprite = mapImages[GameManager.Instance.GetMap()];

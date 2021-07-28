@@ -18,7 +18,7 @@ public class GarageController : MonoBehaviour
     public Text moneyText;
     public Image carSelectorImage;
     public Image carImage;
-    int[] upgradePrices = new int[]{ 270, 550, 995, 550 };
+    int[] upgradePrices = new int[]{ 135, 275, 500, 550 };
     int[] carPrices = new int[] { 0, 300, 400, 700, 1000, 1200, 1500, 2000, 5000};
     string[] upgradeNames = new string[]{ "Limit Strap", "Spring Kit", "Race Rack", "Sway Bar" };
     string[] carNames = new string[] { "Arctic Cat Wildcat", "Can Am x3 Maverick", "Can Am x3 RS Turbo", "Honda Talon 100R", "Kawasaki Teryx", "Polaris RZR", "Polaris XP Pro", "Textron Wildcat XX", "Yamaha XYZ" };

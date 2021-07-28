@@ -187,6 +187,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 23f2d58eff3a0974590971841cb5766f, type: 3}
   - {fileID: 4900000, guid: a11d60d2b9a7c454bb27aae0fad9bd4f, type: 3}
   - {fileID: 4900000, guid: e86641b0eca535243b9b1694f60777eb, type: 3}
+  - {fileID: 4900000, guid: c40b3845ab5b5584583f059fe48360c8, type: 3}
   mapImages:
   - {fileID: 21300000, guid: c0c69993d9bea3f49ae580ba048569e2, type: 3}
   - {fileID: 21300000, guid: ac0f3fff944a8be45b0163cae899df46, type: 3}
@@ -1694,7 +1695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682056358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: -1, z: 0}
+  m_LocalPosition: {x: -1, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1647064607}
@@ -2410,7 +2411,6 @@ GameObject:
   - component: {fileID: 1106760806}
   - component: {fileID: 1106760809}
   - component: {fileID: 1106760808}
-  - component: {fileID: 1106760807}
   - component: {fileID: 1106760810}
   m_Layer: 5
   m_Name: LoseSplash
@@ -2443,18 +2443,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1106760807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106760805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b79a04be2eafb4ca8df8940d028bf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1106760808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3174,7 +3162,6 @@ GameObject:
   - component: {fileID: 1288879249}
   - component: {fileID: 1288879251}
   - component: {fileID: 1288879250}
-  - component: {fileID: 1288879252}
   - component: {fileID: 1288879253}
   m_Layer: 5
   m_Name: WinSplash
@@ -3245,18 +3232,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288879248}
   m_CullTransparentMesh: 1
---- !u!114 &1288879252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1288879248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b79a04be2eafb4ca8df8940d028bf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1288879253
 Animator:
   serializedVersion: 3
@@ -4073,87 +4048,91 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 0
     m_Data:
-      e00: 4e-45
-      e01: 1.6725973e+22
-      e02: 0
-      e03: 7.188633
-      e10: NaN
-      e11: 6.77e-43
-      e12: 6.74e-43
-      e13: 6.74e-43
-      e20: 5.196276e-16
-      e21: 0
-      e22: 0.64667606
-      e23: -1.658066e+29
-      e30: 6.77e-43
-      e31: 0
-      e32: 4.5904e-41
-      e33: 6.75e-43
-  - m_RefCount: 0
-    m_Data:
-      e00: -1.084227e-19
-      e01: 5.6697733e+34
-      e02: 5.6693375e+34
-      e03: 5.6693375e+34
-      e10: 6.74e-43
-      e11: 1.15e-43
-      e12: 1.15e-43
-      e13: 1.15e-43
-      e20: 0.64667606
-      e21: -1.658075e+29
-      e22: 7.1514015
-      e23: -1.658075e+29
+      e00: 0
+      e01: 5.74e-42
+      e02: -8314176
+      e03: -8314176
+      e10: 0
+      e11: 0
+      e12: 2.8e-44
+      e13: 2.8e-44
+      e20: -0.00003994681
+      e21: NaN
+      e22: -4.676258
+      e23: 1.8738471e+29
       e30: 4.5904e-41
-      e31: 6.75e-43
-      e32: 6.74e-43
-      e33: 6.75e-43
-  - m_RefCount: 0
-    m_Data:
-      e00: 4e-45
-      e01: 1.6725973e+22
-      e02: 0
-      e03: 7.188633
-      e10: 6.75e-43
-      e11: 6.77e-43
-      e12: 6.74e-43
-      e13: 6.74e-43
-      e20: 5.196276e-16
-      e21: 0
-      e22: 0.64667606
-      e23: -1.658066e+29
-      e30: 6.77e-43
       e31: 0
-      e32: 4.5904e-41
-      e33: 6.75e-43
+      e32: 6.28e-43
+      e33: 6.3e-43
   - m_RefCount: 0
     m_Data:
-      e00: -1.084227e-19
-      e01: 5.6699e+34
-      e02: 5.6694643e+34
-      e03: 5.6694643e+34
-      e10: 6.74e-43
-      e11: 1.15e-43
-      e12: 1.15e-43
-      e13: 1.15e-43
-      e20: 0.64667606
-      e21: -1.658075e+29
-      e22: 7.188633
-      e23: -1.658075e+29
+      e00: 0
+      e01: 2.524355e-29
+      e02: -8314176
+      e03: -8314176
+      e10: 0
+      e11: 0
+      e12: 2.8e-44
+      e13: 2.8e-44
+      e20: -0.00003994681
+      e21: 2.1e-44
+      e22: -8.569344
+      e23: 1.8738471e+29
       e30: 4.5904e-41
-      e31: 6.75e-43
-      e32: 6.74e-43
-      e33: 6.75e-43
+      e31: 0
+      e32: 6.28e-43
+      e33: 6.3e-43
+  - m_RefCount: 0
+    m_Data:
+      e00: 0
+      e01: 1.435e-42
+      e02: -8314176
+      e03: -8314176
+      e10: 0
+      e11: 0
+      e12: 2.8e-44
+      e13: 2.8e-44
+      e20: -0.00003994681
+      e21: 2.8e-44
+      e22: -5.7580757
+      e23: 1.8738471e+29
+      e30: 4.5904e-41
+      e31: 0
+      e32: 6.28e-43
+      e33: 6.3e-43
+  - m_RefCount: 0
+    m_Data:
+      e00: 0
+      e01: 3e-45
+      e02: -8314176
+      e03: -8314176
+      e10: 0
+      e11: 0
+      e12: 2.8e-44
+      e13: 2.8e-44
+      e20: -0.00003994681
+      e21: NaN
+      e22: -4.6768074
+      e23: 1.8738471e+29
+      e30: 4.5904e-41
+      e31: 0
+      e32: 6.28e-43
+      e33: 6.3e-43
   m_TileColorArray:
   - m_RefCount: 0
-    m_Data: {r: -1.6580085e+29, g: -1.6580085e+29, b: -1.6580085e+29, a: -1.6580085e+29}
+    m_Data: {r: 1.6963496e+29, g: 1.6963496e+29, b: 1.6963496e+29, a: 1.6963496e+29}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -1, y: -10, z: 0}
-  m_Size: {x: 3, y: 10, z: 1}
+  m_Origin: {x: -22, y: -33, z: 0}
+  m_Size: {x: 43, y: 66, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:

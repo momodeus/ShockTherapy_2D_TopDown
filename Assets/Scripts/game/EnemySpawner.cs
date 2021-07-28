@@ -19,10 +19,10 @@ public class EnemySpawner : MonoBehaviour
         }
     } 
 
-    public static bool HasConflict(int heading, int gridX, int gridY)
+    public static bool HasConflict(GridMovement.Direction heading, int gridX, int gridY)
     {
-        int nx = gridX + (heading % 2 == 0 ? 0 : (heading == GridMovement.EAST ? 1 : -1));
-        int ny = gridY + (heading % 2 == 0 ? (heading == GridMovement.NORTH ? 1 : -1) : 0);
+        int nx = gridX + ((int)heading % 2 == 0 ? 0 : (heading == GridMovement.EAST ? 1 : -1));
+        int ny = gridY + ((int)heading % 2 == 0 ? (heading == GridMovement.NORTH ? 1 : -1) : 0);
         foreach (EnemyMovement em in enemies)
         {
             if (em.gridX == nx && em.gridY == ny) return true;
@@ -30,13 +30,21 @@ public class EnemySpawner : MonoBehaviour
         return false;
     }
 
-    public static bool HasBlockage(int heading, int gridX, int gridY)
+    public static bool HasBlockage(GridMovement.Direction heading, int gridX, int gridY)
     {
-        int nx = gridX + (heading % 2 == 0 ? 0 : (heading == GridMovement.EAST ? 1 : -1));
-        int ny = gridY + (heading % 2 == 0 ? (heading == GridMovement.NORTH ? 1 : -1) : 0);
+        int nx = gridX + ((int)heading % 2 == 0 ? 0 : (heading == GridMovement.EAST ? 1 : -1));
+        int ny = gridY + ((int)heading % 2 == 0 ? (heading == GridMovement.NORTH ? 1 : -1) : 0);
         foreach (EnemyMovement em in enemies)
         {
             if (em.gridX == nx && em.gridY == ny && !em.IsMoving()) return true;
+        }
+        return false;
+    }
+    public static bool HasBlockage(Vector2Int v)
+    {
+        foreach (EnemyMovement em in enemies)
+        {
+            if (em.gridX == v.x && em.gridY == v.y && !em.IsMoving()) return true;
         }
         return false;
     }

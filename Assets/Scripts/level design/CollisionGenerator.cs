@@ -31,11 +31,14 @@ public class CollisionGenerator : MonoBehaviour
             }
             if(i < gridHeight) collisionMap += "1\n";
         }
-        print(collisionMap);
         return collisionMap;
     }
 
     public static void ReadCollisionMap(string collisionMap, MapData mapData)
+    {
+        ReadCollisionMap(collisionMap, mapData, GameManager.Instance.GetSelectedTheme());
+    }
+    public static void ReadCollisionMap(string collisionMap, MapData mapData, int themeIdx)
     {
         mapData.baseTilemap.ClearAllTiles();
         if (mapData.carsTilemap != null) mapData.carsTilemap.ClearAllTiles();
@@ -57,31 +60,31 @@ public class CollisionGenerator : MonoBehaviour
                     if (eachLine[i][j] == '1')
                     {
                         dirtPositions.Add(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
-                        dirtTiles.Add(mapData.GetDirtTile());
+                        dirtTiles.Add(mapData.dirtTiles[themeIdx]);
                     }
                     else if (eachLine[i][j] == '0')
                     {
                         pathPositions.Add(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
-                        pathTiles.Add(mapData.GetPathTile());
+                        pathTiles.Add(mapData.pathTiles[themeIdx]);
                     }
                     else if (eachLine[i][j] == 'E')
                     {
                         pathPositions.Add(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
-                        pathTiles.Add(mapData.GetPathTile());
+                        pathTiles.Add(mapData.pathTiles[themeIdx]);
                         mapData.enemyPositions.Enqueue(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
                         if (mapData.carsTilemap != null) mapData.carsTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.enemyTile);
                     }
                     else if (eachLine[i][j] == 'P')
                     {
                         pathPositions.Add(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0));
-                        pathTiles.Add(mapData.GetPathTile());
+                        pathTiles.Add(mapData.pathTiles[themeIdx]);
                         mapData.SetPlayerPosition(j - eachLine[i].Length / 2, -i + eachLine.Count / 2);
                         if (mapData.carsTilemap != null) mapData.carsTilemap.SetTile(new Vector3Int(j - eachLine[i].Length / 2, -i + eachLine.Count / 2, 0), mapData.playerTile);
                     }
                 } else
                 {
                     borderPositions.Add(new Vector3Int(j - eachLine[0].Length / 2, -i + eachLine.Count / 2, 0));
-                    borderTiles.Add(mapData.GetBorderTile());
+                    borderTiles.Add(mapData.borderTiles[themeIdx]);
                 }
             }
         }

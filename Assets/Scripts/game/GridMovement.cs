@@ -9,15 +9,15 @@ public class GridMovement
 {    
     //direction constants (don't want to see in inspector, but valuable to other places)
     [HideInInspector]
-    public const int NORTH = 0;
+    public const Direction NORTH = Direction.NORTH;
     [HideInInspector]
-    public const int WEST = 1;
+    public const Direction WEST = Direction.WEST;
     [HideInInspector]
-    public const int SOUTH = 2;
+    public const Direction SOUTH = Direction.SOUTH;
     [HideInInspector]
-    public const int EAST = 3;
+    public const Direction EAST = Direction.EAST;
     [HideInInspector]
-    public const int NONE = -1;
+    public const Direction NONE = Direction.NONE;
     [HideInInspector]
     private static int gridWidth, gridHeight; //width and height of grid
     private static bool[,] collisions;     //boolean representation of text file
@@ -25,6 +25,14 @@ public class GridMovement
     private static List<Vector2Int> enemySpawns;
     private static Vector2Int playerSpawn;
 
+    public enum Direction : int
+    {
+        NORTH = 0,
+        WEST = 1,
+        SOUTH = 2,
+        EAST = 3,
+        NONE = -1
+    }
     public static void LoadMap(string map)
     {
         enemySpawns = new List<Vector2Int>();
@@ -132,19 +140,19 @@ public class GridMovement
     /// <param name="gridX"></param>
     /// <param name="gridY"></param>
     /// <returns>true if it can move, false if it is blocked. </returns>
-    public static bool CanMove(int heading, int gridX, int gridY)
+    public static bool CanMove(Direction heading, int gridX, int gridY)
     {
         if (gridX >= 1 && gridX < gridWidth-1 && gridY >= 1 && gridY < gridHeight-1)
         {
             switch(heading)
             {
-                case NORTH:
+                case Direction.NORTH:
                     return collisions[gridX, gridY + 1];
-                case WEST:
+                case Direction.WEST:
                     return collisions[gridX - 1, gridY];
-                case SOUTH:
+                case Direction.SOUTH:
                     return collisions[gridX, gridY - 1];
-                case EAST:
+                case Direction.EAST:
                     return collisions[gridX + 1, gridY];
                 default:
                     return false;

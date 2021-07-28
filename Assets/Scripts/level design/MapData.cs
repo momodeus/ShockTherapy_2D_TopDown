@@ -12,13 +12,9 @@ public class MapData : MonoBehaviour
     [HideInInspector]
     public Vector3Int playerPosition;
     [HideInInspector]
-    public Queue<Vector3Int> enemyPositions;
+    public Queue<Vector3Int> enemyPositions = new Queue<Vector3Int>(9);
     [HideInInspector]
     public bool hasPlayer = false;
-    void Awake()
-    {
-        enemyPositions = new Queue<Vector3Int>(9);
-    }
 
     public RuleTile GetBorderTile()
     {

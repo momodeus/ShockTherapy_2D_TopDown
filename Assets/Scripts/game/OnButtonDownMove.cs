@@ -7,12 +7,9 @@ public class OnButtonDownMove : MonoBehaviour, IPointerDownHandler
 {
 
     public PlayerMovement player;
-    public int direction;
+    public GridMovement.Direction direction;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     public void OnPointerDown(PointerEventData eventData)
     {

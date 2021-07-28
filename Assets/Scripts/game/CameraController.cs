@@ -26,7 +26,7 @@ public class CameraController : MonoBehaviour
         if (player.IsMoving())
         {
             transform.position += new Vector3(0.03f * Random.Range(-player.roughness, player.roughness),
-            0.03f * Random.Range(-player.roughness, player.roughness), 0);
+            0.015f * Random.Range(-player.roughness, player.roughness), 0);
         }
     }
 }

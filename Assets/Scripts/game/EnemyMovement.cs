@@ -15,6 +15,15 @@ public class EnemyMovement : UTV
     private Queue<GridMovement.Direction> nextMoves;
     public FollowType followType = FollowType.BASIC;
     public float delayTime = 8;
+    public int[,] difficultyValues = new int[,] {
+                { 3, 1, 1 },
+                { 4, 3, 2 },
+                { 5, 4, 3 },   
+                { 6, 5, 4 },
+                { 7, 6, 5 },
+                { 9, 9, 6 },
+                { 11, 11, 7 }}; 
+    //speed, turning, acceleration out of 11
     public enum FollowType
     {
         SINGLEASTAR,
@@ -25,6 +34,9 @@ public class EnemyMovement : UTV
     // Start is called before the first frame update
     void Start()
     {
+        timeToMove = 0.25f - difficultyValues[GameManager.Instance.GetLevelIndex(), 0] * 0.005f;
+        timeToTurn = 0.25f - difficultyValues[GameManager.Instance.GetLevelIndex(), 1] * 0.005f;
+        //TODO: acceleration
         float rand = Random.value;
         if (rand < 0.3)
             followType = FollowType.SINGLEASTAR;

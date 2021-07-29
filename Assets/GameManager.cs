@@ -48,7 +48,10 @@ public class GameManager
     //status stuff
     private StateType state = StateType.DEFAULT;
     private List<GameManagerListener> listeners = new List<GameManagerListener>();
-
+    private int levelIndex = 0; //there are currently 7 levels, 0-6. maybe 0th level could be tutorial. 
+    private const string levelIndexKey = "levelIndex";
+    private int maxUnlockedLevel = 0;
+    private const string maxLevelKey = "maxLevel";
     //custom map stuff
     private bool userMadeMap = false;
     private string collisionMap;
@@ -61,7 +64,8 @@ public class GameManager
                                             { 0, 5, 0, 1, 2 },
                                             { 4, 0, 0, 0, 2 } };
                                             //5, 5, 5, 3, 8
-    public static int[,] CAR_VALUES = new int[,]{ { 2, 2, 1, 3, 0 },
+    public static int[,] CAR_VALUES = new int[,]{ 
+                                        { 2, 2, 1, 3, 0 },
                                         { 3, 2, 2, 2, 0 },
                                         { 1, 5, 1, 4, 1 },
                                         { 5, 2, 2, 3, 1 },
@@ -102,6 +106,8 @@ public class GameManager
     public int GetHighScore() => highScore;
     public string GetCollisionMap() => collisionMap;
     public bool UserMadeMap() => userMadeMap;
+    public int GetMaxUnlockedLevel() => maxUnlockedLevel;
+    public int GetLevelIndex() => levelIndex;
     
     /// <summary>
     /// 
@@ -155,6 +161,22 @@ public class GameManager
             selectedTheme = theme;
             PlayerPrefs.SetInt(selectedThemeKey, selectedTheme);
         }
+    }
+
+    public void SetLevelIndex(int newIdx)
+    {
+        if (newIdx < 0 || newIdx > 6 || newIdx > maxUnlockedLevel) return;
+        levelIndex = newIdx;
+        if (levelIndex == 6) SetMap(3);
+        else SetMap(levelIndex % 3); //play each map twice, both on diff levels. 
+        PlayerPrefs.SetInt(levelIndexKey, levelIndex);
+    }
+
+    public void SetMaxUnlockedLevel(int newLevel)
+    {
+        if (newLevel < 0 || newLevel > 6 || newLevel < maxUnlockedLevel) return;
+        maxUnlockedLevel = newLevel;
+        PlayerPrefs.SetInt(maxLevelKey, maxUnlockedLevel);
     }
     public void SetMap(int map)
     {
@@ -273,6 +295,20 @@ public class GameManager
     }
     private void LoadData()
     {
+        if(PlayerPrefs.HasKey(maxLevelKey))
+        {
+            maxUnlockedLevel = PlayerPrefs.GetInt(maxLevelKey);
+        } else
+        {
+            SetMaxUnlockedLevel(0);
+        }
+        if(PlayerPrefs.HasKey(levelIndexKey))
+        {
+            levelIndex = PlayerPrefs.GetInt(levelIndexKey);
+        } else
+        {
+            SetLevelIndex(0);
+        }
         if (PlayerPrefs.HasKey(swipeControlsKey))
         {
             swipeControls = PlayerPrefs.GetInt(swipeControlsKey) > 0;
@@ -388,7 +424,11 @@ public class GameManager
     {
         if (state != StateType.GAMEPLAYING) return;
         state = StateType.GAMEWIN;
-        if(map != -1) UpdateMoney(CalculateWinMoney());
+        if (map != -1)
+        {
+            UpdateMoney(CalculateWinMoney());
+            SetMaxUnlockedLevel(GetLevelIndex() + 1);
+        }
         if(score > highScore && map != -1)
         {
             highScore = score;

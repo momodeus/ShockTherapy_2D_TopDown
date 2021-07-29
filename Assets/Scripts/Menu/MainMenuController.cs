@@ -14,9 +14,19 @@ public class MainMenuController : MonoBehaviour
     public Button playCustomMapButton;
     public Text highScoreText;
     public Toggle controlSchemeToggle;
-    public void PlayGame(int mapIdx)
+    public Color color;
+    public void PlayGame(int levelIdx)
     {
-        GameManager.Instance.SetMap(mapIdx);
+        if (levelIdx == -1)
+        {
+            GameManager.Instance.SetLevelIndex(3);
+            GameManager.Instance.SetMap(-1);
+        }
+        else
+        {
+            GameManager.Instance.SetLevelIndex(levelIdx);
+        }
+        
         sceneLoader.LoadScene("InGameScene");
     }
 
@@ -63,7 +73,8 @@ public class MainMenuController : MonoBehaviour
     public void Start()
     {
         controlSchemeToggle.isOn = GameManager.Instance.IsSwipeControls();
-        playCustomMapButton.enabled = GameManager.Instance.UserMadeMap();
+        playCustomMapButton.interactable = GameManager.Instance.UserMadeMap();
+        playCustomMapButton.GetComponentInChildren<Text>().color = GameManager.Instance.UserMadeMap() ? color : Color.black;
         (mainCanvas.GetComponentsInChildren(typeof(Text))[0] as Text).text = "$" + GameManager.Instance.GetMoney();
         Back();
     }

@@ -45,8 +45,12 @@ public class GridMovement
         {
             for (int j = 0; j < eachLine[i].Length; j++)
             {
-                collisions[j, eachLine.Count - (i + 1)] = eachLine[i][j] == '0' || eachLine[i][j] == 'P' || eachLine[i][j] == 'E'; //inserting lines in inverse order, to keep +y facing North. 
+                collisions[j, eachLine.Count - (i + 1)] = eachLine[i][j] == '0' || eachLine[i][j] == 'P' || eachLine[i][j] == 'E' || eachLine[i][j] == 'F'; //inserting lines in inverse order, to keep +y facing North. 
                 if(eachLine[i][j] == 'E')
+                {
+                    enemySpawns.Add(new Vector2Int(j, eachLine.Count - (i + 1)));
+                } 
+                if(eachLine[i][j] == 'F' && GameManager.Instance.GetLevelIndex() > 2) //for second go on levels, spawn more enemies. 
                 {
                     enemySpawns.Add(new Vector2Int(j, eachLine.Count - (i + 1)));
                 }

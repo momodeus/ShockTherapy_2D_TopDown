@@ -143,7 +143,6 @@ public class GarageController : MonoBehaviour
     }
     public void Back()
     {
-        print("back");
         tsl.LoadScene(0);
     }
 }

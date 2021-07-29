@@ -8,6 +8,7 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
 {
     [Header("UI")]
     public GameObject winSplash;
+    public Button nextStageButton;
     public GameObject loseSplash;
     public GameObject pauseSplash;
 
@@ -43,6 +44,10 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
         loseSplash.SetActive(false);
         LoadMap();
         SpawnEntities();
+        if(GameManager.Instance.GetLevelIndex() == 6)
+        {
+            nextStageButton.interactable = false;
+        }
         //scoreText.text = "SCORE:\n" + GameManager.Instance.GetScore();
     }
 
@@ -134,5 +139,11 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
     {
         Time.timeScale = 1;
         pauseSplash.SetActive(false);
+    }
+
+    public void NextStage()
+    {
+        GameManager.Instance.SetLevelIndex(GameManager.Instance.GetLevelIndex() + 1);
+        SceneManager.LoadScene("InGameScene");
     }
 }

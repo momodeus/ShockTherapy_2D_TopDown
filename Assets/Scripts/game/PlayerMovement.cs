@@ -37,7 +37,7 @@ public class PlayerMovement : UTV
         int[] stats = GameManager.Instance.GetStatValues();
         timeToMove = 0.25f - stats[0]*0.005f;
         timeToTurn = 0.25f - stats[1] * 0.005f;
-        //acceleration
+        //TODO: acceleration?
         fuelUsedPerMove = 0.5f - stats[3] * 0.03f;
         roughness = 1 - stats[4]/11f;
     }

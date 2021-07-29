@@ -12,8 +12,8 @@ public class UTV : GridObject, GameManagerListener
     [Header("Movement")]
     [Min(0.001f)]public float timeToMove = 0.2f;
     [Min(0.001f)]public float timeToTurn = 0.2f;
-    [Range(0, 1)]public float roughness = 0f; //between 0 and 1, rougness introduces camera shake and inconsistient movement speed. 
-
+    [HideInInspector] public float roughness = 0f; //between 0 and 1, rougness introduces camera shake and inconsistient movement speed. 
+    //[Min(0.001f)]public float acceleration = 0.2f; //TODO
     public bool canTurn180 = true;
     protected bool isMoving = false;
     protected Vector3 origPos, targetPos;

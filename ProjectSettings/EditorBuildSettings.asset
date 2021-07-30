@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Garage.unity
     guid: fb6eb72730a64ee4f9bdc377737b7fe4
+  - enabled: 1
+    path: Assets/Scenes/QRScanning.unity
+    guid: 239f2a26b3beb8f4c976d682ed3a5829
   m_configObjects: {}

@@ -485,11 +485,6 @@ public class GameManager
     {
         return x * x * x * x;
     }
-
-    private void ThreadLoop()
-    {
-        
-    }
 }
 
 public interface GameManagerListener

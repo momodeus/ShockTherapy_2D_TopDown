@@ -38,7 +38,10 @@ public class MainMenuController : MonoBehaviour
     {
         sceneLoader.LoadScene("Garage");
     }
-
+    public void EnterQR()
+    {
+        sceneLoader.LoadScene("QRScanning");
+    }
     public void LevelSelect()
     {
         mainCanvas.SetActive(false);

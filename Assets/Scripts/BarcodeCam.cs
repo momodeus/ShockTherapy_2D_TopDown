@@ -31,13 +31,11 @@ public class BarcodeCam : MonoBehaviour
     private Thread qrThread;
     private Color32[] c;
     private int W, H;
-
-    private Rect screenRect;
-
+    private bool found = false;
     private bool isQuit;
-
-    public string LastResult;
-    private bool shouldEncodeNow;
+    public string lastResult;
+    public TransitionSceneLoader sceneLoader;
+    public GameObject foundPopup;
 
 
     private void OnGUI()
@@ -80,11 +78,12 @@ public class BarcodeCam : MonoBehaviour
 
     void Start()
     {
+        string compressed = Compression.CompressCollisionMap(GameManager.Instance.GetCollisionMap());
+        print(GameManager.Instance.GetCollisionMap());
+        print(compressed);
+        print(Compression.DecompressCollisionMap(compressed));
         encoded = new Texture2D(256, 256);
-        LastResult = "http://www.google.com";
-        shouldEncodeNow = true;
-
-        screenRect = new Rect(0, 0, Screen.width, Screen.height);
+        lastResult = "http://www.google.com";
 
         camTexture = new WebCamTexture();
         camTexture.requestedHeight = Screen.height; // 480;
@@ -93,6 +92,14 @@ public class BarcodeCam : MonoBehaviour
 
         qrThread = new Thread(DecodeQR);
         qrThread.Start();
+        foundPopup.gameObject.SetActive(false);
+        var textForEncoding = Compression.CompressCollisionMap(GameManager.Instance.GetCollisionMap());
+        if (GameManager.Instance.UserMadeMap() && textForEncoding != null)
+        {
+            var color32 = Encode(textForEncoding, encoded.width, encoded.height);
+            encoded.SetPixels32(color32);
+            encoded.Apply();
+        }
     }
 
     void Update()
@@ -101,19 +108,24 @@ public class BarcodeCam : MonoBehaviour
         {
             c = camTexture.GetPixels32();
         }
-
-        // encode the last found
-        var textForEncoding = GameManager.Instance.GetCollisionMap();
-        if (shouldEncodeNow &&
-            textForEncoding != null)
+        if(found && GameManager.VerifyCollisionMap(lastResult))
         {
-            var color32 = Encode(textForEncoding, encoded.width, encoded.height);
-            encoded.SetPixels32(color32);
-            encoded.Apply();
-            shouldEncodeNow = false;
+            foundPopup.gameObject.SetActive(true);
+            found = false;
         }
     }
 
+    public void HidePopupWindow()
+    {
+        foundPopup.gameObject.SetActive(false);
+    }
+    public void PlayScannedMap()
+    {
+        GameManager.Instance.SetScannedMap(Compression.DecompressCollisionMap(lastResult));
+        GameManager.Instance.SetMap(-2);
+        GameManager.Instance.SetLevelIndex(3);
+        sceneLoader.LoadScene("InGameScene");
+    }
     void DecodeQR()
     {
         // create a reader with a custom luminance source
@@ -130,9 +142,8 @@ public class BarcodeCam : MonoBehaviour
                 var result = barcodeReader.Decode(c, W, H);
                 if (result != null)
                 {
-                    LastResult = result.Text;
-                    shouldEncodeNow = true;
-                    print(result.Text);
+                    lastResult = result.Text;
+                    found = true;
                 }
 
                 // Sleep a little bit and set the signal to get the next frame

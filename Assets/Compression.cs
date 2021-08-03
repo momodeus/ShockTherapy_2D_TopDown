@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Priority_Queue;
+using System;
 
 public class Compression
 {
@@ -19,38 +21,39 @@ public class Compression
         for (int invY = 0; invY < lines.Length; invY++)
         {
             string line = lines[invY];
-            uint fourletters = 0U;
+            if (line.Length < 2) continue;
+            uint sixletters = 0U;
             for (int x = 0; x < 36; x++)
             {
                 if (x >= line.Length)
                 {
-                    fourletters = fourletters << 1;
+                    sixletters = sixletters << 1;
                 }
                 else
                 {
-                    fourletters = fourletters << 1;
-                    fourletters += ((line[x] == '1') ? 1U : 0U);
-                    if (line[x] == 'P') playerPosition = new Vector2Int(x, lines.Length - invY); //TODO: proper pos
-                    else if (line[x] == 'F') fnemyPositions.Add(new Vector2Int(x, lines.Length - invY)); //todo: proper pos
-                    else if (line[x] == 'E') enemyPositions.Add(new Vector2Int(x, lines.Length - invY)); //todo: proper pos
+                    sixletters = sixletters << 1;
+                    sixletters += ((line[x] == '1') ? 1U : 0U);
+                    if (line[x] == 'P') playerPosition = new Vector2Int(x, invY); //TODO: proper pos
+                    else if (line[x] == 'F') fnemyPositions.Add(new Vector2Int(x, invY)); //todo: proper pos
+                    else if (line[x] == 'E') enemyPositions.Add(new Vector2Int(x, invY)); //todo: proper pos
                 }
-                if (x % 4 == 3)
+                if (x % 6 == 5)
                 {
-                    output += (char)('0' + fourletters); //numbers 0-15 correspond to 0,1,2,3,4,5,6,7,8,9,:,;,<,=,>,?
-                    fourletters = 0U;
+                    output += (char)('!' + sixletters); //numbers 0-64 correspond to '!' through 'a'
+                    sixletters = 0U;
                 }
             }
-            output += '\n';
+            if (invY < lines.Length - 1) output += '\n';
         }
         string proxy = "";
-        proxy += "P|" + playerPosition.x + "|" + playerPosition.y + "\n";
+        proxy += "p|" + playerPosition.x + "|" + playerPosition.y + "\n";
         foreach (Vector2Int e in enemyPositions)
         {
-            proxy += "E|" + e.x + "|" + e.y + "\n";
+            proxy += "e|" + e.x + "|" + e.y + "\n";
         }
         foreach (Vector2Int f in fnemyPositions)
         {
-            proxy += "F|" + f.x + "|" + f.y + "\n";
+            proxy += "f|" + f.x + "|" + f.y + "\n";
         }
         output = proxy + output;
         return output;
@@ -64,37 +67,57 @@ public class Compression
     public static string DecompressCollisionMap(string compressed)
     {
         string result = "";
-        int xpos = 0; //makes sure we get rid of the two garbage zeroes at the end
         string[] lines = compressed.Split('\n');
-        int startOfCollision = -1;
+        int startOfCollision = -1; //will be -1 until set on first run of reading collision map
+        List<Vector2Int> enemyPositions = new List<Vector2Int>();
+        List<Vector2Int> fnemyPositions = new List<Vector2Int>();
+        Vector2Int playerPosition = new Vector2Int(1,1);
         for (int y = 0; y < lines.Length; y++)
         {
             string line = lines[y];
-            if (line[0] == 'P' || line[0] == 'E' || line[0] == 'F')
+            if (line.Length < 2) continue;
+            if (line[0] == 'p' || line[0] == 'e' || line[0] == 'f')
             {
                 string[] vals = line.Split('|');
-
+                Debug.Log(vals.Length);
+                switch (vals[0][0])
+                {
+                    case 'P':
+                        playerPosition = new Vector2Int(Int32.Parse(vals[1]), Int32.Parse(vals[2]));
+                        break;
+                    case 'E':
+                        enemyPositions.Add(new Vector2Int(Int32.Parse(vals[1]), Int32.Parse(vals[2])));
+                        break;
+                    case 'F':
+                        fnemyPositions.Add(new Vector2Int(Int32.Parse(vals[1]), Int32.Parse(vals[2])));
+                        break;
+                }
             }
             else
             {
                 if (startOfCollision < 0) startOfCollision = y;
-            }
-        }
-        foreach (char c in compressed)
-        {
-            if (c == '\n')
-            {
-                result += '\n';
-                xpos = 0;
-            }
-            else
-            {
-                int word = c - '0'; //so now chars '0'-'?' map to ints 0-15
-                for (int i = 0; i < 4; i++)
+                int x = 0;
+                foreach(char c in line)
                 {
-                    if (xpos <= 33) result += ((word) & (8 >> i)) > 0 ? '1' : '0';
-                    xpos++;
+                    int word = c - '!';
+                    for(int i = 0; i < 6; i++)
+                    {
+                        if (x == playerPosition.x && (y - startOfCollision) == playerPosition.y)
+                            result += 'P';
+                        else if(enemyPositions.Contains(new Vector2Int(x, y - startOfCollision)))
+                        {
+                            result += 'E';
+                        } else if(fnemyPositions.Contains(new Vector2Int(x, y - startOfCollision)))
+                        {
+                            result += 'F';
+                        }
+                        else if (x <= 33)
+                            result += ((word) & (32 >> i)) > 0 ? '1' : '0';
+                        x++;
+                    }
                 }
+
+                if (y < lines.Length - 1) result += '\n';
             }
         }
         return result;

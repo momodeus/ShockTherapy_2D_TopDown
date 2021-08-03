@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,9 @@ public class GameManager
     private float startFuel;
     private float gameStartTime;
     private int map;
+    private string scannedMap = null;
     private bool firstFlagGot = false;
+
     //options stuff
     private bool swipeControls;
     private const string swipeControlsKey = "SwipeControls";
@@ -108,7 +111,7 @@ public class GameManager
     public bool UserMadeMap() => userMadeMap;
     public int GetMaxUnlockedLevel() => maxUnlockedLevel;
     public int GetLevelIndex() => levelIndex;
-    
+    public string GetScannedMap() => scannedMap;
     /// <summary>
     /// 
     /// </summary>
@@ -143,6 +146,10 @@ public class GameManager
         PlayerPrefs.SetString(collisionMapKey, collisionMap);
     }
 
+    public void SetScannedMap(string map)
+    {
+        scannedMap = map;
+    }
     public void SetSelectedCar(int car)
     {
         if (car >= 0 && car <= 8) 
@@ -180,7 +187,7 @@ public class GameManager
     }
     public void SetMap(int map)
     {
-        if (map < -1 || map > 3) return;
+        if (map < -2 || map > 3) return;
         this.map = map;
     }
     public void LockAllCars()
@@ -424,12 +431,12 @@ public class GameManager
     {
         if (state != StateType.GAMEPLAYING) return;
         state = StateType.GAMEWIN;
-        if (map != -1)
+        if (map >= 0)
         {
             UpdateMoney(CalculateWinMoney());
             SetMaxUnlockedLevel(GetLevelIndex() + 1);
         }
-        if(score > highScore && map != -1)
+        if(score > highScore && map >= 0)
         {
             highScore = score;
             PlayerPrefs.SetInt(highScoreKey, highScore);
@@ -447,7 +454,12 @@ public class GameManager
             (GetPercentFuelRemaining() > 0.5 ? fuelBonus : 0) +
             winBonus : 0;
     }
-
+    public static bool VerifyCollisionMap(string map)
+    {
+        //TODO: verify that map is actually a collisionmap. 
+        //what is collision map? who knows. 
+        return true;
+    }
     public int CalculateLossMoney()
     {
         return map != -1 ? (int)((startFlags - flagsRemaining) * flagValue * 0.5) : 0;

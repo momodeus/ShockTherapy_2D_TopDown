@@ -53,11 +53,16 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
 
     private void LoadMap()
     {
-        if(GameManager.Instance.GetMap() == -1)
+        if (GameManager.Instance.GetMap() == -1)
         {
             mapSpriteRenderer.gameObject.SetActive(false);
             GridMovement.LoadMap(GameManager.Instance.GetCollisionMap());
             CollisionGenerator.ReadCollisionMap(GameManager.Instance.GetCollisionMap(), mapData);
+        } else if(GameManager.Instance.GetMap() == -2)
+        {
+            mapSpriteRenderer.gameObject.SetActive(false);
+            GridMovement.LoadMap(GameManager.Instance.GetScannedMap());
+            CollisionGenerator.ReadCollisionMap(GameManager.Instance.GetScannedMap(), mapData);
         } else if(GameManager.Instance.GetMap() == 3)
         {
             mapSpriteRenderer.gameObject.SetActive(false);

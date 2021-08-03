@@ -10,6 +10,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject optionsCanvas;
     public GameObject themesCanvas;
     public GameObject stageSelectCanvas;
+    public Text mainCanvasMoneyText;
     public TransitionSceneLoader sceneLoader;
     public Button playCustomMapButton;
     public Text highScoreText;
@@ -50,7 +51,7 @@ public class MainMenuController : MonoBehaviour
     public void Options()
     {
         mainCanvas.SetActive(false);
-        (mainCanvas.GetComponentsInChildren(typeof(Text))[0] as Text).text = "$" + GameManager.Instance.GetMoney();
+        mainCanvasMoneyText.text = "$" + GameManager.Instance.GetMoney();
         optionsCanvas.SetActive(true);
     }
 
@@ -65,7 +66,7 @@ public class MainMenuController : MonoBehaviour
         optionsCanvas.SetActive(false);
         stageSelectCanvas.SetActive(false);
         themesCanvas.SetActive(false);
-        (mainCanvas.GetComponentsInChildren(typeof(Text))[0] as Text).text = "$" + GameManager.Instance.GetMoney();
+        mainCanvasMoneyText.text = "$" + GameManager.Instance.GetMoney();
         highScoreText.text = "High Score:\n" + GameManager.Instance.GetHighScore();
         mainCanvas.SetActive(true);
     }
@@ -78,7 +79,7 @@ public class MainMenuController : MonoBehaviour
         controlSchemeToggle.isOn = GameManager.Instance.IsSwipeControls();
         playCustomMapButton.interactable = GameManager.Instance.UserMadeMap();
         playCustomMapButton.GetComponentInChildren<Text>().color = GameManager.Instance.UserMadeMap() ? color : Color.black;
-        (mainCanvas.GetComponentsInChildren(typeof(Text))[0] as Text).text = "$" + GameManager.Instance.GetMoney();
+        mainCanvasMoneyText.text = "$" + GameManager.Instance.GetMoney();
         Back();
     }
     public void SetControlScheme()

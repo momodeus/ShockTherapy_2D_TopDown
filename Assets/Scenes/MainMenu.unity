@@ -2047,6 +2047,7 @@ MonoBehaviour:
   optionsCanvas: {fileID: 147607738}
   themesCanvas: {fileID: 419443491}
   stageSelectCanvas: {fileID: 1397659831}
+  mainCanvasMoneyText: {fileID: 1612693981}
   sceneLoader: {fileID: 1082467412}
   playCustomMapButton: {fileID: 926595420}
   highScoreText: {fileID: 246050539}

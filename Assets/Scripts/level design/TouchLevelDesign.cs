@@ -41,6 +41,7 @@ public class TouchLevelDesign : MonoBehaviour
         if(Input.touchCount > 0)
         {
             theTouch = Input.GetTouch(0);
+            if (EventSystem.current.IsPointerOverGameObject(theTouch.fingerId)) return;
             if (theTouch.phase == TouchPhase.Began && selectedTile > 1)
             {
                 //convert touch position to tile coordinate

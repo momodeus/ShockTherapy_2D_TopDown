@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is a singleton that handles all variables shared across scenes. It 
+/// </summary>
 public class GameManager
 {
     private static GameManager instance = new GameManager();

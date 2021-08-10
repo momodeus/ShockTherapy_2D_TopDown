@@ -34,6 +34,11 @@ public class GarageController : MonoBehaviour
         PreviewUpgrade();
         SetPreviewedCar(GameManager.Instance.GetSelectedCar());
     }
+
+    /// <summary>
+    /// updates UI to reflect which car is previewed. 
+    /// </summary>
+    /// <param name="car"></param>
     void SetPreviewedCar(int car)
     {
         if (car < 0 || car > 8) return;
@@ -63,11 +68,17 @@ public class GarageController : MonoBehaviour
         }
         ShowBars();
     }
+
+
     public void SwitchCar(bool next)
     {
         SetPreviewedCar(previewedCar + (next ? 1 : -1));
     }
 
+    /// <summary>
+    /// function called by the "buy/select" button underneath car scroller. 
+    /// This will behave differently depending on the current car previewed.
+    /// </summary>
     public void PressedCarButton()
     {
         if(GameManager.Instance.IsCarUnlocked(previewedCar))
@@ -85,6 +96,13 @@ public class GarageController : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// This updates UI for previewed upgrades when one is pressed. 
+    /// It will un-preview all other upgrades, and set only the selected 
+    /// upgrade as previewed. 
+    /// </summary>
+    /// <param name="type"></param>
     public void PressedUpgrade(int type)
     {
         SetPreviewedCar(GameManager.Instance.GetSelectedCar());
@@ -98,6 +116,9 @@ public class GarageController : MonoBehaviour
         PreviewUpgrade();
     }
 
+    /// <summary>
+    /// updates UI to reflect previewed upgrade
+    /// </summary>
     void PreviewUpgrade()
     {
         if (previewedUpgrade == -1) 
@@ -114,6 +135,9 @@ public class GarageController : MonoBehaviour
         ShowBars();
     }
 
+    /// <summary>
+    /// Updates stat bars with currenlty previewed car and upgrades
+    /// </summary>
     void ShowBars()
     {
         int j = 0;
@@ -125,11 +149,15 @@ public class GarageController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// function for button to open web browser with link to ST's website
+    /// </summary>
     public void ViewProduct()
     {
         if (previewedUpgrade == -1) return;
         Application.OpenURL(urls[previewedUpgrade]);
     }
+
     public void BuyUpgrade()
     {
         if(GameManager.Instance.UpdateMoney(-upgradePrices[previewedUpgrade]))

@@ -13,6 +13,8 @@ public class Compression
     /// <returns></returns>
     public static string CompressCollisionMap(string uncompressed)
     {
+        if (uncompressed == null) return "";
+        if (uncompressed.Length == 0) return "";
         string[] lines = uncompressed.Split('\n');
         string output = "";
         List<Vector2Int> enemyPositions = new List<Vector2Int>();
@@ -66,6 +68,7 @@ public class Compression
     /// <returns></returns>
     public static string DecompressCollisionMap(string compressed)
     {
+        if (compressed == null || compressed.Length == 0) return "";
         string result = "";
         string[] lines = compressed.Split('\n');
         int startOfCollision = -1; //will be -1 until set on first run of reading collision map
@@ -79,16 +82,15 @@ public class Compression
             if (line[0] == 'p' || line[0] == 'e' || line[0] == 'f')
             {
                 string[] vals = line.Split('|');
-                Debug.Log(vals.Length);
                 switch (vals[0][0])
                 {
-                    case 'P':
+                    case 'p':
                         playerPosition = new Vector2Int(Int32.Parse(vals[1]), Int32.Parse(vals[2]));
                         break;
-                    case 'E':
+                    case 'e':
                         enemyPositions.Add(new Vector2Int(Int32.Parse(vals[1]), Int32.Parse(vals[2])));
                         break;
-                    case 'F':
+                    case 'f':
                         fnemyPositions.Add(new Vector2Int(Int32.Parse(vals[1]), Int32.Parse(vals[2])));
                         break;
                 }

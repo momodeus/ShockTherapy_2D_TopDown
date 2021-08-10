@@ -40,8 +40,10 @@ public class BarcodeCam : MonoBehaviour
 
     private void OnGUI()
     {
-        encoded.filterMode = FilterMode.Point;
-        QRImage.texture = encoded;
+        if (encoded != null) { 
+            encoded.filterMode = FilterMode.Point;
+            QRImage.texture = encoded;
+        }
         QRImage.SetNativeSize();
         cameraImage.texture = camTexture;
         cameraImage.SetNativeSize();
@@ -79,12 +81,12 @@ public class BarcodeCam : MonoBehaviour
     void Start()
     {
         string compressed = Compression.CompressCollisionMap(GameManager.Instance.GetCollisionMap());
-        print(GameManager.Instance.GetCollisionMap());
-        print(compressed);
-        print(Compression.DecompressCollisionMap(compressed));
         encoded = new Texture2D(256, 256);
         lastResult = "http://www.google.com";
 
+        print("uncompressed: " + GameManager.Instance.GetCollisionMap());
+        print("compressed: " + compressed);
+        print("decompressed: " + Compression.DecompressCollisionMap(compressed));
         camTexture = new WebCamTexture();
         camTexture.requestedHeight = Screen.height; // 480;
         camTexture.requestedWidth = Screen.width; //640;
@@ -121,6 +123,7 @@ public class BarcodeCam : MonoBehaviour
     }
     public void PlayScannedMap()
     {
+        print("got: \n" + Compression.DecompressCollisionMap(lastResult));
         GameManager.Instance.SetScannedMap(Compression.DecompressCollisionMap(lastResult));
         GameManager.Instance.SetMap(-2);
         GameManager.Instance.SetLevelIndex(3);

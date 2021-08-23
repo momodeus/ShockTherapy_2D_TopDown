@@ -145,6 +145,7 @@ public class GameManager
     private GameManager()
     {
         LoadData();
+        Money = 10000;
     }
 
     public static GameManager Instance
@@ -270,7 +271,7 @@ public class GameManager
 
     public void PickupSpecialFlag(int flagScore)
     {
-        PickupFlag(flagScore + (firstFlagGot ? flagScore * 10 : flagScore));
+        PickupFlag(flagScore * 2 + (firstFlagGot ? flagScore * 10 : flagScore));
 
     }
 

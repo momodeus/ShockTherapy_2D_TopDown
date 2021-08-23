@@ -127,7 +127,7 @@ public class PlayerMovement : UTV
                 audioSource.PlayOneShot(winSound, 0.7f);
                 playing = false;
             }
-            Instantiate(flagPickupAnimation, other.transform.position, other.transform.rotation);
+            (Instantiate(flagPickupAnimation, other.transform.position, other.transform.rotation)).GetComponent<specialFlagScorer>().isMultiplied = true;
             other.gameObject.SetActive(false);
             audioSource.PlayOneShot(pickupSound, 0.5f);
 

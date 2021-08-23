@@ -99,13 +99,15 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
     }
 
     public void OnGameLost() 
-    { 
+    {
         loseSplash.SetActive(true);
         winSplash.SetActive(false);
         (loseSplash.GetComponentsInChildren(typeof(Text))[1] as Text).text = "SCORE:\n" + GameManager.Instance.score;
         (loseSplash.GetComponentsInChildren(typeof(Text))[3] as Text).text = "REWARD:\n$" + GameManager.Instance.CalculateLossMoney();
     }
-    public void OnGameStarted() { }
+    public void OnGameStarted() {
+        Time.timeScale = 1;
+    }
     public void OnGameWon()
     {
         loseSplash.SetActive(false);

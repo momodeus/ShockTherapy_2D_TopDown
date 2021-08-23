@@ -12,7 +12,7 @@ public class ReturnToMenuScript : MonoBehaviour
     {
         if (mapData.hasPlayer)
         {
-            GameManager.Instance.SetCollisionMap(CollisionGenerator.CreateCollisionMap(mapData));
+            GameManager.Instance.CollisionMap = CollisionGenerator.CreateCollisionMap(mapData);
             sceneLoader.LoadScene("MainMenu");
         } else
         {

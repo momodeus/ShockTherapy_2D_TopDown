@@ -15,7 +15,7 @@ public class StageLocker : MonoBehaviour
 
     void UpdateVisual()
     {
-        if (GameManager.Instance.GetMaxUnlockedLevel() < stageIndex)
+        if (GameManager.Instance.MaxUnlockedLevel < stageIndex)
         {
             GetComponent<Button>().interactable = false;
             GetComponent<Image>().color = Color.black;

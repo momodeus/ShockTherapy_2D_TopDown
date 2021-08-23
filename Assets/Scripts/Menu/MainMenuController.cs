@@ -14,18 +14,20 @@ public class MainMenuController : MonoBehaviour
     public TransitionSceneLoader sceneLoader;
     public Button playCustomMapButton;
     public Text highScoreText;
-    public Toggle controlSchemeToggle;
+    public Button swipeControlButton, touchControlButton;
+    public Image swipeControlImage, touchControlImage;
+    public Sprite checkedSprite, uncheckedSprite;
     public Color color;
     public void PlayGame(int levelIdx)
     {
         if (levelIdx == -1)
         {
-            GameManager.Instance.SetLevelIndex(3);
-            GameManager.Instance.SetMap(-1);
+            GameManager.Instance.LevelIndex = 3;
+            GameManager.Instance.Map = -1;
         }
         else
         {
-            GameManager.Instance.SetLevelIndex(levelIdx);
+            GameManager.Instance.LevelIndex = levelIdx;
         }
         
         sceneLoader.LoadScene("InGameScene");
@@ -51,7 +53,7 @@ public class MainMenuController : MonoBehaviour
     public void Options()
     {
         mainCanvas.SetActive(false);
-        mainCanvasMoneyText.text = "$" + GameManager.Instance.GetMoney();
+        mainCanvasMoneyText.text = "$" + GameManager.Instance.Money;
         optionsCanvas.SetActive(true);
     }
 
@@ -66,8 +68,8 @@ public class MainMenuController : MonoBehaviour
         optionsCanvas.SetActive(false);
         stageSelectCanvas.SetActive(false);
         themesCanvas.SetActive(false);
-        mainCanvasMoneyText.text = "$" + GameManager.Instance.GetMoney();
-        highScoreText.text = "High Score:\n" + GameManager.Instance.GetHighScore();
+        mainCanvasMoneyText.text = "$" + GameManager.Instance.Money;
+        highScoreText.text = "High Score:\n" + GameManager.Instance.HighScore;
         mainCanvas.SetActive(true);
     }
     public void ExitGame()
@@ -76,14 +78,17 @@ public class MainMenuController : MonoBehaviour
     }
     public void Start()
     {
-        controlSchemeToggle.isOn = GameManager.Instance.IsSwipeControls();
-        playCustomMapButton.interactable = GameManager.Instance.UserMadeMap();
-        playCustomMapButton.GetComponentInChildren<Text>().color = GameManager.Instance.UserMadeMap() ? color : Color.black;
-        mainCanvasMoneyText.text = "$" + GameManager.Instance.GetMoney();
+        swipeControlImage.sprite = GameManager.Instance.SwipeControls ? checkedSprite : uncheckedSprite;
+        touchControlImage.sprite = GameManager.Instance.SwipeControls ? uncheckedSprite : checkedSprite;
+        playCustomMapButton.interactable = GameManager.Instance.UserMadeMap;
+        playCustomMapButton.GetComponentInChildren<Text>().color = GameManager.Instance.UserMadeMap ? color : Color.black;
+        mainCanvasMoneyText.text = "$" + GameManager.Instance.Money;
         Back();
     }
-    public void SetControlScheme()
+    public void SetControlScheme(bool swipeControls)
     {
-        GameManager.Instance.SetControlScheme(controlSchemeToggle.isOn);
+        GameManager.Instance.SwipeControls = swipeControls;
+        swipeControlImage.sprite = GameManager.Instance.SwipeControls ? checkedSprite : uncheckedSprite;
+        touchControlImage.sprite = GameManager.Instance.SwipeControls ? uncheckedSprite : checkedSprite;
     }
 }

@@ -21,9 +21,9 @@ public class TouchLevelDesign : MonoBehaviour
 
     private void Start()
     {
-        if(GameManager.Instance.UserMadeMap())
+        if(GameManager.Instance.UserMadeMap)
         {
-            CollisionGenerator.ReadCollisionMap(GameManager.Instance.GetCollisionMap(), mapData);
+            CollisionGenerator.ReadCollisionMap(GameManager.Instance.CollisionMap, mapData);
             saveButton.SetActive(mapData.hasPlayer);
             needsPlayerText.SetActive(!mapData.hasPlayer);
         } else

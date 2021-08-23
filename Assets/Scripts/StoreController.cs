@@ -21,7 +21,7 @@ public class StoreController : MonoBehaviour
     public void AddMoney()
     {
         GameManager.Instance.UpdateMoney(100);
-        moneyText2.text = "$" + GameManager.Instance.GetMoney();
+        moneyText2.text = "$" + GameManager.Instance.Money;
     }
     public void RefreshUnlocks()
     {
@@ -39,9 +39,9 @@ public class StoreController : MonoBehaviour
             }
             (themes[i].GetComponent(typeof(Image)) as Image).color = new Color(0, 0, 0, 0);
         }
-        (themes[GameManager.Instance.GetSelectedTheme()].GetComponent(typeof(Image)) as Image).color = new Color(0, 1, 0, 1);
+        (themes[GameManager.Instance.SelectedTheme].GetComponent(typeof(Image)) as Image).color = Color.green;
 
-        moneyText2.text = "$" + GameManager.Instance.GetMoney();
+        moneyText2.text = "$" + GameManager.Instance.Money;
 
     }
     public void TryBuyTheme(int i)
@@ -49,7 +49,7 @@ public class StoreController : MonoBehaviour
         if (i < 0 || i > MapData.NUM_THEMES) return;
         if (!GameManager.Instance.UpdateMoney(-themesCost[i + 1])) return;
         GameManager.Instance.UnlockTheme(i);
-        moneyText2.text = "$" + GameManager.Instance.GetMoney();
+        moneyText2.text = "$" + GameManager.Instance.Money;
         RefreshUnlocks();
     }
 
@@ -57,7 +57,7 @@ public class StoreController : MonoBehaviour
     {
         if (GameManager.Instance.IsThemeUnlocked(i - 1))
         {
-            GameManager.Instance.SetSelectedTheme(i);
+            GameManager.Instance.SelectedTheme = i;
             RefreshUnlocks();
         } else
             print("not unlocked: " + i + "!");

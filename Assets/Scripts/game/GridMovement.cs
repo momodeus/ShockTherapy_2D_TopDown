@@ -50,7 +50,7 @@ public class GridMovement
                 {
                     enemySpawns.Add(new Vector2Int(j, eachLine.Count - (i + 1)));
                 } 
-                if(eachLine[i][j] == 'F' && GameManager.Instance.GetLevelIndex() > 2) //for second go on levels, spawn more enemies. 
+                if(eachLine[i][j] == 'F' && GameManager.Instance.LevelIndex > 2) //for second go on levels, spawn more enemies. 
                 {
                     enemySpawns.Add(new Vector2Int(j, eachLine.Count - (i + 1)));
                 }

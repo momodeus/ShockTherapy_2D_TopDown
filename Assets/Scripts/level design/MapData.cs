@@ -18,15 +18,15 @@ public class MapData : MonoBehaviour
 
     public RuleTile GetBorderTile()
     {
-        return borderTiles[GameManager.Instance.GetSelectedTheme()];
+        return borderTiles[GameManager.Instance.SelectedTheme];
     }
     public RuleTile GetDirtTile()
     {
-        return dirtTiles[GameManager.Instance.GetSelectedTheme()];
+        return dirtTiles[GameManager.Instance.SelectedTheme];
     }
     public RuleTile GetPathTile()
     {
-        return pathTiles[GameManager.Instance.GetSelectedTheme()];
+        return pathTiles[GameManager.Instance.SelectedTheme];
     }
     public void CullEnemies(int enemiesCount)
     {

@@ -9,6 +9,6 @@ public class CarLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Image>().sprite = cars[GameManager.Instance.GetSelectedCar()];
+        GetComponent<Image>().sprite = cars[GameManager.Instance.SelectedCar];
     }
 }

@@ -17,11 +17,14 @@ public class UpgradeUnlocker : MonoBehaviour
     public Sprite lockSprite;
     public GameObject lockImage;
     public Sprite lockedSprite, unlockedSprite;
+    public GameObject previewOnCar;
     [HideInInspector]
     public bool unlocked = false;
+    private Image img;
     // Start is called before the first frame update
     void Start()
     {
+        img = GetComponent<Image>();
         if((unlocked = GameManager.Instance.IsUpgradeUnlocked((int)upgrade)))
         {
             Unlock();
@@ -30,26 +33,30 @@ public class UpgradeUnlocker : MonoBehaviour
     public void Preview()
     {
         if (unlocked) return;
-        GetComponent<Image>().sprite = lockedSprite;
+        img.sprite = lockedSprite;
+        previewOnCar.SetActive(true);
         lockImage.SetActive(false);
     }
 
     public void UnPreview()
     {
         if (unlocked) return;
-        GetComponent<Image>().sprite = lockedSprite;
+        img.sprite = lockedSprite;
+        previewOnCar.SetActive(false);
         lockImage.SetActive(true);
     }
     public void Lock()
     {
         unlocked = false;
-        GetComponent<Image>().sprite = lockedSprite;
+        img.sprite = lockedSprite;
+        previewOnCar.SetActive(false);
         lockImage.SetActive(true);
     }
     public void Unlock()
     {
         unlocked = true;
-        GetComponent<Image>().sprite = unlockedSprite;
+        img.sprite = unlockedSprite;
+        previewOnCar.SetActive(false);
         lockImage.SetActive(false);
     }
 }

@@ -20,7 +20,8 @@ public class PlayerMovement : UTV
     public AudioClip crashSound; 
     public AudioClip winSound;
     public AudioSource audioSource;
-    private GridMovement.Direction queuedHeading = GridMovement.NONE; //holds queued heading. This imrpoves responsiveness if player tries to move slightly before they're allowed to
+    public GameObject flagPickupAnimation;
+    public GridMovement.Direction queuedHeading = GridMovement.NONE; //holds queued heading. This imrpoves responsiveness if player tries to move slightly before they're allowed to
     private int maxSmokes = 3;
     private int lastSmokeX = 0, lastSmokeY = 0;
     private bool shouldSmoke = false;
@@ -33,7 +34,7 @@ public class PlayerMovement : UTV
         Setup();
         lastSmokeX = gridX;
         lastSmokeY = gridY;
-        (this.GetComponent(typeof(SpriteRenderer)) as SpriteRenderer).sprite = cars[GameManager.Instance.GetSelectedCar()];
+        (this.GetComponent(typeof(SpriteRenderer)) as SpriteRenderer).sprite = cars[GameManager.Instance.SelectedCar];
         int[] stats = GameManager.Instance.GetStatValues();
         timeToMove = 0.25f - stats[0]*0.005f;
         timeToTurn = 0.25f - stats[1] * 0.005f;
@@ -104,26 +105,29 @@ public class PlayerMovement : UTV
         if(other.gameObject.CompareTag("Pickup"))
         {
             GameManager.Instance.PickupFlag(GameManager.flagScore);
-            if (GameManager.Instance.GetFlagsRemaining() == 0)
+            if (GameManager.Instance.flagsRemaining == 0)
             {
                 (Camera.main.gameObject.GetComponent(typeof(AudioSource)) as AudioSource).Pause();
                 audioSource.Stop();
                 audioSource.PlayOneShot(winSound, 0.7f);
                 playing = false;
             }
+            Instantiate(flagPickupAnimation, other.transform.position, other.transform.rotation);
             other.gameObject.SetActive(false);
+            
             audioSource.PlayOneShot(pickupSound, 0.5f);
 
         } else if (other.gameObject.CompareTag("Special Pickup"))
         {
             GameManager.Instance.PickupSpecialFlag(GameManager.flagScore);
-            if (GameManager.Instance.GetFlagsRemaining() == 0)
+            if (GameManager.Instance.flagsRemaining == 0)
             {
                 (Camera.main.gameObject.GetComponent(typeof(AudioSource)) as AudioSource).Pause();
                 audioSource.Stop();
                 audioSource.PlayOneShot(winSound, 0.7f);
                 playing = false;
             }
+            Instantiate(flagPickupAnimation, other.transform.position, other.transform.rotation);
             other.gameObject.SetActive(false);
             audioSource.PlayOneShot(pickupSound, 0.5f);
 
@@ -145,11 +149,12 @@ public class PlayerMovement : UTV
     public void RequestNewMove(GridMovement.Direction newHeading)
     {
         queuedHeading = newHeading;
+        
     }
 
     public void SwipeRequestNewMove(GridMovement.Direction newHeading)
     {
-        if(GameManager.Instance.IsSwipeControls())
+        if(GameManager.Instance.SwipeControls)
         {
             Debug.Log("swipe requested, got");
             RequestNewMove(newHeading);
@@ -158,7 +163,7 @@ public class PlayerMovement : UTV
 
     public void ButtonRequestNewMove(int newHeading)
     {
-        if(!GameManager.Instance.IsSwipeControls())
+        if(!GameManager.Instance.SwipeControls)
         {
             Debug.Log("button requested, got");
             RequestNewMove((GridMovement.Direction)newHeading);

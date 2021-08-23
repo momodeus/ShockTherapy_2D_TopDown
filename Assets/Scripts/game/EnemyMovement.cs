@@ -34,8 +34,8 @@ public class EnemyMovement : UTV
     // Start is called before the first frame update
     void Start()
     {
-        timeToMove = 0.25f - difficultyValues[GameManager.Instance.GetLevelIndex(), 0] * 0.005f;
-        timeToTurn = 0.25f - difficultyValues[GameManager.Instance.GetLevelIndex(), 1] * 0.005f;
+        timeToMove = 0.25f - difficultyValues[GameManager.Instance.LevelIndex, 0] * 0.005f;
+        timeToTurn = 0.25f - difficultyValues[GameManager.Instance.LevelIndex, 1] * 0.005f;
         //TODO: acceleration
         float rand = Random.value;
         if (rand < 0.3)

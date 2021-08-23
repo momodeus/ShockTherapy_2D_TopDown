@@ -24,8 +24,6 @@ using ZXing.QrCode;
 public class BarcodeCam : MonoBehaviour
 {
     // Texture for encoding test
-    public Texture2D encoded;
-    public RawImage QRImage;
     public RawImage cameraImage;
     private WebCamTexture camTexture;
     private Thread qrThread;
@@ -40,13 +38,7 @@ public class BarcodeCam : MonoBehaviour
 
     private void OnGUI()
     {
-        if (encoded != null) { 
-            encoded.filterMode = FilterMode.Point;
-            QRImage.texture = encoded;
-        }
-        QRImage.SetNativeSize();
         cameraImage.texture = camTexture;
-        cameraImage.SetNativeSize();
     }
     void OnEnable()
     {
@@ -80,28 +72,17 @@ public class BarcodeCam : MonoBehaviour
 
     void Start()
     {
-        string compressed = Compression.CompressCollisionMap(GameManager.Instance.GetCollisionMap());
-        encoded = new Texture2D(256, 256);
         lastResult = "http://www.google.com";
-
-        print("uncompressed: " + GameManager.Instance.GetCollisionMap());
-        print("compressed: " + compressed);
-        print("decompressed: " + Compression.DecompressCollisionMap(compressed));
         camTexture = new WebCamTexture();
         camTexture.requestedHeight = Screen.height; // 480;
         camTexture.requestedWidth = Screen.width; //640;
         OnEnable();
-
+#if UNITY_ANDROID
+        cameraImage.transform.localScale = new Vector3(-1, -1, 1);
+#endif
         qrThread = new Thread(DecodeQR);
         qrThread.Start();
         foundPopup.gameObject.SetActive(false);
-        var textForEncoding = Compression.CompressCollisionMap(GameManager.Instance.GetCollisionMap());
-        if (GameManager.Instance.UserMadeMap() && textForEncoding != null)
-        {
-            var color32 = Encode(textForEncoding, encoded.width, encoded.height);
-            encoded.SetPixels32(color32);
-            encoded.Apply();
-        }
     }
 
     void Update()
@@ -124,15 +105,15 @@ public class BarcodeCam : MonoBehaviour
     public void PlayScannedMap()
     {
         print("got: \n" + Compression.DecompressCollisionMap(lastResult));
-        GameManager.Instance.SetScannedMap(Compression.DecompressCollisionMap(lastResult));
-        GameManager.Instance.SetMap(-2);
-        GameManager.Instance.SetLevelIndex(3);
+        GameManager.Instance.scannedMap = Compression.DecompressCollisionMap(lastResult);
+        GameManager.Instance.Map = -2;
+        GameManager.Instance.LevelIndex = 3;
         sceneLoader.LoadScene("InGameScene");
     }
     void DecodeQR()
     {
         // create a reader with a custom luminance source
-        var barcodeReader = new BarcodeReader { AutoRotate = false, TryHarder = false };
+        var barcodeReader = new BarcodeReader { AutoRotate = false };//, TryHarder = false };
 
         while (true)
         {

@@ -36,7 +36,7 @@ public class CollisionGenerator : MonoBehaviour
 
     public static void ReadCollisionMap(string collisionMap, MapData mapData)
     {
-        ReadCollisionMap(collisionMap, mapData, GameManager.Instance.GetSelectedTheme());
+        ReadCollisionMap(collisionMap, mapData, GameManager.Instance.SelectedTheme);
     }
     public static void ReadCollisionMap(string collisionMap, MapData mapData, int themeIdx)
     {

@@ -44,34 +44,31 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
         loseSplash.SetActive(false);
         LoadMap();
         SpawnEntities();
-        if(GameManager.Instance.GetLevelIndex() == 6)
-        {
-            nextStageButton.interactable = false;
-        }
+        nextStageButton.gameObject.SetActive(GameManager.Instance.LevelIndex != 6 && GameManager.Instance.Map >= 0);
         //scoreText.text = "SCORE:\n" + GameManager.Instance.GetScore();
     }
 
     private void LoadMap()
     {
-        if (GameManager.Instance.GetMap() == -1)
+        if (GameManager.Instance.Map == -1)
         {
             mapSpriteRenderer.gameObject.SetActive(false);
-            GridMovement.LoadMap(GameManager.Instance.GetCollisionMap());
-            CollisionGenerator.ReadCollisionMap(GameManager.Instance.GetCollisionMap(), mapData);
-        } else if(GameManager.Instance.GetMap() == -2)
+            GridMovement.LoadMap(GameManager.Instance.CollisionMap);
+            CollisionGenerator.ReadCollisionMap(GameManager.Instance.CollisionMap, mapData);
+        } else if(GameManager.Instance.Map == -2)
         {
             mapSpriteRenderer.gameObject.SetActive(false);
-            GridMovement.LoadMap(GameManager.Instance.GetScannedMap());
-            CollisionGenerator.ReadCollisionMap(GameManager.Instance.GetScannedMap(), mapData);
-        } else if(GameManager.Instance.GetMap() == 3)
+            GridMovement.LoadMap(GameManager.Instance.scannedMap);
+            CollisionGenerator.ReadCollisionMap(GameManager.Instance.scannedMap, mapData);
+        } else if(GameManager.Instance.Map == 3)
         {
             mapSpriteRenderer.gameObject.SetActive(false);
-            GridMovement.LoadMap(collisionMap[GameManager.Instance.GetMap()].text);
-            CollisionGenerator.ReadCollisionMap(collisionMap[GameManager.Instance.GetMap()].text, mapData, 5);
+            GridMovement.LoadMap(collisionMap[GameManager.Instance.Map].text);
+            CollisionGenerator.ReadCollisionMap(collisionMap[GameManager.Instance.Map].text, mapData, 5);
         } else
         {
-            mapSpriteRenderer.sprite = mapImages[GameManager.Instance.GetMap()];
-            GridMovement.LoadMap(collisionMap[GameManager.Instance.GetMap()].text);
+            mapSpriteRenderer.sprite = mapImages[GameManager.Instance.Map];
+            GridMovement.LoadMap(collisionMap[GameManager.Instance.Map].text);
         }
     }
 
@@ -105,7 +102,7 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
     { 
         loseSplash.SetActive(true);
         winSplash.SetActive(false);
-        (loseSplash.GetComponentsInChildren(typeof(Text))[1] as Text).text = "SCORE:\n" + GameManager.Instance.GetScore();
+        (loseSplash.GetComponentsInChildren(typeof(Text))[1] as Text).text = "SCORE:\n" + GameManager.Instance.score;
         (loseSplash.GetComponentsInChildren(typeof(Text))[3] as Text).text = "REWARD:\n$" + GameManager.Instance.CalculateLossMoney();
     }
     public void OnGameStarted() { }
@@ -113,13 +110,13 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
     {
         loseSplash.SetActive(false);
         winSplash.SetActive(true);
-        (winSplash.GetComponentsInChildren(typeof(Text))[1] as Text).text = "SCORE:\n" + GameManager.Instance.GetScore();
+        (winSplash.GetComponentsInChildren(typeof(Text))[1] as Text).text = "SCORE:\n" + GameManager.Instance.score;
         (winSplash.GetComponentsInChildren(typeof(Text))[3] as Text).text = "REWARD:\n$" + GameManager.Instance.CalculateWinMoney();
     }
 
     public void OnScoreChanged()
     {
-        scoreText.text = "SCORE:\n" + GameManager.Instance.GetScore();
+        scoreText.text = "SCORE:\n" + GameManager.Instance.score;
     }
 
     public void ReturnToMainMenu()
@@ -148,7 +145,7 @@ public class LocalGameManager : MonoBehaviour, GameManagerListener
 
     public void NextStage()
     {
-        GameManager.Instance.SetLevelIndex(GameManager.Instance.GetLevelIndex() + 1);
+        GameManager.Instance.LevelIndex = GameManager.Instance.LevelIndex + 1;
         SceneManager.LoadScene("InGameScene");
     }
 }

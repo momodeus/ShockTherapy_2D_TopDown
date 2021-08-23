@@ -35,7 +35,7 @@ public class VirtualDPad : MonoBehaviour
 
                     else if (Mathf.Abs(x) > Mathf.Abs(y))
                     {
-                        playerMovement.SwipeRequestNewMove(x > 0 ? GridMovement.EAST : GridMovement.WEST); //horizontal swipe
+                        playerMovement.SwipeRequestNewMove(x > 0 ? GridMovement.EAST : GridMovement.WEST);
                     }
 
                     else

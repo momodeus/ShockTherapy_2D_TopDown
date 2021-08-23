@@ -21,11 +21,11 @@ public class MenuDemoController : MonoBehaviour
 
     public void LoadMap()
     {
-        GridMovement.LoadMap(GameManager.Instance.UserMadeMap() ?
-                                GameManager.Instance.GetCollisionMap() :
+        GridMovement.LoadMap(GameManager.Instance.UserMadeMap ?
+                                GameManager.Instance.CollisionMap :
                                 CollisionGenerator.BlankCollisionMap());
-        CollisionGenerator.ReadCollisionMap(GameManager.Instance.UserMadeMap() ?
-                                GameManager.Instance.GetCollisionMap() :
+        CollisionGenerator.ReadCollisionMap(GameManager.Instance.UserMadeMap ?
+                                GameManager.Instance.CollisionMap :
                                 CollisionGenerator.BlankCollisionMap(), mapData);
     }
 }

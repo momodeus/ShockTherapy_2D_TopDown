@@ -29,10 +29,10 @@ public class GarageController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        carImage.sprite = cars[GameManager.Instance.GetSelectedCar()];
-        moneyText.text = "$" + GameManager.Instance.GetMoney();
+        carImage.sprite = cars[GameManager.Instance.SelectedCar];
+        moneyText.text = "$" + GameManager.Instance.Money;
         PreviewUpgrade();
-        SetPreviewedCar(GameManager.Instance.GetSelectedCar());
+        SetPreviewedCar(GameManager.Instance.SelectedCar);
     }
 
     /// <summary>
@@ -55,7 +55,7 @@ public class GarageController : MonoBehaviour
         {
             carSelectorImage.color = Color.white;
             carPriceText.text = "";
-            buyCarButton.gameObject.SetActive(!(GameManager.Instance.GetSelectedCar() == previewedCar));
+            buyCarButton.gameObject.SetActive(!(GameManager.Instance.SelectedCar == previewedCar));
             buyCarButton.GetComponentInChildren<Text>().text = "Select";
         }
         else
@@ -63,7 +63,7 @@ public class GarageController : MonoBehaviour
             carSelectorImage.color = Color.black;
             carPriceText.text = "$" + carPrices[previewedCar];
             buyCarButton.gameObject.SetActive(true);
-            buyCarButton.interactable = GameManager.Instance.GetMoney() >= carPrices[previewedCar];
+            buyCarButton.interactable = GameManager.Instance.Money >= carPrices[previewedCar];
             buyCarButton.GetComponentInChildren<Text>().text = "Buy";
         }
         ShowBars();
@@ -83,8 +83,8 @@ public class GarageController : MonoBehaviour
     {
         if(GameManager.Instance.IsCarUnlocked(previewedCar))
         {
-            GameManager.Instance.SetSelectedCar(previewedCar);
-            carImage.sprite = cars[GameManager.Instance.GetSelectedCar()];
+            GameManager.Instance.SelectedCar = previewedCar;
+            carImage.sprite = cars[GameManager.Instance.SelectedCar];
             SetPreviewedCar(previewedCar);
         } else
         {
@@ -92,7 +92,7 @@ public class GarageController : MonoBehaviour
             {
                 GameManager.Instance.UnlockCar(previewedCar);
                 SetPreviewedCar(previewedCar);
-                moneyText.text = "$" + GameManager.Instance.GetMoney();
+                moneyText.text = "$" + GameManager.Instance.Money;
             }
         }
     }
@@ -105,7 +105,7 @@ public class GarageController : MonoBehaviour
     /// <param name="type"></param>
     public void PressedUpgrade(int type)
     {
-        SetPreviewedCar(GameManager.Instance.GetSelectedCar());
+        SetPreviewedCar(GameManager.Instance.SelectedCar);
         foreach(UpgradeUnlocker ul in upgrades)
         {
             ul.UnPreview();
@@ -125,10 +125,11 @@ public class GarageController : MonoBehaviour
         {
             upgradePriceText.text = "";
             buyUpgradeButton.gameObject.SetActive(false);
+            
         } else
         {
             buyUpgradeButton.gameObject.SetActive(true);
-            buyUpgradeButton.interactable = GameManager.Instance.GetMoney() >= upgradePrices[previewedUpgrade];
+            buyUpgradeButton.interactable = GameManager.Instance.Money >= upgradePrices[previewedUpgrade];
             upgradePriceText.text = "$" + upgradePrices[previewedUpgrade];
             buyUpgradeButton.GetComponentInChildren<Text>().text = "Buy " + upgradeNames[previewedUpgrade];
         }
@@ -165,7 +166,7 @@ public class GarageController : MonoBehaviour
             GameManager.Instance.UnlockUpgrade(previewedUpgrade);
             upgrades[previewedUpgrade].Unlock();
             previewedUpgrade = -1;
-            moneyText.text = "$" + GameManager.Instance.GetMoney();
+            moneyText.text = "$" + GameManager.Instance.Money;
             PreviewUpgrade();
         }
     }

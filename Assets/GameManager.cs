@@ -11,35 +11,70 @@ public class GameManager
     private static GameManager instance = new GameManager();
 
     private int startFlags;
-    private int flagsRemaining;
+    public int flagsRemaining;
     private int livesRemaining;
-    private float fuelRemaining;
+    public float fuelRemaining;
     private float startFuel;
     private float gameStartTime;
+
     private int map;
-    private string scannedMap = null;
+    public int Map
+    {
+        get => map; set
+        {
+            if (value < -2 || value > 3) return;
+            map = value;
+        }
+    }
+    public string scannedMap = null;
     private bool firstFlagGot = false;
 
     //options stuff
     private bool swipeControls;
+    public bool SwipeControls { get => swipeControls; set {
+            swipeControls = value;
+            PlayerPrefs.SetInt(swipeControlsKey, swipeControls ? 1 : 0);
+        }}
     private const string swipeControlsKey = "SwipeControls";
 
     //money stuff
     private int money;
+    public int Money { get => money; private set => money = value; }
     private const string moneyKey = "Money";
     public const int winBonus = 50;
     public const int fuelBonus = 50;
     public const int flagValue = 10;
 
     //skins information
-    private uint unlockedCars = 0; //the nth LSB of this int represents whether user has unlocked nth car. 
+    private uint unlockedCars; //the nth LSB of this int represents whether user has unlocked nth car. 
     private string unlockedCarsKey = "unlockedCars";
-    private int selectedCar = 0; //0 - 8, the 9 different car types. 
+    private int selectedCar;
+    public int SelectedCar { get => selectedCar; set
+        {
+            if (value >= 0 && value <= 8)
+            {
+                selectedCar = value;
+                PlayerPrefs.SetInt(selectedCarKey, selectedCar);
+            }
+
+        }
+    } //0 - 8, the 9 different car types. 
     private string selectedCarKey = "selectedCar";
 
-    private uint unlockedThemes = 0; //Works just like cars
+    private uint unlockedThemes; //Works just like cars
     private string unlockedThemesKey = "unlockedThemes";
-    private int selectedTheme = 0;
+    private int selectedTheme;
+    public int SelectedTheme { get => selectedTheme;  set
+        {
+            if (value >= 0 && value <= MapData.NUM_THEMES)
+            {
+                Debug.Log("selected: " + value);
+
+                selectedTheme = value;
+                PlayerPrefs.SetInt(selectedThemeKey, selectedTheme);
+            }
+        }
+    }
     private string selectedThemeKey = "selectedTheme";
 
     private uint unlockedUpgrades = 0;
@@ -47,20 +82,48 @@ public class GameManager
 
     //score stuff
     public const int flagScore = 1000;
-    private int score;
+    public int score;
     private int highScore;
+    public int HighScore { get => highScore; private set => highScore = value; }
     private string highScoreKey = "highScore";
 
     //status stuff
     private StateType state = StateType.DEFAULT;
     private List<GameManagerListener> listeners = new List<GameManagerListener>();
-    private int levelIndex = 0; //there are currently 7 levels, 0-6. maybe 0th level could be tutorial. 
+    private int levelIndex;
+    public int LevelIndex { get => levelIndex; set
+        {
+            if (value < 0 || value > 6 || value > maxUnlockedLevel) return;
+            levelIndex = value;
+            if (levelIndex == 6) Map = 3;
+            else Map = levelIndex % 3; //play each map twice, both on diff levels. 
+            PlayerPrefs.SetInt(levelIndexKey, levelIndex);
+        }
+    } //there are currently 7 levels, 0-6. maybe 0th level could be tutorial. 
     private const string levelIndexKey = "levelIndex";
     private int maxUnlockedLevel = 0;
+    public int MaxUnlockedLevel
+    {
+        get => maxUnlockedLevel;
+        set
+        {
+            if (value < 0 || value > 6 || value < maxUnlockedLevel) return;
+            maxUnlockedLevel = value;
+            PlayerPrefs.SetInt(maxLevelKey, maxUnlockedLevel);
+        }
+    }
     private const string maxLevelKey = "maxLevel";
     //custom map stuff
-    private bool userMadeMap = false;
-    private string collisionMap;
+    private bool userMadeMap;
+    public bool UserMadeMap { get => userMadeMap; private set => userMadeMap = value; }
+    private string collisionMap = "";
+    public string CollisionMap { get => collisionMap; set
+        {
+            UserMadeMap = true;
+            collisionMap = value;
+            PlayerPrefs.SetString(collisionMapKey, collisionMap);
+        }
+    }
     private const string collisionMapKey = "collisionMap";
 
 
@@ -98,30 +161,15 @@ public class GameManager
             return instance;
         }
     }
-    public int GetFlagsRemaining() => flagsRemaining;
-    public int GetLivesRemaining() => livesRemaining;
-    public float GetFuelRemaining() => fuelRemaining;
-    public int GetScore() => score;
     public StateType GetState() => state;
-    public bool IsSwipeControls() => swipeControls;
-    public int GetMoney() => money;
-    public int GetSelectedCar() => selectedCar;
-    public int GetSelectedTheme() => selectedTheme;
-    public int GetMap() => map;
     public float GetTimeSinceGameStart() => Time.time - gameStartTime;
-    public int GetHighScore() => highScore;
-    public string GetCollisionMap() => collisionMap;
-    public bool UserMadeMap() => userMadeMap;
-    public int GetMaxUnlockedLevel() => maxUnlockedLevel;
-    public int GetLevelIndex() => levelIndex;
-    public string GetScannedMap() => scannedMap;
     /// <summary>
     /// 
     /// </summary>
     /// <returns>array in form: [speed, turn, accel, fuel, shock]</returns>
     public int[] GetStatValues()
     {
-        return GetStatValues(selectedCar) ;
+        return GetStatValues(SelectedCar) ;
     }
     public int[] GetStatValues(int car)
     {
@@ -142,57 +190,7 @@ public class GameManager
         }
         return ret;
     }
-    public void SetCollisionMap(string map)
-    {
-        userMadeMap = true;
-        collisionMap = map;
-        PlayerPrefs.SetString(collisionMapKey, collisionMap);
-    }
 
-    public void SetScannedMap(string map)
-    {
-        scannedMap = map;
-    }
-    public void SetSelectedCar(int car)
-    {
-        if (car >= 0 && car <= 8) 
-        {
-            selectedCar = car;
-            PlayerPrefs.SetInt(selectedCarKey, selectedCar);
-        }
-    }
-
-    public void SetSelectedTheme(int theme)
-    {
-        if(theme >= 0 && theme <= MapData.NUM_THEMES)
-        {
-            Debug.Log("selected: " + theme);
-
-            selectedTheme = theme;
-            PlayerPrefs.SetInt(selectedThemeKey, selectedTheme);
-        }
-    }
-
-    public void SetLevelIndex(int newIdx)
-    {
-        if (newIdx < 0 || newIdx > 6 || newIdx > maxUnlockedLevel) return;
-        levelIndex = newIdx;
-        if (levelIndex == 6) SetMap(3);
-        else SetMap(levelIndex % 3); //play each map twice, both on diff levels. 
-        PlayerPrefs.SetInt(levelIndexKey, levelIndex);
-    }
-
-    public void SetMaxUnlockedLevel(int newLevel)
-    {
-        if (newLevel < 0 || newLevel > 6 || newLevel < maxUnlockedLevel) return;
-        maxUnlockedLevel = newLevel;
-        PlayerPrefs.SetInt(maxLevelKey, maxUnlockedLevel);
-    }
-    public void SetMap(int map)
-    {
-        if (map < -2 || map > 3) return;
-        this.map = map;
-    }
     public void LockAllCars()
     {
         unlockedCars = 0U;
@@ -252,12 +250,6 @@ public class GameManager
         return ((unlockedUpgrades & (1U << upgrade)) > 0U);
     }
 
-    public void SetControlScheme(bool isSwipe)
-    {
-        swipeControls = isSwipe;
-        PlayerPrefs.SetInt(swipeControlsKey, swipeControls ? 1 : 0);
-    }
-
     public void UseFuel(float amount) {
         fuelRemaining -= amount;
         fuelRemaining = fuelRemaining < 0 ? 0 : fuelRemaining;
@@ -298,58 +290,54 @@ public class GameManager
     /// <returns>true if adding amount results in positive balance, false otherwise</returns>
     public bool UpdateMoney(int amount)
     {
-        if (money + amount < 0) return false;
-        money += amount;
-        PlayerPrefs.SetInt(moneyKey, money);
+        if (Money + amount < 0) return false;
+        Money += amount;
+        PlayerPrefs.SetInt(moneyKey, Money);
         return true;
     }
     private void LoadData()
     {
         if(PlayerPrefs.HasKey(maxLevelKey))
         {
-            maxUnlockedLevel = PlayerPrefs.GetInt(maxLevelKey);
+            MaxUnlockedLevel = PlayerPrefs.GetInt(maxLevelKey);
         } else
         {
-            SetMaxUnlockedLevel(0);
+            MaxUnlockedLevel = 0;
         }
         if(PlayerPrefs.HasKey(levelIndexKey))
         {
-            levelIndex = PlayerPrefs.GetInt(levelIndexKey);
+            LevelIndex = PlayerPrefs.GetInt(levelIndexKey);
         } else
         {
-            SetLevelIndex(0);
+            LevelIndex = 0;
         }
         if (PlayerPrefs.HasKey(swipeControlsKey))
         {
-            swipeControls = PlayerPrefs.GetInt(swipeControlsKey) > 0;
+            SwipeControls = PlayerPrefs.GetInt(swipeControlsKey) > 0;
         }
         else
         {
-            swipeControls = true;
-            PlayerPrefs.SetInt(swipeControlsKey, 1);
+            SwipeControls = true;
         }
         if (PlayerPrefs.HasKey(moneyKey))
         {
-            money = PlayerPrefs.GetInt(moneyKey);
+            Money = PlayerPrefs.GetInt(moneyKey);
         }
         else
         {
-            money = 0;
-            PlayerPrefs.SetInt(moneyKey, 0);
+            Money = 0;
         }
         if(PlayerPrefs.HasKey(selectedCarKey))
-            selectedCar = PlayerPrefs.GetInt(selectedCarKey);
+            SelectedCar = PlayerPrefs.GetInt(selectedCarKey);
         else
         {
-            selectedCar = 0;
-            PlayerPrefs.SetInt(selectedCarKey, 0);
+            SelectedCar = 0;
         }
         if (PlayerPrefs.HasKey(selectedThemeKey))
-            selectedTheme = PlayerPrefs.GetInt(selectedThemeKey);
+            SelectedTheme = PlayerPrefs.GetInt(selectedThemeKey);
         else
         {
-            selectedTheme = 0;
-            PlayerPrefs.SetInt(selectedThemeKey, 0);
+            SelectedTheme = 0;
         }
         if(PlayerPrefs.HasKey(unlockedCarsKey))
             unlockedCars = (uint)PlayerPrefs.GetInt(unlockedCarsKey);
@@ -373,16 +361,14 @@ public class GameManager
             PlayerPrefs.SetInt(unlockedUpgradesKey, (int)0U); 
         }
         if(PlayerPrefs.HasKey(highScoreKey))
-            highScore = PlayerPrefs.GetInt(highScoreKey);
+            HighScore = PlayerPrefs.GetInt(highScoreKey);
         else
         {
-            highScore = 0;
-            PlayerPrefs.SetInt(highScoreKey, highScore);
+            HighScore = 0;
         }
         if(PlayerPrefs.HasKey(collisionMapKey))
         {
-            userMadeMap = true;
-            collisionMap = PlayerPrefs.GetString(collisionMapKey);
+            UserMadeMap = true;
         }
     }
     public enum StateType
@@ -424,7 +410,7 @@ public class GameManager
     {
         if (state != StateType.GAMEPLAYING) return;
         state = StateType.GAMELOST;
-        if(map != -1) UpdateMoney(CalculateLossMoney());
+        if(Map != -1) UpdateMoney(CalculateLossMoney());
         foreach (GameManagerListener gml in listeners)
         {
             gml.OnGameLost();
@@ -434,15 +420,15 @@ public class GameManager
     {
         if (state != StateType.GAMEPLAYING) return;
         state = StateType.GAMEWIN;
-        if (map >= 0)
+        if (Map >= 0)
         {
             UpdateMoney(CalculateWinMoney());
-            SetMaxUnlockedLevel(GetLevelIndex() + 1);
+            MaxUnlockedLevel = LevelIndex + 1;
         }
-        if(score > highScore && map >= 0)
+        if(score > HighScore && Map >= 0)
         {
-            highScore = score;
-            PlayerPrefs.SetInt(highScoreKey, highScore);
+            HighScore = score;
+            PlayerPrefs.SetInt(highScoreKey, HighScore);
         }
         foreach (GameManagerListener gml in listeners)
         {
@@ -453,7 +439,7 @@ public class GameManager
     public int CalculateWinMoney()
     {
         
-        return map != -1 ? (startFlags - flagsRemaining) * flagValue + 
+        return Map != -1 ? (startFlags - flagsRemaining) * flagValue + 
             (GetPercentFuelRemaining() > 0.5 ? fuelBonus : 0) +
             winBonus : 0;
     }
@@ -465,7 +451,7 @@ public class GameManager
     }
     public int CalculateLossMoney()
     {
-        return map != -1 ? (int)((startFlags - flagsRemaining) * flagValue * 0.5) : 0;
+        return Map != -1 ? (int)((startFlags - flagsRemaining) * flagValue * 0.5) : 0;
     }
     public void AddGameManagerListener(GameManagerListener gml)
     {

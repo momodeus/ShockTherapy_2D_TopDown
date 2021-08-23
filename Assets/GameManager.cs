@@ -68,8 +68,6 @@ public class GameManager
         {
             if (value >= 0 && value <= MapData.NUM_THEMES)
             {
-                Debug.Log("selected: " + value);
-
                 selectedTheme = value;
                 PlayerPrefs.SetInt(selectedThemeKey, selectedTheme);
             }
@@ -369,6 +367,7 @@ public class GameManager
         if(PlayerPrefs.HasKey(collisionMapKey))
         {
             UserMadeMap = true;
+            collisionMap = PlayerPrefs.GetString(collisionMapKey);
         }
     }
     public enum StateType

@@ -18,6 +18,9 @@ public class QRCreator : MonoBehaviour
                 encoded.width, encoded.height);
             encoded.SetPixels32(color32);
             encoded.Apply();
+        } else
+        {
+            gameObject.SetActive(false);
         }
         GetComponent<Image>().sprite = Sprite.Create(encoded, new Rect(0, 0, encoded.width, encoded.height), new Vector2(0,0));
     }

@@ -40,6 +40,7 @@ public class GridMovement
         //reading collision file and setting up collision matrix
         List<string> eachLine = new List<string>();
         eachLine.AddRange(map.Split("\n"[0]));
+        Debug.Log("collisions w: " + eachLine[0].Length + ", h: " + eachLine.Count);
         collisions = new bool[eachLine[0].Length, eachLine.Count];
         for (int i = 0; i < eachLine.Count; i++)
         {
@@ -62,7 +63,7 @@ public class GridMovement
         }
         gridWidth = collisions.GetLength(0);
         gridHeight = collisions.GetLength(1);
-
+        Debug.Log(playerSpawn.x + ", " + playerSpawn.y);
         //finding valid points
         validPoints = new List<Vector2Int>();
         bool[,] visited = new bool[collisions.GetLength(0), collisions.GetLength(1)];
